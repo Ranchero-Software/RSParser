@@ -20,7 +20,7 @@ This framework builds for macOS. It *could* be made to build for iOS also, but I
 
 To get the type of a feed, even with partial data, call `FeedParser.feedType(parserData)`, which will return a `FeedType`.
 
-To parse a feed, call `FeedParser.parseFeed(parserData)`, which will return a [ParsedFeed](Feeds/ParsedFeed.swift). Also see related structs: `ParsedAuthor`, `ParsedItem`, `ParsedAttachment`, and `ParsedHub`.
+To parse a feed, call `FeedParser.parse(parserData)`, which will return a [ParsedFeed](Feeds/ParsedFeed.swift). Also see related structs: `ParsedAuthor`, `ParsedItem`, `ParsedAttachment`, and `ParsedHub`.
 
 You do *not* need to know the type of feed when calling `FeedParser.parse` — it will figure it out and use the correct concrete parser.
 
