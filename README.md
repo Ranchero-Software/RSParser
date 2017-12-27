@@ -1,9 +1,5 @@
 # RSParser
 
-(Note: Tests are still incomplete. It’s possible that none of this works.)
-
-(Also note: this framework is intended to supersede my [RSXML](https://github.com/brentsimmons/RSXML) framework. Use this one instead. Well, once it’s working, that is.)
-
 ## What’s inside
 
 This framework includes parsers for:
@@ -26,7 +22,7 @@ To parse a feed, call `FeedParser.parseFeed(parserData)`, which will return a `P
 
 You do *not* need to know the type of feed when calling `FeedParser.parseFeed` — it will figure it out and use the correct concrete parser.
 
-However, if you do want to use a concrete parser directly, see `RSSInJSONParser`, `JSONFeedParser`, `RSSParser`, and `AtomParser`.
+However, if you do want to use a concrete parser directly, see [RSSInJSONParser](Feeds/JSON/RSSInJSONParser.swift), `JSONFeedParser`, `RSSParser`, and `AtomParser`.
 
 (Note: if you want to write a feed reader app, please do! You have my blessing and encouragement. Let me know when it’s shipping so I can check it out.)
 
