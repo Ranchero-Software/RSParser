@@ -23,6 +23,7 @@
 		84285AB21F00702E002E8708 /* RSOPMLError.h in Headers */ = {isa = PBXBuildFile; fileRef = 84285AB01F00702E002E8708 /* RSOPMLError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84285AB31F00702E002E8708 /* RSOPMLError.m in Sources */ = {isa = PBXBuildFile; fileRef = 84285AB11F00702E002E8708 /* RSOPMLError.m */; };
 		842A42011FB77A5A00EA22E4 /* dcrainmaker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */; };
+		8438731E2002B02400757651 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8438731D2002B02400757651 /* README.md */; };
 		84469CEF1EFA3000004A6B28 /* RSOPMLAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE51EFA3000004A6B28 /* RSOPMLAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84469CF01EFA3000004A6B28 /* RSOPMLAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CE61EFA3000004A6B28 /* RSOPMLAttributes.m */; };
 		84469CF11EFA3000004A6B28 /* RSOPMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE71EFA3000004A6B28 /* RSOPMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,6 +137,7 @@
 		84285AB11F00702E002E8708 /* RSOPMLError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOPMLError.m; sourceTree = "<group>"; };
 		84285AB41F007255002E8708 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dcrainmaker.xml; sourceTree = "<group>"; };
+		8438731D2002B02400757651 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84469CE51EFA3000004A6B28 /* RSOPMLAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSOPMLAttributes.h; sourceTree = "<group>"; };
 		84469CE61EFA3000004A6B28 /* RSOPMLAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOPMLAttributes.m; sourceTree = "<group>"; };
 		84469CE71EFA3000004A6B28 /* RSOPMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSOPMLDocument.h; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 				84285AAE1F006BC0002E8708 /* libxml2.2.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8438731C2002B02400757651 /* FeedServices */ = {
+			isa = PBXGroup;
+			children = (
+				8438731D2002B02400757651 /* README.md */,
+			);
+			path = FeedServices;
 			sourceTree = "<group>";
 		};
 		84469CE31EFA2FB0004A6B28 /* Feeds */ = {
@@ -418,6 +428,7 @@
 				84E7E69E1F85780D0046719D /* ParserData.m */,
 				84245C861FDDDC470074AFBB /* JSON */,
 				84469CE31EFA2FB0004A6B28 /* Feeds */,
+				8438731C2002B02400757651 /* FeedServices */,
 				84285AA61F004879002E8708 /* Dates */,
 				84469CE41EFA3000004A6B28 /* OPML */,
 				84469CFE1EFA307E004A6B28 /* HTML */,
@@ -574,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8438731E2002B02400757651 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
