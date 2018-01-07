@@ -23,7 +23,6 @@
 		84285AB21F00702E002E8708 /* RSOPMLError.h in Headers */ = {isa = PBXBuildFile; fileRef = 84285AB01F00702E002E8708 /* RSOPMLError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84285AB31F00702E002E8708 /* RSOPMLError.m in Sources */ = {isa = PBXBuildFile; fileRef = 84285AB11F00702E002E8708 /* RSOPMLError.m */; };
 		842A42011FB77A5A00EA22E4 /* dcrainmaker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */; };
-		8438731E2002B02400757651 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8438731D2002B02400757651 /* README.md */; };
 		84469CEF1EFA3000004A6B28 /* RSOPMLAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE51EFA3000004A6B28 /* RSOPMLAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84469CF01EFA3000004A6B28 /* RSOPMLAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CE61EFA3000004A6B28 /* RSOPMLAttributes.m */; };
 		84469CF11EFA3000004A6B28 /* RSOPMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE71EFA3000004A6B28 /* RSOPMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -585,7 +584,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8438731E2002B02400757651 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
