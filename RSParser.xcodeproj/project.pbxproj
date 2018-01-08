@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659D22A72003D9AD002555FB /* RSParserInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D22A62003D9AD002555FB /* RSParserInternal.swift */; };
 		8401FF811FE862E70080F13F /* RSParsedEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 8401FF7F1FE862E70080F13F /* RSParsedEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8401FF821FE862E70080F13F /* RSParsedEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401FF801FE862E70080F13F /* RSParsedEnclosure.m */; };
 		8401FF841FE87C2F0080F13F /* theomnishow.rss in Resources */ = {isa = PBXBuildFile; fileRef = 8401FF831FE87C2E0080F13F /* theomnishow.rss */; };
@@ -128,6 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		659D22A62003D9AD002555FB /* RSParserInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSParserInternal.swift; sourceTree = "<group>"; };
 		8401FF7F1FE862E70080F13F /* RSParsedEnclosure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSParsedEnclosure.h; sourceTree = "<group>"; };
 		8401FF801FE862E70080F13F /* RSParsedEnclosure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSParsedEnclosure.m; sourceTree = "<group>"; };
 		8401FF831FE87C2E0080F13F /* theomnishow.rss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theomnishow.rss; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				84469D111EFA30A2004A6B28 /* NSString+RSParser.m */,
 				84469D141EFA30A2004A6B28 /* RSParserInternal.h */,
 				84469D151EFA30A2004A6B28 /* RSParserInternal.m */,
+				659D22A62003D9AD002555FB /* RSParserInternal.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				845213291FCB4042003B6E93 /* RSHTMLTag.m in Sources */,
 				84469D2C1EFA3134004A6B28 /* RSParsedArticle.m in Sources */,
 				84285AAA1F006456002E8708 /* RSParsedFeedTransformer.swift in Sources */,
+				659D22A72003D9AD002555FB /* RSParserInternal.swift in Sources */,
 				84469D2E1EFA3134004A6B28 /* RSParsedFeed.m in Sources */,
 				84469CF81EFA3000004A6B28 /* RSOPMLParser.m in Sources */,
 				8401FF821FE862E70080F13F /* RSParsedEnclosure.m in Sources */,

@@ -26,7 +26,11 @@ BOOL RSParserObjectIsEmpty(id obj) {
 	}
 	
 	if ([obj respondsToSelector:@selector(length)]) {
-		return [obj length] < 1;
+		// Have to cast obj to something specific to quiet "multiple methods named"
+		// errors arising from importing Swift module. Whether obj is actually a
+		// string or not doesn't matter to the Objective-C runtime, so long as it
+		// implements -length.
+		return [(NSString*)obj length] < 1;
 	}
 	
 	return NO; /*Shouldn't get here very often.*/
@@ -37,24 +41,3 @@ BOOL RSParserStringIsEmpty(NSString *s) {
 	return RSParserIsNil(s) || s.length < 1;
 }
 
-
-@implementation NSDictionary (RSParserInternal)
-
-- (nullable id)rsparser_objectForCaseInsensitiveKey:(NSString *)key {
-	
-	id obj = self[key];
-	if (obj) {
-		return obj;
-	}
-	
-	for (NSString *oneKey in self.allKeys) {
-		
-		if ([oneKey isKindOfClass:[NSString class]] && [key caseInsensitiveCompare:oneKey] == NSOrderedSame) {
-			return self[oneKey];
-		}
-	}
-	
-	return nil;
-}
-
-@end

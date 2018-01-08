@@ -8,17 +8,13 @@
 
 @import Foundation;
 
+// RSParserInternal.swift implements rsparser_objectForCaseInsensitiveKey:
+#import <RSParser/RSParser-Swift.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 BOOL RSParserObjectIsEmpty(id _Nullable obj);
 BOOL RSParserStringIsEmpty(NSString * _Nullable s);
-
-
-@interface NSDictionary (RSParserInternal)
-
-- (nullable id)rsparser_objectForCaseInsensitiveKey:(NSString *)key;
-
-@end
 
 NS_ASSUME_NONNULL_END
 
