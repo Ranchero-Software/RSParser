@@ -19,6 +19,7 @@
 - (BOOL)isProbablyRSSInJSON;
 - (BOOL)isProbablyRSS;
 - (BOOL)isProbablyAtom;
+- (BOOL)isProbablyHFeed;
 
 @end
 

@@ -61,6 +61,9 @@ public struct FeedParser {
 
 			case .atom:
 				return AtomParser.parse(parserData)
+                
+            case .hFeed:
+                return HFeedParser.parse(parserData)
 
 			case .unknown, .notAFeed:
 				return nil

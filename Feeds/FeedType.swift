@@ -13,6 +13,7 @@ public enum FeedType {
 	case atom
 	case jsonFeed
 	case rssInJSON
+    case hFeed
 	case unknown
 	case notAFeed
 }
@@ -46,6 +47,9 @@ public func feedType(_ parserData: ParserData, isPartialData: Bool = false) -> F
 	if nsdata.isProbablyAtom() {
 		return .atom
 	}
+    if nsdata.isProbablyHFeed() {
+        return .hFeed
+    }
 
 	if isPartialData && nsdata.isProbablyJSON() {
 		// Might not be able to detect a JSON Feed without all data.

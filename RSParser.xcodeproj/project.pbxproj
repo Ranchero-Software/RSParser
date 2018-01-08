@@ -106,6 +106,15 @@
 		84E7E69F1F85780D0046719D /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E7E69D1F85780D0046719D /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84E7E6A01F85780D0046719D /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E69E1F85780D0046719D /* ParserData.m */; };
 		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
+		93BEC0151FFF463000C0A4F6 /* h-entry.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BEC0141FFF463000C0A4F6 /* h-entry.html */; };
+		93BEC0182000966D00C0A4F6 /* HEntryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC0172000966D00C0A4F6 /* HEntryParser.swift */; };
+		93BEC01A20009F3C00C0A4F6 /* HEntryParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC01920009F3C00C0A4F6 /* HEntryParserTests.swift */; };
+		93BEC01C200130FF00C0A4F6 /* HEntryParser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC01B200130FF00C0A4F6 /* HEntryParser+Extensions.swift */; };
+		93BEC01E2001361300C0A4F6 /* MicroTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC01D2001361300C0A4F6 /* MicroTypes.swift */; };
+		93BEC027200139A100C0A4F6 /* nested-h-card.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BEC026200139A100C0A4F6 /* nested-h-card.html */; };
+		93BEC0292003308500C0A4F6 /* tantek.com.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BEC0282003308500C0A4F6 /* tantek.com.html */; };
+		93BEC02B2003314E00C0A4F6 /* HFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC02A2003314E00C0A4F6 /* HFeedParser.swift */; };
+		93BEC02D2003377700C0A4F6 /* HFeedParser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEC02C2003377700C0A4F6 /* HFeedParser+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +231,15 @@
 		84FF5F841EFA285800C15A01 /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F941EFA285800C15A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BEC0141FFF463000C0A4F6 /* h-entry.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "h-entry.html"; sourceTree = "<group>"; };
+		93BEC0172000966D00C0A4F6 /* HEntryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEntryParser.swift; sourceTree = "<group>"; };
+		93BEC01920009F3C00C0A4F6 /* HEntryParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEntryParserTests.swift; sourceTree = "<group>"; };
+		93BEC01B200130FF00C0A4F6 /* HEntryParser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HEntryParser+Extensions.swift"; sourceTree = "<group>"; };
+		93BEC01D2001361300C0A4F6 /* MicroTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroTypes.swift; sourceTree = "<group>"; };
+		93BEC026200139A100C0A4F6 /* nested-h-card.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "nested-h-card.html"; sourceTree = "<group>"; };
+		93BEC0282003308500C0A4F6 /* tantek.com.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tantek.com.html; sourceTree = "<group>"; };
+		93BEC02A2003314E00C0A4F6 /* HFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFeedParser.swift; sourceTree = "<group>"; };
+		93BEC02C2003377700C0A4F6 /* HFeedParser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HFeedParser+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +422,7 @@
 				8401FF831FE87C2E0080F13F /* theomnishow.rss */,
 				844B5B3D1FE9A13B00C7C76A /* 4fsodonline.atom */,
 				844B5B3F1FE9A45200C7C76A /* expertopinionent.atom */,
+				93BEC0252001398300C0A4F6 /* Micro Formats */,
 				849A03CF1F0081EA00122600 /* Subs.opml */,
 			);
 			path = Resources;
@@ -416,6 +435,7 @@
 				84D81BDA1EFA28E700652332 /* RSParser.h */,
 				84E7E69D1F85780D0046719D /* ParserData.h */,
 				84E7E69E1F85780D0046719D /* ParserData.m */,
+				93BEC0161FFF4F5E00C0A4F6 /* h-Entry */,
 				84245C861FDDDC470074AFBB /* JSON */,
 				84469CE31EFA2FB0004A6B28 /* Feeds */,
 				84285AA61F004879002E8708 /* Dates */,
@@ -452,10 +472,33 @@
 				849A03E31F00912100122600 /* HTMLMetadataTests.swift */,
 				849A03E51F00952400122600 /* HTMLLinkTests.swift */,
 				84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */,
+				93BEC01920009F3C00C0A4F6 /* HEntryParserTests.swift */,
 				849A03C41F0081EA00122600 /* Resources */,
 				84FF5F941EFA285800C15A01 /* Info.plist */,
 			);
 			path = RSParserTests;
+			sourceTree = "<group>";
+		};
+		93BEC0161FFF4F5E00C0A4F6 /* h-Entry */ = {
+			isa = PBXGroup;
+			children = (
+				93BEC02A2003314E00C0A4F6 /* HFeedParser.swift */,
+				93BEC02C2003377700C0A4F6 /* HFeedParser+Extensions.swift */,
+				93BEC0172000966D00C0A4F6 /* HEntryParser.swift */,
+				93BEC01B200130FF00C0A4F6 /* HEntryParser+Extensions.swift */,
+				93BEC01D2001361300C0A4F6 /* MicroTypes.swift */,
+			);
+			path = "h-Entry";
+			sourceTree = "<group>";
+		};
+		93BEC0252001398300C0A4F6 /* Micro Formats */ = {
+			isa = PBXGroup;
+			children = (
+				93BEC0141FFF463000C0A4F6 /* h-entry.html */,
+				93BEC026200139A100C0A4F6 /* nested-h-card.html */,
+				93BEC0282003308500C0A4F6 /* tantek.com.html */,
+			);
+			path = "Micro Formats";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +587,7 @@
 					84FF5F831EFA285800C15A01 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 					84FF5F8C1EFA285800C15A01 = {
 						CreatedOnToolsVersion = 9.0;
@@ -581,7 +625,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BEC0151FFF463000C0A4F6 /* h-entry.html in Resources */,
 				845213251FCB3C76003B6E93 /* coco.html in Resources */,
+				93BEC0292003308500C0A4F6 /* tantek.com.html in Resources */,
 				849A03D51F0081EA00122600 /* KatieFloyd.rss in Resources */,
 				849A03D81F0081EA00122600 /* scriptingNews.rss in Resources */,
 				840FDCBA1F02186D0041F61B /* DaringFireball.json in Resources */,
@@ -590,6 +636,7 @@
 				8401FF841FE87C2F0080F13F /* theomnishow.rss in Resources */,
 				849A03D61F0081EA00122600 /* manton.rss in Resources */,
 				849A03D11F0081EA00122600 /* DaringFireball.rss in Resources */,
+				93BEC027200139A100C0A4F6 /* nested-h-card.html in Resources */,
 				844B5B401FE9A45200C7C76A /* expertopinionent.atom in Resources */,
 				84B19A771FDA438300458981 /* natasha.xml in Resources */,
 				84566D961FD1FC1800103322 /* allthis-partial.json in Resources */,
@@ -618,6 +665,7 @@
 			files = (
 				84469D081EFA307E004A6B28 /* RSHTMLLinkParser.m in Sources */,
 				84469D1B1EFA30A2004A6B28 /* RSParserInternal.m in Sources */,
+				93BEC01C200130FF00C0A4F6 /* HEntryParser+Extensions.swift in Sources */,
 				84D81BE21EFA2D0900652332 /* ParsedAuthor.swift in Sources */,
 				84469D0E1EFA307E004A6B28 /* RSSAXHTMLParser.m in Sources */,
 				84469CF41EFA3000004A6B28 /* RSOPMLFeedSpecifier.m in Sources */,
@@ -625,6 +673,7 @@
 				84469D381EFF2645004A6B28 /* RSSInJSONParser.swift in Sources */,
 				84E7E6A01F85780D0046719D /* ParserData.m in Sources */,
 				84245C881FDDDC6D0074AFBB /* JSONUtilities.swift in Sources */,
+				93BEC02D2003377700C0A4F6 /* HFeedParser+Extensions.swift in Sources */,
 				84469D301EFA3134004A6B28 /* RSRSSParser.m in Sources */,
 				84469D191EFA30A2004A6B28 /* RSDateParser.m in Sources */,
 				84469CFD1EFA3069004A6B28 /* RSSAXParser.m in Sources */,
@@ -634,6 +683,7 @@
 				84285AAC1F006754002E8708 /* AtomParser.swift in Sources */,
 				84285AA81F005D53002E8708 /* RSSParser.swift in Sources */,
 				84469D421EFF2B2D004A6B28 /* JSONTypes.swift in Sources */,
+				93BEC0182000966D00C0A4F6 /* HEntryParser.swift in Sources */,
 				844B5B451FE9AFE000C7C76A /* RSParsedAuthor.m in Sources */,
 				84469D0C1EFA307E004A6B28 /* RSHTMLMetadataParser.m in Sources */,
 				84469D0A1EFA307E004A6B28 /* RSHTMLMetadata.m in Sources */,
@@ -653,7 +703,9 @@
 				84D81BDE1EFA2B7D00652332 /* ParsedFeed.swift in Sources */,
 				84D81BE81EFA2E6700652332 /* ParsedHub.swift in Sources */,
 				84469D441F002CEF004A6B28 /* JSONFeedParser.swift in Sources */,
+				93BEC02B2003314E00C0A4F6 /* HFeedParser.swift in Sources */,
 				84D81BE01EFA2BAE00652332 /* FeedType.swift in Sources */,
+				93BEC01E2001361300C0A4F6 /* MicroTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +718,7 @@
 				840FDCB41F0217410041F61B /* JSONFeedParserTests.swift in Sources */,
 				84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */,
 				849A03E61F00952400122600 /* HTMLLinkTests.swift in Sources */,
+				93BEC01A20009F3C00C0A4F6 /* HEntryParserTests.swift in Sources */,
 				849A03E21F00902C00122600 /* RSDateParserTests.m in Sources */,
 				849A03DE1F00837A00122600 /* FeedParserTypeTests.swift in Sources */,
 				840FDCB21F01FED00041F61B /* RSSParserTests.swift in Sources */,
@@ -855,10 +908,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = 58KMFZ5UGA;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -869,6 +923,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -879,10 +934,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = 58KMFZ5UGA;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -893,6 +949,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};
@@ -904,7 +961,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = 58KMFZ5UGA;
 				INFOPLIST_FILE = RSParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
@@ -920,7 +977,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = 58KMFZ5UGA;
 				INFOPLIST_FILE = RSParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;

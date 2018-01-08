@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Tantek &#xC7;elik</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" href="logo.jpg"/>
+        <link rel="apple-touch-icon-precomposed" href="logo.jpg"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <link rel="webmention" href="http://webmention.io/tantek.com/webmention"/>
+        <link rel="hub" href="https://pubsubhubbub.superfeedr.com/"/>
+        <link rel="self" href="http://tantek.com/"/>
+        <link rel="openid.delegate" href="http://tantek.com/"/>
+        <link rel="openid.server" href="https://indieauth.com/openid"/>
+        <link rel="alternate" type="application/atom+xml" href="updates.atom"/>
+        <style type="text/css">/**/
+            /* HTML5+CSS work in progress. Copy paste AT YOUR OWN RISK! */
+            
+            @import "2017/simple.css";
+            h2 { font-size:1em; }
+            
+            body {
+                margin:auto;
+                padding:1.5em;
+                max-width:940px;
+            }
+        
+        iframe { max-width:100%; }
+        abbr { text-decoration:none }
+        
+        .header {
+            border-bottom:solid 1px #666;
+            margin-top:0;
+            margin-bottom:1em;
+        }
+        
+        .header h1 {
+            margin:0;
+            padding:5px 0 0;
+            font-size:3em;
+            line-height:1.3;
+            font-weight:bold;
+            white-space:nowrap;
+        }
+        .header h2 {
+            font-size:1.5em;
+            font-weight:normal;
+            line-height:1em;
+            min-width:20em;
+            min-height:3em;
+            margin:0;
+        }
+        
+        .aside dt, .aside dd {margin:0;padding:0}
+        .aside dt { margin-top:.77em; color:#666; }
+        .aside dd { color:#000}
+        
+        form.search {
+            clear: right;
+            text-align: right;
+            margin-bottom: 1em;
+            white-space: nowrap;
+            font-size: 1.3em;
+        }
+        
+        .stream>ol { margin:0; padding:0; }
+        
+        div.stream li.h-entry .figure { margin:0 -1em; }
+        
+        span.see-more { display:inline; }
+        
+        .interact img,
+        .p-org.h-card img,
+        .p-category.h-card img { height:1.4em; vertical-align:-.3em }
+        
+        @media screen and (min-width:40em) {
+            /* progressive enhance wider screens */
+            
+            span.see-more { display:none; }
+            
+            body { padding:2em; }
+            
+            .header { height:90px; margin-top:1.3em }
+            
+            form.search {
+                margin-top: -3.9em;
+                width: 34%;
+                float: right;
+            }
+            
+            .stream {
+                clear:left;
+                float:left;
+                width:62%;
+                margin-right:4%;
+            }
+            
+            .stream>ol { margin-right:3em; }
+            
+            .hentry ol, .hentry ul { margin-left:30px; }
+            
+            .aside {
+                float:left;
+                width:33%;
+            }
+            
+            .footer .section {
+                float:left;
+                width:30%;
+                margin-right:3%;
+            }
+            
+            div.stream li.h-entry .figure { margin:0; }
+            
+        } /* end wider screen enhancements */
+        
+        
+        .photo {
+            width:73px;
+            float:left;
+            margin:0 20px 0 0;
+        }
+        
+        form.search input[type=search] { width:62%; }
+        
+        form.search input, form.search button {
+            font-size:1em;
+            height:1.7em;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin:0;
+            vertical-align:bottom;
+        }
+        
+        .stream>ol { list-style:none; }
+        
+        .aside h2,.footer h2 {
+            font-size: 1.3em;
+            text-transform:uppercase;
+            line-height:1.25;
+            margin:0 0 1em;
+        }
+        
+        .aside .section { margin-top:2em; }
+        .aside .section.hello { margin-top:0; }
+        
+        .aside .section h2 {  margin-bottom:0.5em;
+        }
+        
+        .aside p,.aside li,.aside dl,.footer p,.footer li {
+            font-size:1.3em;
+            line-height:1.54;
+            margin:0;
+            color:#666;
+            list-style:none;
+        }
+        .hello p { color:#000; }
+        .elsewhere img {
+            vertical-align:bottom;
+            padding-bottom:.2em;
+        }
+        .aside h2 {
+            font-size:1.4em;
+            line-height:1.43;
+            font-weight:bold;
+        }
+        
+        div.footer {
+            margin-left:1em;
+            clear:both;
+            margin-top:1em;
+            padding-top:5em;
+        }
+        .footer address { white-space:nowrap; }
+        
+        .footer p { margin-top:1em; }
+        .footer .section li { list-style:disc inside; }
+        
+        address {
+            font-style:normal;
+            text-align:center;
+            clear:both;
+            margin:1em 5%;
+            padding:3em;
+        }
+        
+        ul.nav,.nav li,ul.offsite { list-style:none; }
+        ul.nav { float:right; margin-right: 5%; }
+        ul.offsite,.offsite li,.nav li { list-style:inline; display:inline; }
+        a:link { color:#2240C0; }
+        a:link:hover { color:#22B040; }
+        a:visited:hover {color:#118020; }
+        
+        /* events */
+        #events li.vevent { list-style:none;margin-top:1em; }
+        #events abbr.location {
+            display:block; text-align:center;
+            text-transform:uppercase;
+            font-weight:bold; font-size:2em; word-spacing:-.1em; font-size:1.5em;
+        }
+        #events li.vevent a {
+            display:block; width:167px; text-align:center;
+            border:2px solid #000; padding:2px 1px 0 1px;
+        }
+        #events li.vevent object,.vevent img { max-width:160px }
+        #events li.vevent .with { display:block }
+        .subhead { display:block }
+        .html5 {
+            display:block; padding-top:3px;
+            color:#3C790A;
+            font-family: Helvetica, sans-serif; font-weight: 900;
+            font-size: 27px; line-height:.7em;
+        }
+        .html5 span {
+            display:block;
+            font-size:66%; line-height:1em; text-transform:capitalize;
+        }
+        #events .vevent a:visited:hover { color:#66F; }
+        #events .vevent a:link:hover { color:#33F; }
+        input,button { font-size:1em; }
+        button { margin: 0 0.5em 0 0; padding:0 0.5em; }
+            /**/</style>
+    </head>
+    <body class="h-card vcard">
+        <header><div class="header">
+            <img class="photo u-photo" src="photo.jpg" alt=""/><a class="u-url u-uid" rel="author" href=""></a>
+            <div class="hgroup" style="margin-bottom:-1em">
+                <h1 class="p-name fn">Tantek &#xC7;elik</h1>
+                <h2 class="p-role role">
+                    <span class="p-category category">Inventor</span>, <span class="p-category category">writer</span>, <span class="p-category category">teacher</span>, <span class="p-category category">runner</span>, <span class="p-category category">indieweb</span> <span class="p-category category">coder</span><span class="see-more">, <a href="#hello">more</a>.</span>
+                </h2>
+            </div>
+            <span class="see-more" style="float:left; max-width:6em; font-size:1.6em; margin:0; padding:0; text-align:center">
+                <indie-action do="follow" with="http://tantek.com/">
+                    <a href="https://twitter.com/intent/follow?screen_name=t"><abbr title="Follow Tantek on Twitter"><img style="margin:0 -0.3em -0.3em -0.4em" src="icon/twitter.png" alt="Follow @t"></abbr></a>
+                </indie-action>
+                <a href="http://tantek.com/contact"><abbr title="Message Tantek">&#128172;</abbr></a>
+                <a href="http://tantek.com/pay" title="Tip: Did you read something of value here and want to encourage more posts like that? Feel free to tip a small amount and mention which topics you enjoyed! (Just please avoid specific products or services. Thanks! -t)">&#128079; </a>
+            </span>
+            <form class="search" action="https://duckduckgo.com/html/" method="get"><div>
+                <input type="hidden" name="type" value="list"/>
+                <input type="search" value="site:tantek.com " name="q" style="max-width:10.5em"/>
+                <button type="submit">Search</button>
+            </div></form>
+        </div></header>
+        
+        <div class="h-feed section stream" id="updates">
+            <data class="p-name" value=""></data><div class="pinned"></div>
+            <ol>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">going to run the Hot Chocolate 15k on 2018-01-07!<br class="auto-break"/><a class="auto-link" href="https://www.hotchocolate15k.com/sanfrancisco">https://www.hotchocolate15k.com/sanfrancisco</a><br class="auto-break"/>Last year&rsquo;s was only ~9.8k due to Great Highway being flooded. Looking forward to an actual 15k!</p>
+                    <span class="info footer"><a href="2018/005/t3/run-hot-chocolate-15k" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="23:54-0800">23:54</time> on <time class="value">2018-01-05</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">First wet #<span class="p-category auto-tag">NPSF</span> #<span class="p-category auto-tag">weatherproof</span> workout in 2018 this morning. #<span class="p-category auto-tag">100PDPD</span><br class="auto-break"/>#<span class="p-category auto-tag">stepsforbreakfast</span> up the Moraga Tiled Steps^1 to Grand View Park^2. Afterwards we saw just a sliver of orange sunrise between land &amp; cloudcover. Last bright sunlight til maybe sunset.<br class="auto-break"/><br class="auto-break"/>^1 AKA 16th Avenue Tiled Steps <a class="auto-link" href="http://www.16thavenuetiledsteps.com/">http://www.16thavenuetiledsteps.com/</a><br class="auto-break"/>^2 <a class="auto-link" href="https://en.wikipedia.org/wiki/Grand_View_Park">https://en.wikipedia.org/wiki/Grand_View_Park</a></p>
+                    <span class="info footer"><a href="2018/005/t2/wet-npsf-weatherproof" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="13:05-0800">13:05</time> on <time class="value">2018-01-05</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Yesterday was a rest and homework^1 day. #<span class="p-category auto-tag">100PDPD</span> #<span class="p-category auto-tag">2018_004</span><br class="auto-break"/>Originally planned to hike up Mt. Tam to watch the sunrise, but being shaken awake by a 02:40 4.4 earthquake^2 screwed up our sleep enough to postpone.<br class="auto-break"/>Barely awake for <a class="auto-link h-cassis-username" href="https://twitter.com/W3CAB">@W3CAB</a> telcon. Scheduled a physical and started tax prep.<br class="auto-break"/><br class="auto-break"/>^1 homework is what I am starting to call all the things you must do as an adult that you are not paid to do (i.e. they&rsquo;re not your job or other regular source of income, e.g. filing taxes, preventative doctor checkups, laundry etc.) or else bad things happen, are more likely to happen, cost you a lot more time or $ later, or delay receiving $.<br class="auto-break"/>^2 <a class="auto-link" href="https://earthquake.usgs.gov/earthquakes/eventpage/nc72948801">https://earthquake.usgs.gov/earthquakes/eventpage/nc72948801</a></p>
+                    <span class="info footer"><a href="2018/005/t1/yesterday-rest-homework-day" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="09:48-0800">09:48</time> on <time class="value">2018-01-05</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article"><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_g7yruXflacsGr7PyVmECefyTBMB_R99zmPQxW7pftzA.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_g7yruXflacsGr7PyVmECefyTBMB_R99zmPQxW7pftzA.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_zM3UgU9JHNhom907Ac_1WCEcUhGOJZaNWGlRmev86YA.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_zM3UgU9JHNhom907Ac_1WCEcUhGOJZaNWGlRmev86YA.jpg"/></a>&#127750; Made it to the first #<span class="p-category auto-tag">NPSF</span> #<span class="p-category auto-tag">earlygang</span> of the year, did in-betweeners abs, and 6:30 workout with a brutal burnout that was really its own workout. But wow pretty sunrise. Plus 50+ deg F? I&rsquo;ll take it. #<span class="p-category auto-tag">100PDPD</span><br class="auto-break"/><br class="auto-break"/>#<span class="p-category auto-tag">justshowup</span> #<span class="p-category auto-tag">darknesstodawn</span> #<span class="p-category auto-tag">wakeupthesun</span> #<span class="p-category auto-tag">fromwhereirun</span> #<span class="p-category auto-tag">NovemberProject</span> #<span class="p-category auto-tag">sunrise</span> #<span class="p-category auto-tag">latergram</span> #<span class="p-category auto-tag">nofilter</span></p>
+                    <span class="info footer"><a href="2018/003/t3/first-npsf-earlygang-year" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="21:08-0800">21:08</time> on <time class="value">2018-01-03</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Last night I went to my first yoga class of the year (also by Lauren Pisano <a class="auto-link h-cassis-username" href="https://twitter.com/YogaFlowSF">@YogaFlowSF</a> on Ocean Ave) and brought a friend who had not done a heated yoga class before. Apparently really needed it. Felt much lighter afterwards.<br class="auto-break"/>#<span class="p-category auto-tag">100PDPD</span> #<span class="p-category auto-tag">2018_002</span></p>
+                    <span class="info footer"><a href="2018/003/t2/first-yoga-class-this-year" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="17:59-0800">17:59</time> on <time class="value">2018-01-03</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">went to New Years Day Meditation &amp; Satsang with Lauren Pisano <a class="auto-link h-cassis-username" href="https://twitter.com/YogaFlowSF">@YogaFlowSF</a> on Ocean Ave at #<span class="p-category auto-tag">2018_001</span>. My first #<span class="p-category auto-tag">Satsang</span>, and the longest I have sat (and meditated) outside of #<span class="p-category auto-tag">YTT</span>. There was comfort in doing so in a group, and with few words.<br class="auto-break"/>#<span class="p-category auto-tag">100PDPD</span></p>
+                    <span class="info footer"><a href="2018/003/t1/new-years-day-meditation-satsang" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="17:52-0800">17:52</time> on <time class="value">2018-01-03</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Hello 2018.<br class="auto-break"/>This changing of the year feels very different than last. It felt more like just another day to make the most of. <br class="auto-break"/>But I am doing #<span class="p-category auto-tag">indieweb</span> #<span class="p-category auto-tag">100Days</span> of Positive Posts again, refocused on 100 Positive Doing then Posting Days: #<span class="p-category auto-tag">100PDPD</span> <br class="auto-break"/><br class="auto-break"/>Being an optimist, I believe every day we have opportunities to choose to make things better (or not), even if in seemingly small ways.<br class="auto-break"/><br class="auto-break"/>Thus the plan for #<span class="p-category auto-tag">100PDPD:</span><br class="auto-break"/>1. Every day: *do* something positive in-person (not just online). E.g.<br class="auto-break"/>&#xA0;* Something for the first time<br class="auto-break"/>&#xA0;* Or the first time this year<br class="auto-break"/>&#xA0;* Or build on something<br class="auto-break"/>&#xA0;* Or complete something<br class="auto-break"/>2. Post about it on your own site,<br class="auto-break"/>&#xA0;- or make a note of it and post it later.<br class="auto-break"/>3. Ideally post about it before posting anything critical (or negative) that same day<br class="auto-break"/><br class="auto-break"/>From my experience last year, there were several times when for one reason or another I went days without posting, then had to "catch up". Instead of catch-up, I&rsquo;m making the posting part strictly secondary, and ok even if published days after the action.<br class="auto-break"/><br class="auto-break"/>I expect to spend more time offline and perhaps even offgrid this year. I&rsquo;ll be taking paper notes which I can then post about later.<br class="auto-break"/><br class="auto-break"/>The refocus on doing rather than just posting may make this more challenging than last time.<br class="auto-break"/><br class="auto-break"/>Last year&rsquo;s #<span class="p-category auto-tag">100DoPP:</span> <a class="auto-link" href="http://tantek.com/2017/020/t3/indieweb-100days-positive-posts-100dopp">http://tantek.com/2017/020/t3/indieweb-100days-positive-posts-100dopp</a><br class="auto-break"/>and 100th DoPP: <a class="auto-link" href="http://tantek.com/2017/119/t6/haight-this-morning">http://tantek.com/2017/119/t6/haight-this-morning</a></p>
+                    <span class="info footer"><a href="2018/002/t1/hello" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="23:42-0800">23:42</time> on <time class="value">2018-01-02</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article"><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_VAYKB0kwX1-EJWo9b_8A5oX48Lmv5BtGNlzh4yUL-84.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_VAYKB0kwX1-EJWo9b_8A5oX48Lmv5BtGNlzh4yUL-84.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_WNnNCZ2dasHxwWrBULE_o5n_YZgi6J62OYHR5hmQ3FU.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_WNnNCZ2dasHxwWrBULE_o5n_YZgi6J62OYHR5hmQ3FU.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_cDryJsU6v5jAawCnwSNgqUkxX3nf8mufz8c9R9W0DWA.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_cDryJsU6v5jAawCnwSNgqUkxX3nf8mufz8c9R9W0DWA.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_ctXJewZ2Rv0Sw45X7Mwmpfq-9R9nFASaI7etF4xrQ8Y.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_ctXJewZ2Rv0Sw45X7Mwmpfq-9R9nFASaI7etF4xrQ8Y.jpg"/></a>Running <a class="auto-link h-cassis-username" href="https://twitter.com/TheNorthFace">@TheNorthFace</a> #<span class="p-category auto-tag">ECSCA</span> marathon relay was particularly awesome this year. First photo by <a class="auto-link h-cassis-username" href="https://twitter.com/matt_anzur">@matt_anzur</a>.<br class="auto-break"/><br class="auto-break"/>This is my fifth #<span class="p-category auto-tag">NP_PhotoContest</span> entry, though the photos were taken over a month ago. November 18th was one of my favorite days of 2017.<br class="auto-break"/><br class="auto-break"/>I got my dad to run on a North Face Endurance Challenge relay team for the first time (at 70+, he was the oldest ECSCA relay team participant this year by 17 years!). After running the first leg and resting while Anna did leg 2, I was in good enough shape to run with my dad in relay leg 3 and keep up! Thanks to Matt Anzur for capturing the sheer joy as we returned from Baker Beach. My dad joins #<span class="p-category auto-tag">NPSF</span> workouts whenever he can when he is in town, having him participate in ECSCA was extra special.<br class="auto-break"/><br class="auto-break"/>I also talked my good friend Michele into running the final leg of the relay for our team. Michele has been a great long distance training partner, including on weekends on the Marin hills, or on Golden Gate Park trails. She participates in #<span class="p-category auto-tag">NovemberProject</span> events when she can.<br class="auto-break"/><br class="auto-break"/>Lastly, after just coming to #<span class="p-category auto-tag">NPSF</span> for a few weeks, I convinced newcomer Anna to join our relay team, despite her being unsure about the distance (it was the longest she had ever run). We practiced the route early Tuesday morning of race week, which she easily crushed. She was also worried she wasn&rsquo;t fast enough, and she ran the fastest leg of our team! Anna is now a regular at #<span class="p-category auto-tag">NPSF</span> and always brings a great attitude and spirit.<br class="auto-break"/><br class="auto-break"/>To me our ECSCA team represented a lot of what NovemberProject is all about. Whether older or younger, a seasoned regular, an occasional participant, or a newbie, we run, support each other, and have a great time.<br class="auto-break"/><br class="auto-break"/>Happy New Year friends, let&rsquo;s make 2018 even better.<br class="auto-break"/><br class="auto-break"/>#<span class="p-category auto-tag">run</span> #<span class="p-category auto-tag">runner</span> #<span class="p-category auto-tag">runners</span> #<span class="p-category auto-tag">grassrootsgear</span> #<span class="p-category auto-tag">TheNorthFace</span> #<span class="p-category auto-tag">TNFECS</span> #<span class="p-category auto-tag">neverstopexploring</span> #<span class="p-category auto-tag">raceeverything</span> #<span class="p-category auto-tag">grateful</span> #<span class="p-category auto-tag">latergram</span> #<span class="p-category auto-tag">nofilter</span></p>
+                    <span class="info footer"><a href="2017/365/t2/thenorthface-ecsca-marathon-relay" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="21:17-0800">21:17</time> on <time class="value">2017-12-31</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">TODAY: Donate, and renew arts &amp; science memberships:<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/ACLU">@ACLU</a> 2x<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/PPact">@PPact</a> 3x<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/InternetArchive">@InternetArchive</a> 3x<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/Wikipedia">@Wikipedia</a><br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/Mozilla">@Mozilla</a>**<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/EFF">@EFF</a><br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/CalAcademy">@CalAcademy</a> 2x<br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/deYoungMuseum">@deYoungMuseum</a><br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/Exploratorium">@Exploratorium</a><br class="auto-break"/><a class="auto-link h-cassis-username" href="https://twitter.com/SFMOMA">@SFMOMA</a><br class="auto-break"/><br class="auto-break"/>Donate/renew NOW for 2017+2018 for 2-3x match &amp; to #<span class="p-category auto-tag">RESIST</span> new #<span class="p-category auto-tag">taxlaw</span>! Why: <br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>Why you must act TODAY (everyone)<br class="auto-break"/><br class="auto-break"/>Several of the above charitable organizations have matching donations that will increase your donation 2-3x IF you donate by end of day TODAY 2017-12-31 US Timezones.<br class="auto-break"/><br class="auto-break"/>See the 2x/3x next to the @-names for which organizations and how much.<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>Why you must act TODAY (US friends) <br class="auto-break"/><br class="auto-break"/>It&rsquo;s the last day of 2017. By donating today, you MAY*** be able to itemize your donations and deduct them from your 2017 Federal taxes, BUT you may NOT be able to in 2018! See: <a class="auto-link" href="https://www.nytimes.com/interactive/2017/12/22/business/taxbillroundup.html">https://www.nytimes.com/interactive/2017/12/22/business/taxbillroundup.html</a> (many provisions to punish blue states as predicted***).<br class="auto-break"/><br class="auto-break"/>tl;dr (IANAA, talk to your accountant): In 2018 you can no longer itemize and deduct state income tax (per cited NYT article). <br class="auto-break"/><br class="auto-break"/>Thus if you usually itemize because your state income tax is more than the standard deduction, you will lose that, and by taking the standard deduction, you won&rsquo;t be able to itemize &amp; deduct any charitable donations in 2018. So make those donations today instead!<br class="auto-break"/><br class="auto-break"/>You can donate to all of these organizations online and get an email receipt in minutes (I confirmed this by donating/renewing all the above personally).<br class="auto-break"/><br class="auto-break"/>See each Twitter profile above for their site/donation URLs.<br class="auto-break"/><br class="auto-break"/>**Disclosure: I work for <a class="auto-link h-cassis-username" href="https://twitter.com/Mozilla">@Mozilla</a>, on &amp; with open web standards &amp; communities <a class="auto-link h-cassis-username" href="https://twitter.com/indiewebcamp">@indiewebcamp</a> <a class="auto-link h-cassis-username" href="https://twitter.com/microformats">@microformats</a> <a class="auto-link h-cassis-username" href="https://twitter.com/W3C">@W3C</a> <a class="auto-link h-cassis-username" href="https://twitter.com/WHATWG">@WHATWG</a> supported by <a class="auto-link h-cassis-username" href="https://twitter.com/Firefox">@Firefox</a> to provide a more human-centric, private, and secure web for all users. #<span class="p-category auto-tag">fightfortheuser</span><br class="auto-break"/><br class="auto-break"/>***You "MAY" meaning by way of an itemized deduction on your Federal taxes, per the following (talk to your accountant, get one, IANAA, etc.)<br class="auto-break"/>&#xA0; * <a class="auto-link" href="http://tantek.com/2016/365/t6/blue-state-taxpayers-more-donations-resist">tantek.com/2016/365/t6/blue-state-taxpayers-more-donations-resist</a><br class="auto-break"/>&#xA0; * <a class="auto-link" href="http://tantek.com/2016/365/t5/calexit-start-cutting-fed-taxes-paid">tantek.com/2016/365/t5/calexit-start-cutting-fed-taxes-paid</a><br class="auto-break"/>&#xA0; * <a class="auto-link" href="http://tantek.com/2016/365/t4/if-fed-taxes-not-fund-then-minimizing">tantek.com/2016/365/t4/if-fed-taxes-not-fund-then-minimizing</a><br class="auto-break"/><br class="auto-break"/>See last year&rsquo;s post on this for more details:<br class="auto-break"/>* <a class="auto-link" href="http://tantek.com/2016/366/t2/resist-by-donating-today">http://tantek.com/2016/366/t2/resist-by-donating-today</a></p>
+                    <span class="info footer"><a href="2017/365/t1/today-donate-renew-arts-science" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="12:42-0800">12:42</time> on <time class="value">2017-12-31</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article"><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_oYMBN0s6_VaFB7LSgLXYVeuQZKAJ25dXlqIITZNcLzU.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_oYMBN0s6_VaFB7LSgLXYVeuQZKAJ25dXlqIITZNcLzU.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476__RmhKvLYt8O_LwzRRy73sKddL_mi4BsqyGZz09gVHkw.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476__RmhKvLYt8O_LwzRRy73sKddL_mi4BsqyGZz09gVHkw.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_tPgp4ZF0c0LoyejbZXb8g2IRskniXM23EAxYgq9dFk0.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_tPgp4ZF0c0LoyejbZXb8g2IRskniXM23EAxYgq9dFk0.jpg"/></a><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_hX45ciA37FmCQNhFpmWwHyE72LS7q6a5RRg3u4Y4OMw.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_hX45ciA37FmCQNhFpmWwHyE72LS7q6a5RRg3u4Y4OMw.jpg"/></a>#<span class="p-category auto-tag">FBF</span> to teaching #<span class="p-category auto-tag">yoga</span> <a class="auto-link h-cassis-username" href="https://twitter.com/Nov_Project_SF">@Nov_Project_SF</a> Friday 2017-10-13 <a class="auto-link h-cassis-username" href="https://twitter.com/TheNorthFace">@TheNorthFace</a>. &#128247; <a class="auto-link h-cassis-username" href="https://twitter.com/poleary87">@poleary87</a> (except 2nd).<br class="auto-break"/><br class="auto-break"/>I was honored when Paddy asked me if I could teach #<span class="p-category auto-tag">NPSF</span> yoga instead of our usual Friday hills, due to the poor outdoor air quality (unhealthy for everyone) from the north bay fires. Thanks to #<span class="p-category auto-tag">TheNorthFace</span> for allowing us early morning use of their space!<br class="auto-break"/><br class="auto-break"/>This was my first time teaching a full one hour yoga class on my own indoors (having taught outdoors over the summer), as well as first time teaching NPSF as a whole.<br class="auto-break"/><br class="auto-break"/>I came up with a custom routine (and a new playlist) that I thought would suit NPSFs abilities &amp; challenges, provide a good workout, but perhaps most importantly help people connect with themselves, and hopefully find a sense of peace &amp; calm amongst everything happening at the time.<br class="auto-break"/><br class="auto-break"/>Interestingly, though anxious at the start, I found myself also feeling more peaceful and calm as the class proceeded. Afterwards I was just grateful I was able to provide and serve a community which has inspired and helped me so much.<br class="auto-break"/><br class="auto-break"/>Learning to teach yoga and share that has been one of the highlights of 2017. My training <a class="auto-link h-cassis-username" href="https://twitter.com/YogaFlowSF">@YogaFlowSF</a> also left me with more questions than answers, personal and universal, that I know I will be spending more time thinking about in the coming years. Grateful for all my teachers, past and present.<br class="auto-break"/><br class="auto-break"/>More photos: <a class="auto-link" href="https://www.facebook.com/pg/NovemberProjectSF/photos/?tab=album&amp;album_id=1158115940991564">https://www.facebook.com/pg/NovemberProjectSF/photos/?tab=album&amp;album_id=1158115940991564</a><br class="auto-break"/><br class="auto-break"/>#<span class="p-category auto-tag">NovemberProject</span> #<span class="p-category auto-tag">freefitness</span> #<span class="p-category auto-tag">yogi</span> #<span class="p-category auto-tag">yogis</span> #<span class="p-category auto-tag">yogisofnp</span> #<span class="p-category auto-tag">NP_YOGA</span> #<span class="p-category auto-tag">justshowup</span> #<span class="p-category auto-tag">teach</span> #<span class="p-category auto-tag">teacher</span> #<span class="p-category auto-tag">teaching</span> #<span class="p-category auto-tag">practiceandalliscoming</span> #<span class="p-category auto-tag">savasana</span> #<span class="p-category auto-tag">namaste</span> #<span class="p-category auto-tag">grateful</span> #<span class="p-category auto-tag">latergram</span> #<span class="p-category auto-tag">nofilter</span></p>
+                    <span class="info footer"><a href="2017/363/t1/fbf-teaching-yoga-npsf" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="17:08-0800">17:08</time> on <time class="value">2017-12-29</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article"><a class="auto-link figure u-photo" href="https://igx.4sqi.net/img/general/original/476_swSAfwkkQcrDMNTQvxcEz4GEwG4veGC-XYGZ1hiEB6w.jpg"><img class="auto-embed" alt="a jpg. " src="https://igx.4sqi.net/img/general/width960/476_swSAfwkkQcrDMNTQvxcEz4GEwG4veGC-XYGZ1hiEB6w.jpg"/></a>#<span class="p-category auto-tag">TBT</span> to running up Diamond Head last Saturday, and seeing a bright orange #<span class="p-category auto-tag">grassrootsgear</span> tagged tanktop coming down the hill. <a class="auto-link h-cassis-username" href="https://twitter.com/jhoguem">@jhoguem</a> of #<span class="p-category auto-tag">NP_DC</span> &amp; I posing just about where we met. &#128247; <a class="auto-link" href="http://instagram.com/t_moneee">instagram.com/t_moneee</a><br class="auto-break"/><br class="auto-break"/>One of the best things about #<span class="p-category auto-tag">NovemberProject</span> is randomly running into others, whether across an ocean or in your local park, and instantly bonding over shared values: #<span class="p-category auto-tag">wakeupthesun</span> #<span class="p-category auto-tag">getoutside</span> #<span class="p-category auto-tag">justshowup</span> #<span class="p-category auto-tag">bounce</span> #<span class="p-category auto-tag">shout</span> #<span class="p-category auto-tag">workout</span> #<span class="p-category auto-tag">hugitout</span> (or high five it) #<span class="p-category auto-tag">neverstopexploring</span>.<br class="auto-break"/><br class="auto-break"/>This is my fourth #<span class="p-category auto-tag">NP_PhotoContest</span> entry. Joint entry with Jessie (<a class="auto-link h-cassis-username" href="https://twitter.com/jhoguem">@jhoguem</a>), if that&rsquo;s a thing.<br class="auto-break"/><br class="auto-break"/>#<span class="p-category auto-tag">NPSF</span> #<span class="p-category auto-tag">NP_TSA</span> #<span class="p-category auto-tag">fromwhereirun</span> #<span class="p-category auto-tag">run</span> #<span class="p-category auto-tag">runner</span> #<span class="p-category auto-tag">runners</span> #<span class="p-category auto-tag">trailrun</span> #<span class="p-category auto-tag">sunrise</span> #<span class="p-category auto-tag">DiamondHead</span> #<span class="p-category auto-tag">crater</span> #<span class="p-category auto-tag">DiamondHeadcrater</span> #<span class="p-category auto-tag">Waikiki</span> #<span class="p-category auto-tag">Honolulu</span> #<span class="p-category auto-tag">Oahu</span> #<span class="p-category auto-tag">Hawaii</span> #<span class="p-category auto-tag">sun</span> #<span class="p-category auto-tag">clouds</span> #<span class="p-category auto-tag">ocean</span> #<span class="p-category auto-tag">waves</span> #<span class="p-category auto-tag">hills</span> #<span class="p-category auto-tag">latergram</span> #<span class="p-category auto-tag">nofilter</span></p>
+                    <div class="e-fa-info">
+                        &#128100;
+                        
+                        <span class="u-category h-card">
+                            <a class="p-name u-url" href="http://tantek.com">Tantek &#xC7;elik</a>(<a class="u-url" href="https://facebook.com/214611">f</a>,<a class="u-url" href="https://twitter.com/t">t</a>,<a class="u-url" href="https://www.flickr.com/people/tantek">&bull;&bull;</a>)</span>,
+                        
+                        <span class="u-category h-card">
+                            <a class="p-name">Jessie Hogue</a>(<a class="u-url" href="https://facebook.com/28503420">f</a>,<a class="u-url" href="https://twitter.com/jhoguem">t</a>)</span>
+                        
+                    </div>
+                    <span class="info footer"><a href="2017/362/t2/diamond-head-orange-grassrootsgear-met" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="19:02-0800">19:02</time> on <time class="value">2017-12-28</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Yesterday morning #<span class="p-category auto-tag">NPSF</span> PR Wednesday interrupted after the first lap &amp; burpees with a pit stop run to the nearest Starbucks. Two more laps and called it a morning since everyone else was done. Smaller crowd, though many visitors, still took over upstairs at Jane on Fillmore for breakfast club.<br class="auto-break"/><br class="auto-break"/>Previously: <a class="auto-link" href="http://tantek.com/2017/333/t1/npsf-pr-slower-weeks-of-races">tantek.com/2017/333/t1/npsf-pr-slower-weeks-of-races</a></p>
+                    <span class="info footer"><a href="2017/362/t1/npsf-pr-wednesday-interrupted" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="10:51-0800">10:51</time> on <time class="value">2017-12-28</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article"><a class="auto-link h-cassis-username" href="https://twitter.com/colinjohnston">@colinjohnston</a> next regularly scheduled #<span class="p-category auto-tag">IndieWeb</span> Homebrew Website Club meetup is on Wednesday 2018-01-10 in a bunch of cities!<br class="auto-break"/><br class="auto-break"/><a class="auto-link" href="https://indieweb.org/events/2018-01-10-homebrew-website-club">https://indieweb.org/events/2018-01-10-homebrew-website-club</a><br class="auto-break"/><br class="auto-break"/>Join the chat for more info: <a class="auto-link" href="https://indieweb.org/discuss">https://indieweb.org/discuss</a></p>
+                    <span class="info footer"><a href="2017/361/t2/next-indieweb-meetup-2018" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="18:17-0800">18:17</time> on <time class="value">2017-12-27</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Last minute SF: #<span class="p-category auto-tag">IndieWeb</span> meetup <br class="auto-break"/>TONIGHT 17:00-19:00 The Grove Yerba Buena (690 Mission st. &amp; 3rd)<br class="auto-break"/><br class="auto-break"/>Come by for a drink &amp; a chat! Will be near the door.<br class="auto-break"/><br class="auto-break"/>RSVP if you like:<br class="auto-break"/>* <a class="auto-link" href="http://tantek.com/2017/361/e1/homebrew-website-club">http://tantek.com/2017/361/e1/homebrew-website-club</a><br class="auto-break"/>* <a class="auto-link" href="https://www.facebook.com/events/159715264798375">https://www.facebook.com/events/159715264798375</a><br class="auto-break"/><br class="auto-break"/>#<span class="p-category auto-tag">openweb</span> #<span class="p-category auto-tag">dweb</span> #<span class="p-category auto-tag">decentralizedweb</span></p>
+                    <span class="info footer"><a href="2017/361/t1/last-minute-sf-indieweb-meetup" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="16:30-0800">16:30</time> on <time class="value">2017-12-27</time></a></span>
+                </li>
+                <li class="h-event vevent hentry as-event">
+                    <div class="article">
+                        <a href="2017/361/e1/homebrew-website-club" rel="bookmark" class="u-url u-uid"><h1 class="entry-title summary">
+                            Homebrew Website Club SF
+                        </h1></a><div class="entry-content">
+                            <p>
+                            When: <time class="dt-start dtstart">2017-12-27 17:00</time>&#x2026;<time class="dt-end dtend">19:00</time> (half hour earlier than usual!)
+                            <span style="display:block">
+                                Where: <span class="p-location location">The Grove Yerba Buena, 690 Mission st., San Francisco, CA</span>
+                            </span>
+                            Host: <a class="u-organizer h-card" href="http://tantek.com/">Tantek &#xC7;elik</a>
+                            </p>
+                            <div class="p-summary description">
+                                <p>
+                                17:00-19:00: Indieweb meetup and socializing<br/>
+                                </p>
+                                <p><img class="u-featured" style="max-width:100%;width:100%;height:300px;object-fit:cover;object-position:50% 40%" src="https://indieweb.org/images/b/b1/2017-hwc-80s-retro.jpg" alt="Homebrew Website Club retro 1980s-style logo"/></p>
+                                <p>Topics for this week:</p>
+                                <ul>
+                                    <li><a href="https://indieweb.org/2018-01-01-commitments">2018-01-01-commitments</a></li>
+                                    <li><a href="https://indieweb.org/2017-12-indieweb-challenge">December IndieWeb Challenge</a></li>
+                                    <li><a href="https://indieweb.org/2017-review">2017 in review</a></li>
+                                    <li>
+                                        <a href="https://indieweb.org/2017/Baltimore">Jan 20-21: IndieWebCamp Baltimore</a> coming up!</li>
+                                </ul>
+                                <p>
+                                Demos of personal website breakthroughs. Create or update your personal web site!
+                                </p>
+                                <p>
+                                Join a community with like-minded interests. Bring friends that want a personal site, or are interested in a healthy, independent web!
+                                </p>
+                                <p>
+                                Any questions? Ask in
+                                <a href="https://indieweb.org/discuss">#indieweb Slack or IRC</a>
+                                </p>
+                                <p>
+                                More information:
+                                <a class="u-url" href="https://indieweb.org/events/2017-12-27-homebrew-website-club">IndieWeb Wiki Event Page</a>
+                                </p>
+                                <p>
+                                RSVP: <a class="u-syndication" href="https://www.facebook.com/events/159715264798375/">on the Facebook event</a> or post an <a href="https://indieweb.org/rsvp">indie RSVP</a> on your own site!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="info footer"><a href="2017/361/e1/homebrew-website-club" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="16:15-0800">16:15</time> on <time class="value">2017-12-27</time></a></span>
+                </li>
+                <li class="h-entry hentry as-note">
+                    <p class="p-name entry-title e-content entry-content article">Slept in, missed track Tuesday this morning. Made it to far fewer this year. My notes:<br class="auto-break"/>* 2017-103 +before: <a class="auto-link" href="http://tantek.com/2017/103/t4/track-tuesday-only-did">tantek.com/2017/103/t4/track-tuesday-only-did</a> <br class="auto-break"/>* 2017-156 set 400m PR ~1:26<br class="auto-break"/>* 2017-255 did 400 abs 400<br class="auto-break"/>* 2017-269 did 400 800 1200 800 400 400 abs<br class="auto-break"/>* a few more Tuesdays I made it to the abs workout and ran a few laps afterwards<br class="auto-break"/><br class="auto-break"/>Not sure why it was harder for me to make it to track this year than last. Whatever the reasons, with these notes I&rsquo;m letting them go.<br class="auto-break"/><br class="auto-break"/>I&rsquo;ll start fresh again in 2018, keeping this post in mind: <a class="auto-link" href="http://tantek.com/2017/066/t2/runner-tantek">tantek.com/2017/066/t2/runner-tantek</a></p>
+                    <span class="info footer"><a href="2017/360/t1/missed-track-tuesday-last-this-year" class="dt-published published dt-updated updated u-url u-uid"><time class="value" datetime="23:34-0800">23:34</time> on <time class="value">2017-12-26</time></a></span>
+                </li>
+            </ol>
+        </div>
+        
+        <aside><div class="aside" id="contact">
+            
+            <div class="p-note note">
+                <div class="section hello" id="hello">
+                    <h2>Hello</h2>
+                    <p>Hi. I work on open web standards and the indie web. I like to code, design, run, yoga, climb, write, and cook when I can. Yes I'm with the resistance.</p>
+                </div>
+                
+                <div class="section interact">
+                    <ul>
+                        <li>
+                            <indie-action do="follow" with="http://tantek.com/">
+                                <a href="https://twitter.com/intent/follow?screen_name=t"><img style="height:1.8em;margin:0 -.2em -0.2em -.3em" src="icon/twitter.png" alt="Follow @t"> Follow</a>
+                            </indie-action>
+                        </li>
+                        <li><a href="http://tantek.com/contact">&#128172; Contact</a></li>
+                        <li><a href="http://tantek.com/pay" title="Did you read something of value here and want to encourage more posts like that? Feel free to tip a small amount and mention which topics you enjoyed! (Just please avoid specific products or services. Thanks! -t)">&#128079; Tip</a></li>
+                    </ul>
+                </div>
+                
+                <div class="section information">
+                    <ul>
+                        <li>
+                            <a href="https://indieweb.org/founders">Founder</a> at <a href="https://indieweb.org/" class="p-org org h-card"><img src="https://twitter.com/indiewebcamp/profile_image?size=original" alt=""/> IndieWeb</a>
+                        </li>
+                        <li>
+                            <a href="http://microformats.org/about/people">Founder</a> at <a href="http://microformats.org/" class="p-org org h-card"><img src="https://twitter.com/microformats/profile_image?size=original" alt=""/> microformats.org</a>
+                        </li>
+                        <li>
+                            <a class="p-role" href="https://wiki.mozilla.org/Standards">Web Standards Lead</a> at <a href="https://mozilla.org/" class="p-org org h-card"><img src="https://twitter.com/mozilla/profile_image?size=original" alt=""/> Mozilla</a>
+                        </li>
+                        <li>
+                            <a class="p-role" href="https://www.w3.org/2002/ab/">Advisory Board Member</a> at <a href="https://www.w3.org/wiki/AB" class="p-org org h-card"><img src="https://twitter.com/w3c/profile_image?size=original" alt=""/> W3C</a>
+                        </li>
+                        <li>BSCS &amp; MSCS <a href="http://stanford.edu/" class="p-category category h-card"><img src="https://twitter.com/stanford/profile_image?size=original" alt=""/> Stanford University</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="recent-articles" class="section recent-articles h-feed">
+                <h2 class="p-name">Recent Articles</h2>
+                <ul>
+                    <li class="h-entry"><a href="2017/253/b1/my-first-marathon">My First #Marathon @theSFMarathon</a></li>
+                    <li class="h-entry"><a href="2017/034/b1/indie-microblogging-hits-stretch-goal-indieweb">Indie Microblogging Kickstarter Micro.blog Hits Goal &amp; Stretch Goal For Safe Replies! #indieweb</a></li>
+                    <li class="h-entry"><a href="2016/330/b1/2017-01-01-indieweb-commitment-own-my-rsvps">My 2017-01-01 #IndieWeb Commitment: Own All My RSVPs To Public Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="section elsewhere">
+                <h2>Elsewhere</h2>
+                <ul class="facets">
+                    <li><a rel="me" class="u-url url" href="https://en.wikipedia.org/wiki/User:Tantek" title="encyclopedia contributions on Wikipedia"><img src="images/wikipedia-16x16.png" alt=""/> Wikipedia</a></li>
+                    
+                    <li><a rel="me" class="u-url url" href="http://last.fm/user/tantekc" title="music on last.fm"><img src="images/lastfm-16x16.png" alt=""/> last.fm</a></li>
+                    <li><a rel="me" class="u-url url" href="https://plus.google.com/109182513536739786206" title="occasional Google Plus posts"><img src="images/google+-16x16.png" alt=""/> Google+</a></li>
+                    <li><a href="http://upcoming.org/user/6623" title="past events, talks, and conferences on Upcoming"><img src="images/upcoming-16x16.png" alt=""/> Upcoming</a></li>
+                    <li><a href="http://www.imdb.com/name/nm8414793" title="film appearance(s)on IMDB"><img src="images/imdb-16x16.png" alt=""/> IMDB</a></li>
+                    
+                    <li><a rel="me" class="u-url url" href="https://micro.blog/t"><img src="https://micro.blog/images/splash_750.png" style="height:16px" alt=""/> micro.blog</a></li>
+                    <li><a rel="me" class="u-url url" href="https://twitter.com/t"><img src="images/twitter-16x16.png" alt=""/> Twitter</a></li>
+                    <li><a rel="me" class="u-url url" href="http://lanyrd.com/people/t" title="conferences past, present, and future on Lanyrd"><img src="images/lanyrd-16x16.png" alt=""/> Lanyrd</a></li>
+                    <li><a rel="me" class="u-url url" href="https://github.com/tantek" title="open source on Github"><img src="images/github-16x16.png" alt=""/> Github</a></li>
+                    <!--<li><a rel="me" class="u-url url" href="http://tantek.pbwiki.com/" title="projects, notes, and events on PBWiki">PBworks wiki</a></li>-->
+                    <li><a rel="me" class="u-url url" href="http://foursquare.com/t" title="geolocation checkins on Foursquare"><img src="images/foursquare-16x16.png" alt=""/> Foursquare</a></li>
+                    
+                    <li><a rel="me" class="u-url url" href="https://www.flickr.com/people/tantek/" title="photos on Flickr"><img src="images/flickr-16x16.png" alt=""/> Flickr</a></li>
+                    <li><a rel="me" class="u-url url" href="http://dribbble.com/tantek/" title="design snippets on Dribbble"><img src="images/dribbble-16x16.png" alt=""/> Dribbble</a></li>
+                    <li>
+                        <a rel="me" class="u-url url" href="https://www.instagram.com/tantek/" title="Private Instagram Account primarily as a means to the ends of posting photos from my iPod touch"><img src="images/instagram-16x16.png" alt=""/> Instagram</a> (mobile photo uploading)</li>
+                </ul>
+            </div>
+            
+            <!-- <div class="section">
+             <h2>Contact</h2>
+             <ul>
+             <li><a href="http://tantek.com/w/CommunicationProtocols">Preferred</a>: <a class="u-url url u-impp" href="aim:goim?screenname=tantekc"><img src="images/aim-16x16.png" alt="" /> aim:tantekc</a></li>
+             <li><a class="u-url url" type="text/directory" href="http://h2vx.com/vcf/tantek.com/" title="Download my vCard to add my contact information to your Address Book"><img src="images/vcard-16x16.png" alt="" /> download vCard</a></li>
+             </ul>
+             </div>-->
+            
+            <div class="section">
+                <h2>Buy my book!</h2>
+                <a href="http://tantek.com/html5now"><img src="images/html5nowdvd.jpg" alt="HTML5 Now!"/></a>
+                <p>A step-by-step tutorial for getting started with HTML5 today. Includes reference guide and DVD with 2.5 hours of video plus 100 page searchable full-color PDF eBook.</p>
+                <p><a href="http://tantek.com/html5now">Buy at Amazon.com</a></p>
+            </div>
+            
+        </div></aside>
+        
+        <footer><div class="footer">
+            
+            <div class="section">
+                <h2>Launched &amp; Live</h2>
+                <ul>
+                    <li>
+                        <a href="http://tantek.com/html5now">HTML5 Now! book &amp; DVD</a> (<a href="https://twitter.com/html5now">@html5now</a>) - quickly learn how to write HTML5, from simple documents to video and vector graphics.</li>
+                    <li>
+                        <a href="http://asin.cc" title="Amazon product link shortener">ASIN.cc</a> (<a href="https://twitter.com/asindotcc">@asindotcc</a>) - a handy URL shortener for books and Amazon products</li>
+                    <li>
+                        <a href="http://h2vx.com/" title="hCard to vCard, hCalendar to iCalendar conversion services">H2VX</a> (<a href="https://twitter.com/h2vx">@h2vx</a>) - add hCard contacts and hCalendar events from web pages to your address book and calendar programs</li>
+                    <li class="h-card">
+                        <a class="p-name u-url" href="http://microformats.org/wiki">microformats.org</a> (<a class="u-url" href="https://twitter.com/microformats">@microformats</a>) - <span class="p-note">the fastest way to turn your web pages into simple APIs and simultaneously look better in search engines</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Currently Working On</h2>
+                <ul>
+                    <li>
+                        <a href="https://wiki.mozilla.org/Tantek-Mozilla-projects">Mozilla projects</a> - open standards:
+                        <a class="p-category category" href="http://microformats.org/wiki/microformats2">microformats2</a> (e.g. <a class="p-category category" href="http://microformats.org/wiki/h-card">h-card</a>,
+                        <a class="p-category category" href="http://microformats.org/wiki/h-cite">h-cite</a>,
+                        <a class="p-category category" href="http://microformats.org/wiki/h-entry">h-entry</a>, &amp;
+                        <a class="p-category category" href="http://microformats.org/wiki/h-event">h-event</a>),
+                        some <span class="p-category category">HTML5</span> &amp;
+                        <span class="p-category category">CSS3</span>,
+                        growing the <a class="p-category category p-org org h-org" href="https://indieweb.org/">IndieWeb</a> &amp; <a href="https://indieweb.org/events/next-hwc">Homebrew Website</a> communities.</li>
+                    <li>
+                        <a href="https://indieweb.org/">IndieWeb community</a> (<a href="https://twitter.com/indiewebcamp">@indiewebcamp</a>) <a href="https://indieweb.org/events">events</a>,
+                        <a href="http://tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication">people-focused mobile communication</a>,
+                        <a class="p-category category" href="https://indieweb.org/authorship">authorship</a>,
+                        <a class="p-category category" href="https://indieweb.org/POSSE">POSSE</a>,
+                        <a class="p-category category" href="https://indieweb.org/post-type-discovery">post type discovery</a>,
+                        <a class="p-category category" href="https://indieweb.org/webactions">webactions</a>, and measuring progress with <a class="p-category category" href="https://indieweb.org/IndieMark">IndieMark</a>.
+                    </li>
+                    <li>
+                        <a class="p-category category" href="http://cassisproject.com" title="CASSIS language and library"><abbr title="Client And Server Scripting Implementation Subset for Javascript and PHP">CASSIS</abbr></a>
+                        (<a href="http://github.com/tantek/cassis/">on github</a>, <a href="https://twitter.com/cassisjs">@cassisjs</a>) - a functional programming language and framework for  code that natively executes in PHP and Javascript.</li>
+                    <!--
+                     need help with this: https://indieweb.org/User:Tantek.com#RelMeAuth_PHP_library
+                     <li><a class="p-category category" href="http://microformats.org/wiki/RelMeAuth" title="Simplified personal logins with rel-me and OAuth">RelMeAuth</a> - use a personal site and rel="me" hyperlinks to profiles on popular OAuth supporting services like <a href="https://twitter.com/t">Twitter</a>, <a href="https://github.com/tantek">Github</a> etc. to sign-in with your own URL.
+                     </li> -->
+                    <li>
+                        <a class="p-category category" href="https://indieweb.org/Falcon">Falcon</a> (<a href="https://twitter.com/falcon">@falcon</a>) - server-based personal tweeting/blogging application. See in particular, what <a href="https://indieweb.org/Falcon#Working_On">I'm currently working on</a>.
+                    </li>
+                    <li>
+                        <a href="http://tantek.com/w/Whistle">Whistle</a> - personal algorithmically reversible URL shortener.</li>
+                </ul>
+            </div>
+            
+            <div class="section" id="events">
+                <h2>Speaking &amp; Events</h2>
+                <ol>
+                    
+                    <li class="h-event vevent">
+                        <span class="dt-start dtstart"><time>2017-12-06</time></span>&#x2026;<abbr class="dt-end dtend" title="2017-12-07"><time datetime="2017-12-07">07</time></abbr> <a class="u-url url" href="https://www.w3.org/wiki/AB/2017-12-SF"><span class="p-name summary">W3C Advisory Board</span> <abbr class="p-location location" title="San Francisco, California">San Francisco</abbr></a>
+                    </li>
+                    
+                    <li class="h-event vevent">
+                        <span class="dt-start dtstart"><time>2017-12-09</time></span>&#x2026;<abbr class="dt-end dtend" title="2017-12-10"><time datetime="2017-12-10">10</time></abbr> <a class="u-url url" href="https://indieweb.org/2017/Austin"><object class="u-attach attach" data="https://indieweb.org/images/b/b8/im-building-indiewebcamp.png" type="image/png"><span class="p-name summary">IndieWebCamp</span></object> <abbr class="p-location location" title="Austin, Texas">Austin</abbr></a>
+                    </li>
+                    
+                    <li class="h-event vevent">
+                        <span class="dt-start dtstart"><time>2017-12-11</time></span>&#x2026;<abbr class="dt-end dtend" title="2017-12-15"><time datetime="2017-12-15">15</time></abbr> <a class="u-url url" href="https://wiki.mozilla.org/All_Hands/Austin"><span class="p-name summary">Mozilla Y'all Hands</span> <abbr class="p-location location" title="Austin, Texas">Austin</abbr></a>
+                    </li>
+                    
+                    <li class="h-event vevent">
+                        <span class="dt-start dtstart"><time>2017-12-27</time></span> <a class="u-url url" href="https://indiewebcamp.com/events/2017-12-27-homebrew-website-club"><span class="p-name summary">Homebrew Website Club</span> <abbr class="p-location location" title="San Francisco, California, USA">San Francisco</abbr></a>
+                    </li>
+                    
+                </ol>
+                <p>See <a href="http://lanyrd.com/profile/t/future/">my Lanyrd</a> for more.</p>
+                <p>
+                <a href="webcal://dev.h2vx.com/ics/tantek.com">Subscribe to events</a>
+                </p>
+            </div>
+            
+            <div class="favorite-quotes" id="favorite-quotes" style="padding-top:2em;clear:both">
+                <blockquote>I always had a repulsive sort of need to be something more than human. I felt very very puny as a human. I thought, &ldquo;Fuck that. I want to be a superman.&rdquo; <br/>
+                    &#x2014; <a href="https://en.wikiquote.org/wiki/David_Bowie#Quotes">David Bowie</a>, 1976</blockquote>
+                <blockquote>There are two wolves and they are always fighting. One is darkness and despair, the other is light and hope. Which wolf wins? </blockquote>
+                <blockquote>I get things are bad. But what are we doing to fix it?<br/>
+                    &#x2014; Casey Newton (<a href="https://en.wikiquote.org/wiki/Tomorrowland_%28film%29#Casey_Newton">Tomorrowland, 2015</a>)</blockquote>
+                
+            </div>
+            
+            <address class="copyright">&#xA9; <time>1996</time>-<time>2017</time> Tantek &#xC7;elik <span class="c">All Rights Reserved.</span>
+                <span style="display:block" class="photo-credit">
+                    Icon photo by <a href="http://www.rebeccadanielsphoto.com/" class="h-card">Rebecca Daniels</a>.
+                </span>
+            </address>
+            
+        </div></footer>
+        <script type="text/javascript" src="cassis.js"></script>
+        <script type="text/javascript">/**/
+            var es = document.getElementById("link");
+            if (es) {
+                es.onclick = function() {
+                    var e = targetelement();
+                    e.focus();
+                    e.select();
+                };
+            }
+        /**/</script>
+    </body>
+</html>
