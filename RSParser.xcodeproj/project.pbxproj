@@ -107,6 +107,70 @@
 		84E7E69F1F85780D0046719D /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E7E69D1F85780D0046719D /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84E7E6A01F85780D0046719D /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E69E1F85780D0046719D /* ParserData.m */; };
 		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
+		F75B875B201F6FC300BC202D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84285AAE1F006BC0002E8708 /* libxml2.2.tbd */; };
+		F75B875C201F717000BC202D /* RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D81BDA1EFA28E700652332 /* RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B875D201F717700BC202D /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E7E69D1F85780D0046719D /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B875E201F717900BC202D /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E69E1F85780D0046719D /* ParserData.m */; };
+		F75B875F201F717F00BC202D /* JSONTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D411EFF2B2D004A6B28 /* JSONTypes.swift */; };
+		F75B8760201F717F00BC202D /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245C871FDDDC6D0074AFBB /* JSONUtilities.swift */; };
+		F75B8761201F718F00BC202D /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BDF1EFA2BAE00652332 /* FeedType.swift */; };
+		F75B8762201F718F00BC202D /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D311EFA31CF004A6B28 /* FeedParser.swift */; };
+		F75B8763201F718F00BC202D /* ParsedFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BDD1EFA2B7D00652332 /* ParsedFeed.swift */; };
+		F75B8764201F718F00BC202D /* ParsedAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE11EFA2D0900652332 /* ParsedAuthor.swift */; };
+		F75B8765201F718F00BC202D /* ParsedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE31EFA2D3D00652332 /* ParsedItem.swift */; };
+		F75B8766201F718F00BC202D /* ParsedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE51EFA2DFB00652332 /* ParsedAttachment.swift */; };
+		F75B8767201F718F00BC202D /* ParsedHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE71EFA2E6700652332 /* ParsedHub.swift */; };
+		F75B8768201F718F00BC202D /* FeedParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D3F1EFF29A9004A6B28 /* FeedParserError.swift */; };
+		F75B8769201F718F00BC202D /* RSSInJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D371EFF2645004A6B28 /* RSSInJSONParser.swift */; };
+		F75B876A201F718F00BC202D /* JSONFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D431F002CEF004A6B28 /* JSONFeedParser.swift */; };
+		F75B876B201F718F00BC202D /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84285AA71F005D53002E8708 /* RSSParser.swift */; };
+		F75B876C201F718F00BC202D /* AtomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84285AAB1F006754002E8708 /* AtomParser.swift */; };
+		F75B876D201F718F00BC202D /* RSParsedFeedTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84285AA91F006456002E8708 /* RSParsedFeedTransformer.swift */; };
+		F75B876E201F718F00BC202D /* RSAtomParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D1D1EFA3134004A6B28 /* RSAtomParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B876F201F718F00BC202D /* RSAtomParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D1E1EFA3134004A6B28 /* RSAtomParser.m */; };
+		F75B8770201F718F00BC202D /* RSRSSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D251EFA3134004A6B28 /* RSRSSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8771201F718F00BC202D /* RSRSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D261EFA3134004A6B28 /* RSRSSParser.m */; };
+		F75B8772201F718F00BC202D /* RSParsedArticle.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D211EFA3134004A6B28 /* RSParsedArticle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8773201F718F00BC202D /* RSParsedArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D221EFA3134004A6B28 /* RSParsedArticle.m */; };
+		F75B8774201F718F00BC202D /* RSParsedFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D231EFA3134004A6B28 /* RSParsedFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8775201F718F00BC202D /* RSParsedFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D241EFA3134004A6B28 /* RSParsedFeed.m */; };
+		F75B8776201F718F00BC202D /* RSParsedEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 8401FF7F1FE862E70080F13F /* RSParsedEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8777201F718F00BC202D /* RSParsedEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401FF801FE862E70080F13F /* RSParsedEnclosure.m */; };
+		F75B8778201F718F00BC202D /* RSParsedAuthor.h in Headers */ = {isa = PBXBuildFile; fileRef = 844B5B411FE9AF2700C7C76A /* RSParsedAuthor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8779201F718F00BC202D /* RSParsedAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B5B421FE9AF2700C7C76A /* RSParsedAuthor.m */; };
+		F75B877A201F719C00BC202D /* RSDateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D121EFA30A2004A6B28 /* RSDateParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B877B201F719C00BC202D /* RSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D131EFA30A2004A6B28 /* RSDateParser.m */; };
+		F75B877C201F71AF00BC202D /* RSOPMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CED1EFA3000004A6B28 /* RSOPMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B877D201F71AF00BC202D /* RSOPMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CEE1EFA3000004A6B28 /* RSOPMLParser.m */; };
+		F75B877E201F71AF00BC202D /* RSOPMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE71EFA3000004A6B28 /* RSOPMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B877F201F71AF00BC202D /* RSOPMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CE81EFA3000004A6B28 /* RSOPMLDocument.m */; };
+		F75B8780201F71AF00BC202D /* RSOPMLAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE51EFA3000004A6B28 /* RSOPMLAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8781201F71AF00BC202D /* RSOPMLAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CE61EFA3000004A6B28 /* RSOPMLAttributes.m */; };
+		F75B8782201F71AF00BC202D /* RSOPMLFeedSpecifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CE91EFA3000004A6B28 /* RSOPMLFeedSpecifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8783201F71AF00BC202D /* RSOPMLFeedSpecifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CEA1EFA3000004A6B28 /* RSOPMLFeedSpecifier.m */; };
+		F75B8784201F71AF00BC202D /* RSOPMLItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CEB1EFA3000004A6B28 /* RSOPMLItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8785201F71AF00BC202D /* RSOPMLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CEC1EFA3000004A6B28 /* RSOPMLItem.m */; };
+		F75B8786201F71AF00BC202D /* RSOPMLError.h in Headers */ = {isa = PBXBuildFile; fileRef = 84285AB01F00702E002E8708 /* RSOPMLError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8787201F71AF00BC202D /* RSOPMLError.m in Sources */ = {isa = PBXBuildFile; fileRef = 84285AB11F00702E002E8708 /* RSOPMLError.m */; };
+		F75B8788201F71B400BC202D /* RSHTMLLinkParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CFF1EFA307E004A6B28 /* RSHTMLLinkParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8789201F71B400BC202D /* RSHTMLLinkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D001EFA307E004A6B28 /* RSHTMLLinkParser.m */; };
+		F75B878A201F71B400BC202D /* RSHTMLMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D011EFA307E004A6B28 /* RSHTMLMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B878B201F71B400BC202D /* RSHTMLMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D021EFA307E004A6B28 /* RSHTMLMetadata.m */; };
+		F75B878C201F71B400BC202D /* RSHTMLMetadataParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D031EFA307E004A6B28 /* RSHTMLMetadataParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B878D201F71B400BC202D /* RSHTMLMetadataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D041EFA307E004A6B28 /* RSHTMLMetadataParser.m */; };
+		F75B878E201F71B400BC202D /* RSSAXHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D051EFA307E004A6B28 /* RSSAXHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B878F201F71B400BC202D /* RSSAXHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D061EFA307E004A6B28 /* RSSAXHTMLParser.m */; };
+		F75B8790201F71B400BC202D /* RSHTMLTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 845213261FCB4042003B6E93 /* RSHTMLTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8791201F71B400BC202D /* RSHTMLTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 845213271FCB4042003B6E93 /* RSHTMLTag.m */; };
+		F75B8792201F71BA00BC202D /* RSSAXParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469CFA1EFA3069004A6B28 /* RSSAXParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8793201F71BA00BC202D /* RSSAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469CFB1EFA3069004A6B28 /* RSSAXParser.m */; };
+		F75B8794201F71C000BC202D /* NSData+RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D331EFF1190004A6B28 /* NSData+RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8795201F71C000BC202D /* NSData+RSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D341EFF1190004A6B28 /* NSData+RSParser.m */; };
+		F75B8796201F71C000BC202D /* NSString+RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D101EFA30A2004A6B28 /* NSString+RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75B8797201F71C000BC202D /* NSString+RSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D111EFA30A2004A6B28 /* NSString+RSParser.m */; };
+		F75B8798201F71C000BC202D /* RSParserInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 84469D141EFA30A2004A6B28 /* RSParserInternal.h */; };
+		F75B8799201F71C000BC202D /* RSParserInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 84469D151EFA30A2004A6B28 /* RSParserInternal.m */; };
+		F75B879A201F72B500BC202D /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75B8753201F6ED800BC202D /* RSParser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +290,7 @@
 		84FF5F841EFA285800C15A01 /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F941EFA285800C15A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F75B8753201F6ED800BC202D /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +306,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75B879A201F72B500BC202D /* RSParser.framework in Frameworks */,
 				84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75B874F201F6ED800BC202D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F75B875B201F6FC300BC202D /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +532,7 @@
 			children = (
 				84FF5F841EFA285800C15A01 /* RSParser.framework */,
 				84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */,
+				F75B8753201F6ED800BC202D /* RSParser.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -515,6 +590,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F75B8750201F6ED800BC202D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F75B8784201F71AF00BC202D /* RSOPMLItem.h in Headers */,
+				F75B8772201F718F00BC202D /* RSParsedArticle.h in Headers */,
+				F75B878C201F71B400BC202D /* RSHTMLMetadataParser.h in Headers */,
+				F75B876E201F718F00BC202D /* RSAtomParser.h in Headers */,
+				F75B8782201F71AF00BC202D /* RSOPMLFeedSpecifier.h in Headers */,
+				F75B8770201F718F00BC202D /* RSRSSParser.h in Headers */,
+				F75B878A201F71B400BC202D /* RSHTMLMetadata.h in Headers */,
+				F75B875C201F717000BC202D /* RSParser.h in Headers */,
+				F75B8780201F71AF00BC202D /* RSOPMLAttributes.h in Headers */,
+				F75B877C201F71AF00BC202D /* RSOPMLParser.h in Headers */,
+				F75B8786201F71AF00BC202D /* RSOPMLError.h in Headers */,
+				F75B8774201F718F00BC202D /* RSParsedFeed.h in Headers */,
+				F75B877E201F71AF00BC202D /* RSOPMLDocument.h in Headers */,
+				F75B8778201F718F00BC202D /* RSParsedAuthor.h in Headers */,
+				F75B878E201F71B400BC202D /* RSSAXHTMLParser.h in Headers */,
+				F75B8798201F71C000BC202D /* RSParserInternal.h in Headers */,
+				F75B8796201F71C000BC202D /* NSString+RSParser.h in Headers */,
+				F75B8794201F71C000BC202D /* NSData+RSParser.h in Headers */,
+				F75B8790201F71B400BC202D /* RSHTMLTag.h in Headers */,
+				F75B877A201F719C00BC202D /* RSDateParser.h in Headers */,
+				F75B8788201F71B400BC202D /* RSHTMLLinkParser.h in Headers */,
+				F75B8792201F71BA00BC202D /* RSSAXParser.h in Headers */,
+				F75B8776201F718F00BC202D /* RSParsedEnclosure.h in Headers */,
+				F75B875D201F717700BC202D /* ParserData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -554,6 +660,24 @@
 			productReference = 84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F75B8752201F6ED800BC202D /* RSParser iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75B875A201F6ED900BC202D /* Build configuration list for PBXNativeTarget "RSParser iOS" */;
+			buildPhases = (
+				F75B874E201F6ED800BC202D /* Sources */,
+				F75B874F201F6ED800BC202D /* Frameworks */,
+				F75B8750201F6ED800BC202D /* Headers */,
+				F75B8751201F6ED800BC202D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSParser iOS";
+			productName = "RSParser iOS";
+			productReference = F75B8753201F6ED800BC202D /* RSParser.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -572,6 +696,10 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 					};
+					F75B8752201F6ED800BC202D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 84FF5F7E1EFA285800C15A01 /* Build configuration list for PBXProject "RSParser" */;
@@ -588,6 +716,7 @@
 			targets = (
 				84FF5F831EFA285800C15A01 /* RSParser */,
 				84FF5F8C1EFA285800C15A01 /* RSParserTests */,
+				F75B8752201F6ED800BC202D /* RSParser iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -630,6 +759,13 @@
 				840FDCB81F0218670041F61B /* DaringFireball.atom in Resources */,
 				849A03D91F0081EA00122600 /* sixcolors.html in Resources */,
 				842A42011FB77A5A00EA22E4 /* dcrainmaker.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75B8751201F6ED800BC202D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +831,51 @@
 				840FDCB21F01FED00041F61B /* RSSParserTests.swift in Sources */,
 				840FDCB61F0217D20041F61B /* AtomParserTests.swift in Sources */,
 				849A03E41F00912100122600 /* HTMLMetadataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75B874E201F6ED800BC202D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F75B8763201F718F00BC202D /* ParsedFeed.swift in Sources */,
+				F75B8787201F71AF00BC202D /* RSOPMLError.m in Sources */,
+				F75B8765201F718F00BC202D /* ParsedItem.swift in Sources */,
+				F75B8768201F718F00BC202D /* FeedParserError.swift in Sources */,
+				F75B8797201F71C000BC202D /* NSString+RSParser.m in Sources */,
+				F75B8795201F71C000BC202D /* NSData+RSParser.m in Sources */,
+				F75B8785201F71AF00BC202D /* RSOPMLItem.m in Sources */,
+				F75B876D201F718F00BC202D /* RSParsedFeedTransformer.swift in Sources */,
+				F75B875E201F717900BC202D /* ParserData.m in Sources */,
+				F75B8775201F718F00BC202D /* RSParsedFeed.m in Sources */,
+				F75B8791201F71B400BC202D /* RSHTMLTag.m in Sources */,
+				F75B875F201F717F00BC202D /* JSONTypes.swift in Sources */,
+				F75B8773201F718F00BC202D /* RSParsedArticle.m in Sources */,
+				F75B876C201F718F00BC202D /* AtomParser.swift in Sources */,
+				F75B8799201F71C000BC202D /* RSParserInternal.m in Sources */,
+				F75B876B201F718F00BC202D /* RSSParser.swift in Sources */,
+				F75B8760201F717F00BC202D /* JSONUtilities.swift in Sources */,
+				F75B8766201F718F00BC202D /* ParsedAttachment.swift in Sources */,
+				F75B877B201F719C00BC202D /* RSDateParser.m in Sources */,
+				F75B8779201F718F00BC202D /* RSParsedAuthor.m in Sources */,
+				F75B8783201F71AF00BC202D /* RSOPMLFeedSpecifier.m in Sources */,
+				F75B8771201F718F00BC202D /* RSRSSParser.m in Sources */,
+				F75B877F201F71AF00BC202D /* RSOPMLDocument.m in Sources */,
+				F75B8767201F718F00BC202D /* ParsedHub.swift in Sources */,
+				F75B8781201F71AF00BC202D /* RSOPMLAttributes.m in Sources */,
+				F75B876A201F718F00BC202D /* JSONFeedParser.swift in Sources */,
+				F75B8761201F718F00BC202D /* FeedType.swift in Sources */,
+				F75B8762201F718F00BC202D /* FeedParser.swift in Sources */,
+				F75B877D201F71AF00BC202D /* RSOPMLParser.m in Sources */,
+				F75B878F201F71B400BC202D /* RSSAXHTMLParser.m in Sources */,
+				F75B878D201F71B400BC202D /* RSHTMLMetadataParser.m in Sources */,
+				F75B878B201F71B400BC202D /* RSHTMLMetadata.m in Sources */,
+				F75B8769201F718F00BC202D /* RSSInJSONParser.swift in Sources */,
+				F75B8789201F71B400BC202D /* RSHTMLLinkParser.m in Sources */,
+				F75B876F201F718F00BC202D /* RSAtomParser.m in Sources */,
+				F75B8764201F718F00BC202D /* ParsedAuthor.swift in Sources */,
+				F75B8793201F71BA00BC202D /* RSSAXParser.m in Sources */,
+				F75B8777201F718F00BC202D /* RSParsedEnclosure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +1134,61 @@
 			};
 			name = Release;
 		};
+		F75B8758201F6ED900BC202D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ranchero.RSParser-iOS";
+				PRODUCT_NAME = RSParser;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F75B8759201F6ED900BC202D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ranchero.RSParser-iOS";
+				PRODUCT_NAME = RSParser;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -979,6 +1215,15 @@
 			buildConfigurations = (
 				84FF5F9C1EFA285800C15A01 /* Debug */,
 				84FF5F9D1EFA285800C15A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F75B875A201F6ED900BC202D /* Build configuration list for PBXNativeTarget "RSParser iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75B8758201F6ED900BC202D /* Debug */,
+				F75B8759201F6ED900BC202D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
