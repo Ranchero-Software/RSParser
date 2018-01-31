@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import RSParser
+import CoreGraphics
+@testable import RSParser
 
 class HTMLMetadataTests: XCTestCase {
 
