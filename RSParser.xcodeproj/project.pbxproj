@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665DAD222021F9E8000F30D3 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
+		66A034F720192EF400A08861 /* FeedParserTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03DD1F00837A00122600 /* FeedParserTypeTests.swift */; };
+		66A034F820192EF400A08861 /* RSSInJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03EB1F01FCDC00122600 /* RSSInJSONParserTests.swift */; };
+		66A034F920192EF400A08861 /* JSONFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB31F0217410041F61B /* JSONFeedParserTests.swift */; };
+		66A034FA20192EF400A08861 /* RSSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB11F01FED00041F61B /* RSSParserTests.swift */; };
+		66A034FB20192EF400A08861 /* AtomParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB51F0217D20041F61B /* AtomParserTests.swift */; };
+		66A034FC20192EF400A08861 /* OPMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03DF1F0088F600122600 /* OPMLTests.swift */; };
+		66A034FD20192EF400A08861 /* RSDateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E11F00902C00122600 /* RSDateParserTests.m */; };
+		66A034FE20192EF400A08861 /* HTMLMetadataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E31F00912100122600 /* HTMLMetadataTests.swift */; };
+		66A034FF20192EF400A08861 /* HTMLLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E51F00952400122600 /* HTMLLinkTests.swift */; };
+		66A0350020192EF400A08861 /* EntityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */; };
 		8401FF811FE862E70080F13F /* RSParsedEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 8401FF7F1FE862E70080F13F /* RSParsedEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8401FF821FE862E70080F13F /* RSParsedEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401FF801FE862E70080F13F /* RSParsedEnclosure.m */; };
 		8401FF841FE87C2F0080F13F /* theomnishow.rss in Resources */ = {isa = PBXBuildFile; fileRef = 8401FF831FE87C2E0080F13F /* theomnishow.rss */; };
-		840FDCB21F01FED00041F61B /* RSSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB11F01FED00041F61B /* RSSParserTests.swift */; };
-		840FDCB41F0217410041F61B /* JSONFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB31F0217410041F61B /* JSONFeedParserTests.swift */; };
-		840FDCB61F0217D20041F61B /* AtomParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB51F0217D20041F61B /* AtomParserTests.swift */; };
 		840FDCB81F0218670041F61B /* DaringFireball.atom in Resources */ = {isa = PBXBuildFile; fileRef = 840FDCB71F0218670041F61B /* DaringFireball.atom */; };
 		840FDCBA1F02186D0041F61B /* DaringFireball.json in Resources */ = {isa = PBXBuildFile; fileRef = 840FDCB91F02186D0041F61B /* DaringFireball.json */; };
 		84245C881FDDDC6D0074AFBB /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245C871FDDDC6D0074AFBB /* JSONUtilities.swift */; };
@@ -87,14 +95,8 @@
 		849A03D81F0081EA00122600 /* scriptingNews.rss in Resources */ = {isa = PBXBuildFile; fileRef = 849A03CD1F0081EA00122600 /* scriptingNews.rss */; };
 		849A03D91F0081EA00122600 /* sixcolors.html in Resources */ = {isa = PBXBuildFile; fileRef = 849A03CE1F0081EA00122600 /* sixcolors.html */; };
 		849A03DA1F0081EA00122600 /* Subs.opml in Resources */ = {isa = PBXBuildFile; fileRef = 849A03CF1F0081EA00122600 /* Subs.opml */; };
-		849A03DE1F00837A00122600 /* FeedParserTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03DD1F00837A00122600 /* FeedParserTypeTests.swift */; };
-		849A03E01F0088F600122600 /* OPMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03DF1F0088F600122600 /* OPMLTests.swift */; };
-		849A03E21F00902C00122600 /* RSDateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E11F00902C00122600 /* RSDateParserTests.m */; };
-		849A03E41F00912100122600 /* HTMLMetadataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E31F00912100122600 /* HTMLMetadataTests.swift */; };
-		849A03E61F00952400122600 /* HTMLLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03E51F00952400122600 /* HTMLLinkTests.swift */; };
 		849A03E81F01F88600122600 /* ScriptingNews.json in Resources */ = {isa = PBXBuildFile; fileRef = 849A03E71F01F88600122600 /* ScriptingNews.json */; };
 		849A03EA1F01F92B00122600 /* inessential.json in Resources */ = {isa = PBXBuildFile; fileRef = 849A03E91F01F92B00122600 /* inessential.json */; };
-		849A03EC1F01FCDC00122600 /* RSSInJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A03EB1F01FCDC00122600 /* RSSInJSONParserTests.swift */; };
 		84B19A771FDA438300458981 /* natasha.xml in Resources */ = {isa = PBXBuildFile; fileRef = 84B19A761FDA438300458981 /* natasha.xml */; };
 		84D81BDC1EFA28E700652332 /* RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D81BDA1EFA28E700652332 /* RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84D81BDE1EFA2B7D00652332 /* ParsedFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BDD1EFA2B7D00652332 /* ParsedFeed.swift */; };
@@ -103,14 +105,12 @@
 		84D81BE41EFA2D3D00652332 /* ParsedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE31EFA2D3D00652332 /* ParsedItem.swift */; };
 		84D81BE61EFA2DFB00652332 /* ParsedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE51EFA2DFB00652332 /* ParsedAttachment.swift */; };
 		84D81BE81EFA2E6700652332 /* ParsedHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D81BE71EFA2E6700652332 /* ParsedHub.swift */; };
-		84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */; };
 		84E7E69F1F85780D0046719D /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E7E69D1F85780D0046719D /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84E7E6A01F85780D0046719D /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E69E1F85780D0046719D /* ParserData.m */; };
-		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84FF5F8F1EFA285800C15A01 /* PBXContainerItemProxy */ = {
+		665DAD202021F9E3000F30D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84FF5F7B1EFA285800C15A01 /* Project object */;
 			proxyType = 1;
@@ -241,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */,
+				665DAD222021F9E8000F30D3 /* RSParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +547,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				84FF5F901EFA285800C15A01 /* PBXTargetDependency */,
+				665DAD212021F9E3000F30D3 /* PBXTargetDependency */,
 			);
 			name = RSParserTests;
 			productName = RSParserTests;
@@ -560,7 +560,7 @@
 		84FF5F7B1EFA285800C15A01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ranchero Software, LLC";
 				TargetAttributes = {
@@ -685,26 +685,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849A03EC1F01FCDC00122600 /* RSSInJSONParserTests.swift in Sources */,
-				849A03E01F0088F600122600 /* OPMLTests.swift in Sources */,
-				840FDCB41F0217410041F61B /* JSONFeedParserTests.swift in Sources */,
-				84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */,
-				849A03E61F00952400122600 /* HTMLLinkTests.swift in Sources */,
-				849A03E21F00902C00122600 /* RSDateParserTests.m in Sources */,
-				849A03DE1F00837A00122600 /* FeedParserTypeTests.swift in Sources */,
-				840FDCB21F01FED00041F61B /* RSSParserTests.swift in Sources */,
-				840FDCB61F0217D20041F61B /* AtomParserTests.swift in Sources */,
-				849A03E41F00912100122600 /* HTMLMetadataTests.swift in Sources */,
+				66A034F720192EF400A08861 /* FeedParserTypeTests.swift in Sources */,
+				66A034F820192EF400A08861 /* RSSInJSONParserTests.swift in Sources */,
+				66A034F920192EF400A08861 /* JSONFeedParserTests.swift in Sources */,
+				66A034FA20192EF400A08861 /* RSSParserTests.swift in Sources */,
+				66A034FB20192EF400A08861 /* AtomParserTests.swift in Sources */,
+				66A034FC20192EF400A08861 /* OPMLTests.swift in Sources */,
+				66A034FD20192EF400A08861 /* RSDateParserTests.m in Sources */,
+				66A034FE20192EF400A08861 /* HTMLMetadataTests.swift in Sources */,
+				66A034FF20192EF400A08861 /* HTMLLinkTests.swift in Sources */,
+				66A0350020192EF400A08861 /* EntityDecodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		84FF5F901EFA285800C15A01 /* PBXTargetDependency */ = {
+		665DAD212021F9E3000F30D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84FF5F831EFA285800C15A01 /* RSParser */;
-			targetProxy = 84FF5F8F1EFA285800C15A01 /* PBXContainerItemProxy */;
+			targetProxy = 665DAD202021F9E3000F30D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -748,7 +748,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -781,18 +781,23 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos watchsimulator iphonesimulator appletvsimulator appletvos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALID_ARCHS = "i386 x86_64 armv7k armv7 armv7s arm64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -835,7 +840,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -862,16 +867,21 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos watchsimulator iphonesimulator appletvsimulator appletvos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALID_ARCHS = "i386 x86_64 armv7k armv7 armv7s arm64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -879,10 +889,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -895,7 +903,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -903,10 +910,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -918,7 +923,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -928,13 +932,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = CZNPSE3ACR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
+					"@executable_path/../Frameworks",
+				);
 				INFOPLIST_FILE = RSParserTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -944,12 +953,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				DEVELOPMENT_TEAM = CZNPSE3ACR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
+					"@executable_path/../Frameworks",
+				);
 				INFOPLIST_FILE = RSParserTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

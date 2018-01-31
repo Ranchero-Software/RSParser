@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import RSParser
+@testable import RSParser
+import CoreGraphics
 
 class JSONFeedParserTests: XCTestCase {
 

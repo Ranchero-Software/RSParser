@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import CoreGraphics;
 
 @class RSHTMLMetadataFeedLink;
 @class RSHTMLMetadataAppleTouchIcon;
@@ -14,6 +15,7 @@
 @class RSHTMLOpenGraphImage;
 @class RSHTMLTag;
 @class RSHTMLTwitterProperties;
+
 
 @interface RSHTMLMetadata : NSObject
 
