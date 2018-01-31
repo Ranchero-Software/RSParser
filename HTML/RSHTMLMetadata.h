@@ -8,6 +8,10 @@
 
 @import Foundation;
 
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+@import UIKit;
+#endif
+
 @class RSHTMLMetadataFeedLink;
 @class RSHTMLMetadataAppleTouchIcon;
 @class RSHTMLOpenGraphProperties;
