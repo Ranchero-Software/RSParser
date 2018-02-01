@@ -6,7 +6,7 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
 @import RSParser;
 
 @interface RSDateParserTests : XCTestCase

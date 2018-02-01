@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import RSParser
+@testable import RSParser
 
 class JSONFeedParserTests: XCTestCase {
 

@@ -894,8 +894,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				VALID_ARCHS = "i386 x86_64 armv7k armv7s armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -918,7 +920,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
 				SWIFT_VERSION = 4.0;
+				VALID_ARCHS = "i386 x86_64 armv7k armv7s armv7 arm64";
 			};
 			name = Release;
 		};
@@ -929,6 +933,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = RSParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
@@ -945,6 +955,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = RSParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
