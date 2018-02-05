@@ -12,13 +12,13 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "This framework was developed for Evergreen"
 
-  s.description  = "Parsers available for RSS , Atom, OPML, Internet Dates, HTML metadata and links HTML entities
+  s.description  = "Parsers available for RSS, Atom, OPML, Internet Dates, HTML metadata and links, and HTML entities.
   It also includes Objective-C wrappers for libXML2’s XML SAX and HTML SAX parsers. 
   You can write your own parsers on top of these."
 
   s.homepage     = "https://github.com/brentsimmons/RSParser"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Brent Simmons" => "{email here}" }
+  s.author             = { "Brent Simmons" => "brent@ranchero.com" }
 
   s.platforms
 
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
   
-  s.source       = { :git => "https://github.com/dcilia/RSParser.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/brentsimmons/RSParser.git", :tag => "#{s.version}" }
   s.source_files  = "Sources", "Sources/**/*.{h,m, swift}"
   s.library   = "xml2"
   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
