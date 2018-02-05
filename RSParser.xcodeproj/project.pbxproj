@@ -70,8 +70,6 @@
 		665516D020287E8C00E6ACB0 /* NSString+RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 665516C820287E8C00E6ACB0 /* NSString+RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516D120287E8C00E6ACB0 /* RSParserInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 665516C920287E8C00E6ACB0 /* RSParserInternal.m */; };
 		665516D220287E8C00E6ACB0 /* RSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 665516CA20287E8C00E6ACB0 /* RSDateParser.m */; };
-		665516D520287EB000E6ACB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 665516D420287EB000E6ACB0 /* README.md */; };
-		665516D820287ECD00E6ACB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 665516D720287ECD00E6ACB0 /* README.md */; };
 		8401FF841FE87C2F0080F13F /* theomnishow.rss in Resources */ = {isa = PBXBuildFile; fileRef = 8401FF831FE87C2E0080F13F /* theomnishow.rss */; };
 		840FDCB21F01FED00041F61B /* RSSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB11F01FED00041F61B /* RSSParserTests.swift */; };
 		840FDCB41F0217410041F61B /* JSONFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB31F0217410041F61B /* JSONFeedParserTests.swift */; };
@@ -602,8 +600,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665516D820287ECD00E6ACB0 /* README.md in Resources */,
-				665516D520287EB000E6ACB0 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
