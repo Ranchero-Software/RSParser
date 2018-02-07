@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RSParser"
-  s.version      = "0.0.1"
+  s.version      = "1.0"
   s.summary      = "This framework was developed for Evergreen"
 
   s.description  = "Parsers available for RSS, Atom, OPML, Internet Dates, HTML metadata and links, and HTML entities.
@@ -19,8 +19,6 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/brentsimmons/RSParser"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Brent Simmons" => "brent@ranchero.com" }
-
-  s.platforms
 
   #  When using multiple platforms
   s.ios.deployment_target = "9.3"
