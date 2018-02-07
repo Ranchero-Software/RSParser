@@ -2,6 +2,8 @@
 
 This framework was developed for [Evergreen](https://github.com/brentsimmons/Evergreen) and is made available here for developers who just need the parsing code. It has no depencies that aren’t provided by the system.
 
+_Update 6 Feb. 2018_: RSParser is now a CocoaPod, with the much-appreciated help of [Silver Fox](https://github.com/dcilia). (We _think_ it worked, anyway. Looked like it did.)
+
 ## What’s inside
 
 This framework includes parsers for:
