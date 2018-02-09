@@ -1,0 +1,25 @@
+language: objective-c
+osx_image: xcode9.3beta
+xcode_project: RSParser.xcodeproj
+xcode_scheme: RSParser
+xcode_sdk: macosx
+env:
+  global:
+  - REPO=dcilia/RSParser
+  - FRAMEWORK_NAME=RSParser
+before_install:
+- brew update
+- brew install carthage
+before_script: 
+script:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+deploy:
+  provider: releases
+  api_key:
+    secure: QkEYTAjkYlC32FWqU57RCMGNB/jd7f50y1rlaw/1WF/NcHGcoRJx3PQkt0QbDr6P+V5i5D+GOLRSHKQ2D65Wsq35+/068BL1Pmy6r4mZVwybxDKm7wI3GYx8kJ1ypyOT2yOs1k/mHAkD90ZH1qG5ZAoYot+bIpztneVKkT9SXcThjJQ1X+sBGM1DyQ8EWOzRn4Af+90rhJHQIqap6tbzUqHaJh0ovlMDnqBsED/vJi4PxtjAsFkDoVaIdFve1Jhf8IfMgc/JkVehUwMLE6i5dW0wYqzEpi9uhybGK+sTRJV/3/0WNdIH9EcrITuhu0UJqYKO/25e3qIOpF1eRJjgo/auvHWBvMY+YS/RJK9pAQ2Adio5OTt556hQyVfrC641F+00lacT5Xx8kQHysZl3eDJ1URYH1zmz+BwORRgt0g+VY2TDKqre/eNcNqLOVAjm6rkfpKgIniOv/nGf/R0FuTNPPCYrFP+sDj8XWIeKAlzaIPvDaLqtlN2/XIP+uc1Nz8WcmDvXKDDR1yEodL+PcWRkfmpqYvUfP25ShYJH6Svo0BkaGyn3sYNj4SrGNGBH10luuWTxUJ6VrWBY3e8mvtWvFxxUREx7+NRR/j6/H0pjFNcAsbc2hbraSPVWFf22hkytqSXJntGzdvk87I+sGWPFlEp15nnhOc98bjENRU8=
+  file: $FRAMEWORK_NAME.framework.zip
+  skip_cleanup: true
+  on:
+    repo: $REPO
+    tags: true
