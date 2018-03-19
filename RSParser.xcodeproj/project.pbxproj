@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ECE4B4F205FFE0F00DE952E /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE4B4E205FFE0F00DE952E /* Compatibility.swift */; };
 		6655164F2027549600E6ACB0 /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164C2027549600E6ACB0 /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516502027549600E6ACB0 /* RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164D2027549600E6ACB0 /* RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516512027549600E6ACB0 /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6655164E2027549600E6ACB0 /* ParserData.m */; };
@@ -121,6 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1ECE4B4E205FFE0F00DE952E /* Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Compatibility.swift; path = Sources/Utilities/Compatibility.swift; sourceTree = "<group>"; };
 		6655164C2027549600E6ACB0 /* ParserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserData.h; path = Sources/ParserData.h; sourceTree = "<group>"; };
 		6655164D2027549600E6ACB0 /* RSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSParser.h; path = Sources/RSParser.h; sourceTree = "<group>"; };
 		6655164E2027549600E6ACB0 /* ParserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserData.m; path = Sources/ParserData.m; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				665516CA20287E8C00E6ACB0 /* RSDateParser.m */,
 				665516C420287E8C00E6ACB0 /* RSParserInternal.h */,
 				665516C920287E8C00E6ACB0 /* RSParserInternal.m */,
+				1ECE4B4E205FFE0F00DE952E /* Compatibility.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				6655165C202754B800E6ACB0 /* FeedParser.swift in Sources */,
 				6655167F202754EB00E6ACB0 /* RSRSSParser.m in Sources */,
 				665516A220287E3F00E6ACB0 /* JSONTypes.swift in Sources */,
+				1ECE4B4F205FFE0F00DE952E /* Compatibility.swift in Sources */,
 				665516D220287E8C00E6ACB0 /* RSDateParser.m in Sources */,
 				665516512027549600E6ACB0 /* ParserData.m in Sources */,
 				66551661202754B800E6ACB0 /* ParsedFeed.swift in Sources */,
