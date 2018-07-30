@@ -296,9 +296,12 @@ static const NSInteger kEnclosureLength = 10;
 	}
 
 	if (RSSAXEqualTags(prefix, kContent, kContentLength) && RSSAXEqualTags(localName, kEncoded, kEncodedLength)) {
+		NSString *body = [self currentStringWithHTMLEntitiesDecoded];
 
-		self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
-		return;
+		if (body.length > 0) {
+			self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
+			return;
+		}
 	}
 
 	if (prefix != NULL) {
