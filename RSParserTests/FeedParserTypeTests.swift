@@ -148,6 +148,13 @@ class FeedParserTypeTests: XCTestCase {
 		XCTAssertTrue(type == .jsonFeed)
 	}
 
+	func testRoseJSONFeedType() {
+
+		let d = parserData("rose", "json", "https://www.rosemaryorchard.com/")
+		let type = feedType(d)
+		XCTAssertTrue(type == .jsonFeed)
+	}
+
 	// MARK: Unknown
 
 	func testPartialAllThisUnknownFeedType() {

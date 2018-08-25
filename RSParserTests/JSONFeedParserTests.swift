@@ -92,4 +92,10 @@ class JSONFeedParserTests: XCTestCase {
 		XCTAssertEqual(parsedFeed.items.count, 20)
 
 	}
+
+	func testRose() {
+		let d = parserData("rose", "json", "http://www.rosemaryorchard.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.items.count, 84)
+	}
 }
