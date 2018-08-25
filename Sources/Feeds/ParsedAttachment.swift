@@ -15,8 +15,7 @@ public struct ParsedAttachment: Hashable {
 	public let title: String?
 	public let sizeInBytes: Int?
 	public let durationInSeconds: Int?
-	public let hashValue: Int
-	
+
 	init?(url: String, mimeType: String?, title: String?, sizeInBytes: Int?, durationInSeconds: Int?) {
 
 		if url.isEmpty {
@@ -28,11 +27,5 @@ public struct ParsedAttachment: Hashable {
 		self.title = title
 		self.sizeInBytes = sizeInBytes
 		self.durationInSeconds = durationInSeconds
-		self.hashValue = url.hashValue
-	}
-	
-	public static func ==(lhs: ParsedAttachment, rhs: ParsedAttachment) -> Bool {
-		
-		return lhs.hashValue == rhs.hashValue && lhs.url == rhs.url && lhs.mimeType == rhs.mimeType && lhs.title == rhs.title && lhs.sizeInBytes == rhs.sizeInBytes && lhs.durationInSeconds == rhs.durationInSeconds
 	}
 }
