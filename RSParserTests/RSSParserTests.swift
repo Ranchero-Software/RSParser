@@ -110,4 +110,22 @@ class RSSParserTests: XCTestCase {
 			XCTAssertNotNil(author.name)
 		}
 	}
+
+	func testMonkeyDomGuids() {
+
+		// https://coding.monkeydom.de/posts.rss has a bug in the feed (at this writing):
+		// It has guids that are supposed to be permalinks, per the spec —
+		// except that they’re not actually permalinks. The RSS parser should
+		// detect this situation, and every article in the feed should have a permalink.
+
+		let d = parserData("monkeydom", "rss", "https://coding.monkeydom.de/")
+		let parsedFeed = try! FeedParser.parse(d)!
+
+		for article in parsedFeed.items {
+
+			XCTAssertNil(article.url)
+			XCTAssertNotNil(article.uniqueID)
+		}
+
+	}
 }

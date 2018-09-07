@@ -76,6 +76,7 @@
 		840FDCB61F0217D20041F61B /* AtomParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FDCB51F0217D20041F61B /* AtomParserTests.swift */; };
 		840FDCB81F0218670041F61B /* DaringFireball.atom in Resources */ = {isa = PBXBuildFile; fileRef = 840FDCB71F0218670041F61B /* DaringFireball.atom */; };
 		840FDCBA1F02186D0041F61B /* DaringFireball.json in Resources */ = {isa = PBXBuildFile; fileRef = 840FDCB91F02186D0041F61B /* DaringFireball.json */; };
+		841DCDED21421D89007B5539 /* monkeydom.rss in Resources */ = {isa = PBXBuildFile; fileRef = 841DCDEC21421D89007B5539 /* monkeydom.rss */; };
 		84285AAF1F006BC0002E8708 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84285AAE1F006BC0002E8708 /* libxml2.2.tbd */; };
 		842A42011FB77A5A00EA22E4 /* dcrainmaker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */; };
 		84387337200338F500757651 /* curt.json in Resources */ = {isa = PBXBuildFile; fileRef = 84387336200338F500757651 /* curt.json */; };
@@ -194,6 +195,7 @@
 		840FDCB51F0217D20041F61B /* AtomParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomParserTests.swift; sourceTree = "<group>"; };
 		840FDCB71F0218670041F61B /* DaringFireball.atom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DaringFireball.atom; sourceTree = "<group>"; };
 		840FDCB91F02186D0041F61B /* DaringFireball.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DaringFireball.json; sourceTree = "<group>"; };
+		841DCDEC21421D89007B5539 /* monkeydom.rss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = monkeydom.rss; sourceTree = "<group>"; };
 		84285AAE1F006BC0002E8708 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		84285AB41F007255002E8708 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dcrainmaker.xml; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				844B5B3F1FE9A45200C7C76A /* expertopinionent.atom */,
 				846EBEA7208AFA510070D2FD /* pxlnv.json */,
 				845F73AD2131D1A60050A6DD /* rose.json */,
+				841DCDEC21421D89007B5539 /* monkeydom.rss */,
 				849A03CF1F0081EA00122600 /* Subs.opml */,
 			);
 			path = Resources;
@@ -621,6 +624,7 @@
 				849A03DA1F0081EA00122600 /* Subs.opml in Resources */,
 				8401FF841FE87C2F0080F13F /* theomnishow.rss in Resources */,
 				849A03D61F0081EA00122600 /* manton.rss in Resources */,
+				841DCDED21421D89007B5539 /* monkeydom.rss in Resources */,
 				849A03D11F0081EA00122600 /* DaringFireball.rss in Resources */,
 				844B5B401FE9A45200C7C76A /* expertopinionent.atom in Resources */,
 				84B19A771FDA438300458981 /* natasha.xml in Resources */,
