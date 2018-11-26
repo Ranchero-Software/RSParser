@@ -26,33 +26,5 @@ public struct ParsedItem: Hashable {
 	public let authors: Set<ParsedAuthor>?
 	public let tags: Set<String>?
 	public let attachments: Set<ParsedAttachment>?
-	public let hashValue: Int
-	
-	init(syncServiceID: String?, uniqueID: String, feedURL: String, url: String?, externalURL: String?, title: String?, contentHTML: String?, contentText: String?, summary: String?, imageURL: String?, bannerImageURL: String?, datePublished: Date?, dateModified: Date?, authors: Set<ParsedAuthor>?, tags: Set<String>?, attachments: Set<ParsedAttachment>?) {
-
-		self.syncServiceID = syncServiceID
-		self.uniqueID = uniqueID
-		self.feedURL = feedURL
-		self.url = url
-		self.externalURL = externalURL
-		self.title = title
-		self.contentHTML = contentHTML
-		self.contentText = contentText
-		self.summary = summary
-		self.imageURL = imageURL
-		self.bannerImageURL = bannerImageURL
-		self.datePublished = datePublished
-		self.dateModified = dateModified
-		self.authors = authors
-		self.tags = tags
-		self.attachments = attachments
-		self.hashValue = (feedURL + uniqueID).hashValue
-	}
-	
-	public static func ==(lhs: ParsedItem, rhs: ParsedItem) -> Bool {
-		
-		// TODO: compare all properties.
-		return lhs.hashValue == rhs.hashValue && lhs.uniqueID == rhs.uniqueID && lhs.feedURL == rhs.feedURL
-	}
 }
 

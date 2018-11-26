@@ -13,7 +13,7 @@ class EntityDecodingTests: XCTestCase {
 
     func test39Decoding() {
 
-		// Bug found by Manton Reece — the &#39; entity was not getting decoded by Evergreen in JSON Feeds from micro.blog.
+		// Bug found by Manton Reece — the &#39; entity was not getting decoded by NetNewsWire in JSON Feeds from micro.blog.
 
 		let s = "These are the times that try men&#39;s souls."
 		let decoded = s.rsparser_stringByDecodingHTMLEntities()

@@ -34,7 +34,7 @@ class JSONFeedParserTests: XCTestCase {
 		let d = parserData("DaringFireball", "json", "http://daringfireball.net/")
 		let parsedFeed = try! FeedParser.parse(d)
 
-		// https://github.com/brentsimmons/Evergreen/issues/176
+		// https://github.com/brentsimmons/NetNewsWire/issues/176
 		// In the article titled "The Talk Show: ‘I Do Like Throwing a Baby’",
 		// make sure the content HTML starts with "\n<p>New episode of America’s"
 		// instead of "\n<p>New episode of America&#8217;s" — this will tell us
@@ -91,5 +91,11 @@ class JSONFeedParserTests: XCTestCase {
 		let parsedFeed = try! FeedParser.parse(d)!
 		XCTAssertEqual(parsedFeed.items.count, 20)
 
+	}
+
+	func testRose() {
+		let d = parserData("rose", "json", "http://www.rosemaryorchard.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.items.count, 84)
 	}
 }

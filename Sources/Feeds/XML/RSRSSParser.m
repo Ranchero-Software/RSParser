@@ -231,11 +231,14 @@ static const NSInteger kEnclosureLength = 10;
 
 - (void)addGuid {
 
-	self.currentArticle.guid = self.parser.currentStringWithTrimmedWhitespace;
+	NSString *guid = self.parser.currentStringWithTrimmedWhitespace;
+	self.currentArticle.guid = guid;
 
 	NSString *isPermaLinkValue = [self.currentAttributes rsparser_objectForCaseInsensitiveKey:@"ispermalink"];
 	if (!isPermaLinkValue || ![isPermaLinkValue isEqualToString:@"false"]) {
-		self.currentArticle.permalink = [self urlString:self.currentArticle.guid];
+		if ([self stringIsProbablyAURLOrRelativePath:guid]) {
+			self.currentArticle.permalink = [self urlString:guid];
+		}
 	}
 }
 
@@ -253,6 +256,33 @@ static const NSInteger kEnclosureLength = 10;
 	enclosure.mimeType = attributes[kTypeKey];
 
 	[self.currentArticle addEnclosure:enclosure];
+}
+
+- (BOOL)stringIsProbablyAURLOrRelativePath:(NSString *)s {
+
+	/*The RSS guid is defined as a permalink, except when it appears like this:
+	 <guid isPermaLink="false">some—identifier</guid>
+	 However, people often seem to think it’s *not* a permalink by default, even
+	 though it is. So we try to detect the situation where the value is not a URL string,
+	 and not even a relative path. This may need to evolve over time as we find
+	 feeds broken in different ways.*/
+
+	if ([s hasPrefix:@"http"]) {
+		return YES;
+	}
+	NSString *lowercaseString = [s lowercaseString];
+	if ([lowercaseString hasPrefix:@"tag:"]) { // A common non-URL guid form
+		return NO;
+	}
+	if ([lowercaseString hasPrefix:@"http"]) {
+		return YES;
+	}
+	if ([s rsparser_contains:@":"] && ![s rsparser_contains:@"/"]) {
+		// Example: <guid>cocoa-dom:tcmportmapper</guid>
+		// From https://coding.monkeydom.de/posts.rss
+		return NO;
+	}
+	return YES;
 }
 
 - (NSString *)urlString:(NSString *)s {

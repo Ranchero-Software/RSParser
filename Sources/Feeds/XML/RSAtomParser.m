@@ -124,8 +124,14 @@ static const NSInteger kLinkLength = 5;
 static const char *kPublished = "published";
 static const NSInteger kPublishedLength = 10;
 
+static const char *kIssued = "issued";
+static const NSInteger kIssuedLength = 7;
+
 static const char *kUpdated = "updated";
 static const NSInteger kUpdatedLength = 8;
+
+static const char *kModified = "modified";
+static const NSInteger kModifiedLength = 9;
 
 static const char *kAuthor = "author";
 static const NSInteger kAuthorLength = 7;
@@ -351,6 +357,18 @@ static const NSInteger kLengthLength = 7;
 
 	else if (RSSAXEqualTags(localName, kUpdated, kUpdatedLength)) {
 		self.currentArticle.dateModified = self.currentDate;
+	}
+
+	// Atom 0.3 dates
+	else if (RSSAXEqualTags(localName, kIssued, kIssuedLength)) {
+		if (!self.currentArticle.datePublished) {
+			self.currentArticle.datePublished = self.currentDate;
+		}
+	}
+	else if (RSSAXEqualTags(localName, kModified, kModifiedLength)) {
+		if (!self.currentArticle.dateModified) {
+			self.currentArticle.dateModified = self.currentDate;
+		}
 	}
 }
 
