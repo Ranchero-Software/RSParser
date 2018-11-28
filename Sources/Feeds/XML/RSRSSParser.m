@@ -199,12 +199,12 @@ static const NSInteger kEnclosureLength = 10;
 
 	if (RSSAXEqualTags(localName, kLink, kLinkLength)) {
 		if (!self.link) {
-			self.link = self.parser.currentStringWithTrimmedWhitespace;
+			self.link = [self currentString];
 		}
 	}
 
 	else if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
-		self.title = self.parser.currentStringWithTrimmedWhitespace;
+		self.title = [self currentString];
 	}
 }
 
@@ -214,14 +214,14 @@ static const NSInteger kEnclosureLength = 10;
 		return;
 	}
 	
-	RSParsedAuthor *author = [RSParsedAuthor authorWithSingleString:self.parser.currentStringWithTrimmedWhitespace];
+	RSParsedAuthor *author = [RSParsedAuthor authorWithSingleString:[self currentString]];
 	[self.currentArticle addAuthor:author];
 }
 
 - (void)addDCElement:(const xmlChar *)localName {
 
 	if (RSSAXEqualTags(localName, kCreator, kCreatorLength)) {
-		[self addAuthorWithString:self.parser.currentStringWithTrimmedWhitespace];
+		[self addAuthorWithString:[self currentString]];
 	}
 	else if (RSSAXEqualTags(localName, kDate, kDateLength)) {
 		self.currentArticle.datePublished = self.currentDate;
@@ -231,7 +231,7 @@ static const NSInteger kEnclosureLength = 10;
 
 - (void)addGuid {
 
-	NSString *guid = self.parser.currentStringWithTrimmedWhitespace;
+	NSString *guid = [self currentString];
 	self.currentArticle.guid = guid;
 
 	NSString *isPermaLinkValue = [self.currentAttributes rsparser_objectForCaseInsensitiveKey:@"ispermalink"];
@@ -312,9 +312,9 @@ static const NSInteger kEnclosureLength = 10;
 }
 
 
-- (NSString *)currentStringWithHTMLEntitiesDecoded {
+- (NSString *)currentString {
 
-	return [self.parser.currentStringWithTrimmedWhitespace rsparser_stringByDecodingHTMLEntities];
+	return self.parser.currentStringWithTrimmedWhitespace;
 }
 
 - (void)addArticleElement:(const xmlChar *)localName prefix:(const xmlChar *)prefix {
@@ -327,7 +327,7 @@ static const NSInteger kEnclosureLength = 10;
 
 	if (RSSAXEqualTags(prefix, kContent, kContentLength) && RSSAXEqualTags(localName, kEncoded, kEncodedLength)) {
 
-		self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
+		self.currentArticle.body = [self currentString];
 		return;
 	}
 
@@ -342,19 +342,19 @@ static const NSInteger kEnclosureLength = 10;
 		self.currentArticle.datePublished = self.currentDate;
 	}
 	else if (RSSAXEqualTags(localName, kAuthor, kAuthorLength)) {
-		[self addAuthorWithString:self.parser.currentStringWithTrimmedWhitespace];
+		[self addAuthorWithString:[self currentString]];
 	}
 	else if (RSSAXEqualTags(localName, kLink, kLinkLength)) {
-		self.currentArticle.link = [self urlString:self.parser.currentStringWithTrimmedWhitespace];
+		self.currentArticle.link = [self urlString:[self currentString]];
 	}
 	else if (RSSAXEqualTags(localName, kDescription, kDescriptionLength)) {
 
 		if (!self.currentArticle.body) {
-			self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
+			self.currentArticle.body = [self currentString];
 		}
 	}
 	else if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
-		self.currentArticle.title = [self currentStringWithHTMLEntitiesDecoded];
+		self.currentArticle.title = [self currentString];
 	}
 	else if (RSSAXEqualTags(localName, kEnclosure, kEnclosureLength)) {
 		[self addEnclosure];
