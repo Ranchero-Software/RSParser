@@ -258,7 +258,7 @@ static const NSInteger kLengthLength = 7;
 - (void)addFeedTitle {
 
 	if (self.title.length < 1) {
-		self.title = self.parser.currentStringWithTrimmedWhitespace;
+		self.title = [self currentString];
 	}
 }
 
@@ -307,21 +307,21 @@ static const NSInteger kLengthLength = 7;
 
 - (void)addContent {
 
-	self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
+	self.currentArticle.body = [self currentString];
 }
 
 
 - (void)addSummary {
 
 	if (!self.currentArticle.body) {
-		self.currentArticle.body = [self currentStringWithHTMLEntitiesDecoded];
+		self.currentArticle.body = [self currentString];
 	}
 }
 
 
-- (NSString *)currentStringWithHTMLEntitiesDecoded {
-	
-	return [self.parser.currentStringWithTrimmedWhitespace rsparser_stringByDecodingHTMLEntities];
+- (NSString *)currentString {
+
+	return self.parser.currentStringWithTrimmedWhitespace;
 }
 
 
@@ -332,11 +332,11 @@ static const NSInteger kLengthLength = 7;
 	}
 
 	if (RSSAXEqualTags(localName, kID, kIDLength)) {
-		self.currentArticle.guid = self.parser.currentStringWithTrimmedWhitespace;
+		self.currentArticle.guid = [self currentString];
 	}
 
 	else if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
-		self.currentArticle.title = [self currentStringWithHTMLEntitiesDecoded];
+		self.currentArticle.title = [self currentString];
 	}
 
 	else if (RSSAXEqualTags(localName, kContent, kContentLength)) {
@@ -512,13 +512,13 @@ static const NSInteger kLengthLength = 7;
 			self.currentAuthor = nil;
 		}
 		else if (RSSAXEqualTags(localName, kName, kNameLength)) {
-			self.currentAuthor.name = self.parser.currentStringWithTrimmedWhitespace;
+			self.currentAuthor.name = [self currentString];
 		}
 		else if (RSSAXEqualTags(localName, kEmail, kEmailLength)) {
-			self.currentAuthor.emailAddress = self.parser.currentStringWithTrimmedWhitespace;
+			self.currentAuthor.emailAddress = [self currentString];
 		}
 		else if (RSSAXEqualTags(localName, kURI, kURILength)) {
-			self.currentAuthor.url = self.parser.currentStringWithTrimmedWhitespace;
+			self.currentAuthor.url = [self currentString];
 		}
 	}
 
