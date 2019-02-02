@@ -122,10 +122,21 @@ class RSSParserTests: XCTestCase {
 		let parsedFeed = try! FeedParser.parse(d)!
 
 		for article in parsedFeed.items {
-
 			XCTAssertNil(article.url)
 			XCTAssertNotNil(article.uniqueID)
 		}
-
 	}
+
+	func testEmptyContentEncoded() {
+		// The ATP feed (at the time of this writing) has some empty content:encoded elements. The parser should ignore those.
+		// https://github.com/brentsimmons/NetNewsWire/issues/529
+
+		let d = parserData("atp", "rss", "http://atp.fm/")
+		let parsedFeed = try! FeedParser.parse(d)!
+
+		for article in parsedFeed.items {
+			XCTAssertNotNil(article.contentHTML)
+		}
+	}
+
 }
