@@ -138,5 +138,4 @@ class RSSParserTests: XCTestCase {
 			XCTAssertNotNil(article.contentHTML)
 		}
 	}
-
 }

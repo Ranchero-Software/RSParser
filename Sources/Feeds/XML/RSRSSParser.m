@@ -317,6 +317,7 @@ static const NSInteger kEnclosureLength = 10;
 	return self.parser.currentStringWithTrimmedWhitespace;
 }
 
+
 - (void)addArticleElement:(const xmlChar *)localName prefix:(const xmlChar *)prefix {
 
 	if (RSSAXEqualTags(prefix, kDC, kDCLength)) {
@@ -326,8 +327,10 @@ static const NSInteger kEnclosureLength = 10;
 	}
 
 	if (RSSAXEqualTags(prefix, kContent, kContentLength) && RSSAXEqualTags(localName, kEncoded, kEncodedLength)) {
-
-		self.currentArticle.body = [self currentString];
+		NSString *s = [self currentString];
+		if (!RSParserStringIsEmpty(s)) {
+			self.currentArticle.body = s;
+		}
 		return;
 	}
 
