@@ -59,7 +59,7 @@
 		return nil;
 	}
 
-	_feedSpecifier = [[RSOPMLFeedSpecifier alloc] initWithTitle:self.attributes.opml_title feedDescription:self.attributes.opml_description homePageURL:self.attributes.opml_htmlUrl feedURL:feedURL];
+	_feedSpecifier = [[RSOPMLFeedSpecifier alloc] initWithTitle:self.titleFromAttributes feedDescription:self.attributes.opml_description homePageURL:self.attributes.opml_htmlUrl feedURL:feedURL];
 
 	return _feedSpecifier;
 }
