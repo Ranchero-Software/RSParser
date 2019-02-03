@@ -29,27 +29,6 @@ class JSONFeedParserTests: XCTestCase {
 		}
 	}
 
-	func testThatEntitiesAreDecoded() {
-
-		let d = parserData("DaringFireball", "json", "http://daringfireball.net/")
-		let parsedFeed = try! FeedParser.parse(d)
-
-		// https://github.com/brentsimmons/NetNewsWire/issues/176
-		// In the article titled "The Talk Show: ‘I Do Like Throwing a Baby’",
-		// make sure the content HTML starts with "\n<p>New episode of America’s"
-		// instead of "\n<p>New episode of America&#8217;s" — this will tell us
-		// that entities are being decoded.
-
-		for article in parsedFeed!.items {
-			if article.title == "The Talk Show: ‘I Do Like Throwing a Baby’" {
-				XCTAssert(article.contentHTML!.hasPrefix("\n<p>New episode of America’s"))
-				return
-			}
-		}
-
-		XCTAssert(false, "Expected to find “The Talk Show: ‘I Do Like Throwing a Baby’” article.")
-	}
-
 	func testGettingFaviconAndIconURLs() {
 
 		let d = parserData("DaringFireball", "json", "http://daringfireball.net/")
