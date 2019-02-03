@@ -57,7 +57,7 @@ class JSONFeedParserTests: XCTestCase {
 		for article in parsedFeed.items {
 			if article.title == "Twitter Quitter" {
 				didFindTwitterQuitterArticle = true
-				XCTAssertTrue(article.contentHTML!.hasPrefix("<p>I’ve decided to close my Twitter account. William Van Hecke <a href=\"https://tinyletter.com/fet/letters/microcosmographia-xlxi-reasons-to-stay-on-twitter\">makes a convincing case</a>"))
+				XCTAssertTrue(article.contentHTML!.hasPrefix("<p>I&#8217;ve decided to close my Twitter account. William Van Hecke <a href=\"https://tinyletter.com/fet/letters/microcosmographia-xlxi-reasons-to-stay-on-twitter\">makes a convincing case</a>"))
 			}
 		}
 
