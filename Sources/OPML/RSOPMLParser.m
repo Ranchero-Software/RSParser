@@ -175,6 +175,11 @@ static const char kOutlineLength = 8;
 
 - (void)saxParser:(RSSAXParser *)SAXParser XMLStartElement:(const xmlChar *)localName prefix:(const xmlChar *)prefix uri:(const xmlChar *)uri numberOfNamespaces:(NSInteger)numberOfNamespaces namespaces:(const xmlChar **)namespaces numberOfAttributes:(NSInteger)numberOfAttributes numberDefaulted:(int)numberDefaulted attributes:(const xmlChar **)attributes {
 
+	if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
+		[SAXParser beginStoringCharacters];
+		return;
+	}
+
 	if (!RSSAXEqualTags(localName, kOutline, kOutlineLength)) {
 		return;
 	}
@@ -188,6 +193,14 @@ static const char kOutlineLength = 8;
 
 
 - (void)saxParser:(RSSAXParser *)SAXParser XMLEndElement:(const xmlChar *)localName prefix:(const xmlChar *)prefix uri:(const xmlChar *)uri {
+
+	if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
+		RSOPMLItem* item = [self currentItem];
+		if ([item isKindOfClass:[RSOPMLDocument class]]) {
+			((RSOPMLDocument *)item).title = SAXParser.currentStringWithTrimmedWhitespace;
+		}
+		return;
+	}
 
 	if (RSSAXEqualTags(localName, kOutline, kOutlineLength)) {
 		[self popItem];
