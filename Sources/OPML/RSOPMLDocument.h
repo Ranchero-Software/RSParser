@@ -13,5 +13,6 @@
 @interface RSOPMLDocument : RSOPMLItem
 
 @property (nonatomic) NSString *title;
+@property (nonatomic) NSString *url;
 
 @end

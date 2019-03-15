@@ -30,6 +30,7 @@ class OPMLTests: XCTestCase {
 	func testSubsStructure() {
 		let opmlDocument = try! RSOPMLParser.parseOPML(with: subsData)
 		XCTAssertEqual("Subs", opmlDocument.title)
+		XCTAssertEqual("http://example.org/", opmlDocument.url)
 		recursivelyCheckOPMLStructure(opmlDocument)
 	}
 
