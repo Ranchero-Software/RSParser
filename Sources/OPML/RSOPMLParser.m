@@ -48,6 +48,7 @@ void RSParseOPML(ParserData *parserData, OPMLParserCallback callback) {
 	RSOPMLParser *parser = [[RSOPMLParser alloc] initWithParserData:parserData];
 
 	RSOPMLDocument *document = parser.OPMLDocument;
+	document.url = parserData.url;
 	if (parser.error && error) {
 		*error = parser.error;
 		return nil;
