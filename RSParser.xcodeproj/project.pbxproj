@@ -817,7 +817,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -896,7 +896,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -923,7 +923,6 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "i386 x86_64 armv7k armv7s armv7 arm64";
 			};
 			name = Debug;
@@ -948,7 +947,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
-				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "i386 x86_64 armv7k armv7s armv7 arm64";
 			};
 			name = Release;
@@ -966,7 +964,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -982,7 +979,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "macosx watchos appletvos iphoneos watchsimulator appletvsimulator iphonesimulator";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
