@@ -131,14 +131,6 @@ void RSParseOPML(ParserData *parserData, OPMLParserCallback callback) {
 			return NO;
 		}
 
-		NSRange outlineRange = [s rangeOfString:@"<outline" options:NSLiteralSearch range:rangeToSearch];
-		if (outlineRange.length < 1) {
-			return NO;
-		}
-
-		if (outlineRange.location < opmlRange.location) {
-			return NO;
-		}
 	}
 
 	return YES;
