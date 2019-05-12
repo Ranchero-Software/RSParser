@@ -16,7 +16,7 @@ public struct ParsedAttachment: Hashable {
 	public let sizeInBytes: Int?
 	public let durationInSeconds: Int?
 
-	init?(url: String, mimeType: String?, title: String?, sizeInBytes: Int?, durationInSeconds: Int?) {
+	public init?(url: String, mimeType: String?, title: String?, sizeInBytes: Int?, durationInSeconds: Int?) {
 
 		if url.isEmpty {
 			return nil
