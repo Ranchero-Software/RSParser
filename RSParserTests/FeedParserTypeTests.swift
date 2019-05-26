@@ -109,6 +109,12 @@ class FeedParserTypeTests: XCTestCase {
 		XCTAssertTrue(type == .atom)
 	}
 
+	func testRussCoxAtomType() {
+		let d = parserData("russcox", "atom", "https://research.swtch.com/")
+		let type = feedType(d)
+		XCTAssertTrue(type == .atom)
+	}
+
 	// MARK: RSS-in-JSON
 
 	func testScriptingNewsJSONType() {

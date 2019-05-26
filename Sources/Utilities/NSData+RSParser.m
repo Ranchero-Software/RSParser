@@ -15,6 +15,7 @@ static BOOL bytesAreProbablyXML(const char *bytes, NSUInteger numberOfBytes);
 static BOOL bytesStartWithStringIgnoringWhitespace(const char *string, const char *bytes, NSUInteger numberOfBytes);
 static BOOL didFindString(const char *string, const char *bytes, NSUInteger numberOfBytes);
 static BOOL bytesStartWithRSS(const char *bytes, NSUInteger numberOfBytes);
+static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 
 @implementation NSData (RSParser)
 
@@ -70,6 +71,9 @@ static BOOL bytesStartWithRSS(const char *bytes, NSUInteger numberOfBytes);
 
 - (BOOL)isProbablyAtom {
 
+	if (bytesStartWithAtom(self.bytes, self.length)) { // https://research.swtch.com/feed.atom does not start with xml header.
+		return YES;
+	}
 	if (![self isProbablyXML]) {
 		return NO;
 	}
@@ -143,4 +147,9 @@ static BOOL bytesAreProbablyXML(const char *bytes, NSUInteger numberOfBytes) {
 static BOOL bytesStartWithRSS(const char *bytes, NSUInteger numberOfBytes) {
 
 	return bytesStartWithStringIgnoringWhitespace("<rss", bytes, numberOfBytes);
+}
+
+static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes) {
+
+	return bytesStartWithStringIgnoringWhitespace("<feed", bytes, numberOfBytes);
 }
