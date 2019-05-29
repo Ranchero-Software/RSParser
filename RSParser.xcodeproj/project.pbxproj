@@ -113,6 +113,7 @@
 		84B19A771FDA438300458981 /* natasha.xml in Resources */ = {isa = PBXBuildFile; fileRef = 84B19A761FDA438300458981 /* natasha.xml */; };
 		84D2F2E1229B4C2B001900A7 /* russcox.atom in Resources */ = {isa = PBXBuildFile; fileRef = 84D2F2E0229B4C2B001900A7 /* russcox.atom */; };
 		84D4D23C22055B8100CC4BEB /* atp.rss in Resources */ = {isa = PBXBuildFile; fileRef = 84D4D23B22055B8100CC4BEB /* atp.rss */; };
+		84D97ED0229E464800E8884F /* livemint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 84D97ECF229E464800E8884F /* livemint.xml */; };
 		84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */; };
 		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
 /* End PBXBuildFile section */
@@ -238,6 +239,7 @@
 		84D2F2E0229B4C2B001900A7 /* russcox.atom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russcox.atom; sourceTree = "<group>"; };
 		84D4D23B22055B8100CC4BEB /* atp.rss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = atp.rss; sourceTree = "<group>"; };
 		84D81BD91EFA28E700652332 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D97ECF229E464800E8884F /* livemint.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livemint.xml; sourceTree = "<group>"; };
 		84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDecodingTests.swift; sourceTree = "<group>"; };
 		84FF5F841EFA285800C15A01 /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,6 +455,7 @@
 				8401FF831FE87C2E0080F13F /* theomnishow.rss */,
 				844B5B3D1FE9A13B00C7C76A /* 4fsodonline.atom */,
 				844B5B3F1FE9A45200C7C76A /* expertopinionent.atom */,
+				84D97ECF229E464800E8884F /* livemint.xml */,
 				846EBEA7208AFA510070D2FD /* pxlnv.json */,
 				845F73AD2131D1A60050A6DD /* rose.json */,
 				84D2F2E0229B4C2B001900A7 /* russcox.atom */,
@@ -657,6 +660,7 @@
 				84D4D23C22055B8100CC4BEB /* atp.rss in Resources */,
 				8476F79621A67C4300C808C3 /* 489.rss in Resources */,
 				846EBEA8208AFA510070D2FD /* pxlnv.json in Resources */,
+				84D97ED0229E464800E8884F /* livemint.xml in Resources */,
 				844B5B3E1FE9A13C00C7C76A /* 4fsodonline.atom in Resources */,
 				840FDCB81F0218670041F61B /* DaringFireball.atom in Resources */,
 				849A03D91F0081EA00122600 /* sixcolors.html in Resources */,

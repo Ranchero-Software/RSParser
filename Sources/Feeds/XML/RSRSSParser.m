@@ -34,6 +34,7 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSDate *dateParsed;
 @property (nonatomic) BOOL isRDF;
+@property (nonatomic) BOOL feedIsKnownToHaveBugWhereGuidsArentPermalinks;
 
 @end
 
@@ -61,10 +62,18 @@
 	_urlString = parserData.url;
 	_parser = [[RSSAXParser alloc] initWithDelegate:self];
 	_articles = [NSMutableArray new];
+	_feedIsKnownToHaveBugWhereGuidsArentPermalinks = [RSRSSParser urlStringIsForFeedWhereGuidsArentPermalinks:_urlString];
 
 	return self;
 }
 
++ (BOOL)urlStringIsForFeedWhereGuidsArentPermalinks:(NSString *)urlString {
+	NSString *lowerURLString = urlString.lowercaseString;
+	if ([lowerURLString hasSuffix:@"livemint.com/rss/news"]) {
+		return YES;
+	}
+	return NO;
+}
 
 #pragma mark - API
 
@@ -233,6 +242,10 @@ static const NSInteger kEnclosureLength = 10;
 
 	NSString *guid = [self currentString];
 	self.currentArticle.guid = guid;
+
+	if (self.feedIsKnownToHaveBugWhereGuidsArentPermalinks) {
+		return;
+	}
 
 	NSString *isPermaLinkValue = [self.currentAttributes rsparser_objectForCaseInsensitiveKey:@"ispermalink"];
 	if (!isPermaLinkValue || ![isPermaLinkValue isEqualToString:@"false"]) {

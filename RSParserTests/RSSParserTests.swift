@@ -138,4 +138,12 @@ class RSSParserTests: XCTestCase {
 			XCTAssertNotNil(article.contentHTML)
 		}
 	}
+
+	func testFeedKnownToHaveGuidsThatArentPermalinks() {
+		let d = parserData("livemint", "xml", "https://www.livemint.com/rss/news")
+		let parsedFeed = try! FeedParser.parse(d)!
+		for article in parsedFeed.items {
+			XCTAssertNil(article.url)
+		}
+	}
 }
