@@ -1,0 +1,38 @@
+# iOS CircleCI 2.0 configuration file
+#
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "10.2.1"
+    # https://circleci.com/docs/2.0/configuration-reference/
+
+    # Mac/IOS specific examples and docs under the following links:
+    # https://circleci.com/docs/2.0/hello-world-macos/
+
+    steps:
+      - checkout
+      # Commands will execute in macOS container
+      # with Xcode 10.2.1 installed
+      - run: xcodebuild -version
+      #- run:
+      #    name: get xcodebuild build options
+      #    command: xcodebuild -help
+      - run:
+          name: get xcodebuild build settings
+          command: xcodebuild -showBuildSettings
+      - run:
+          name: get xcodebuild active SDKs
+          command: xcodebuild -showsdks
+      - run:
+          name: get xcodebuild list schemes
+          command: xcodebuild -list
+
+      # Build the app and run tests
+      - run:
+          name: build and test
+          command: xcodebuild
+      # NOTE(heckj) project needs to be tweaked to support tests due to signing
+      #    command: xcodebuild -scheme RSCoreTests test -showBuildTimingSummary
