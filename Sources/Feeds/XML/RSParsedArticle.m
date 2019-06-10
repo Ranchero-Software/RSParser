@@ -11,6 +11,7 @@
 #import <RSParser/NSString+RSParser.h>
 #import <RSParser/RSParsedAuthor.h>
 #import <RSParser/RSParsedEnclosure.h>
+#import <RSParser/RSParser-Swift.h>
 
 @implementation RSParsedArticle
 
@@ -124,7 +125,12 @@
 		[s appendString:self.body];
 	}
 
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_15)
+	return [s insecureMD5Hash];
+#else
 	return [s rsparser_md5Hash];
+#endif
+
 }
 
 @end
