@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5113B87022ADA4780018040E /* NSString+RSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5113B86F22ADA4780018040E /* NSString+RSParser.swift */; };
 		6655164F2027549600E6ACB0 /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164C2027549600E6ACB0 /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516502027549600E6ACB0 /* RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164D2027549600E6ACB0 /* RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516512027549600E6ACB0 /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6655164E2027549600E6ACB0 /* ParserData.m */; };
@@ -130,7 +129,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5113B86F22ADA4780018040E /* NSString+RSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSString+RSParser.swift"; path = "Sources/Utilities/NSString+RSParser.swift"; sourceTree = "<group>"; };
 		6655164C2027549600E6ACB0 /* ParserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserData.h; path = Sources/ParserData.h; sourceTree = "<group>"; };
 		6655164D2027549600E6ACB0 /* RSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSParser.h; path = Sources/RSParser.h; sourceTree = "<group>"; };
 		6655164E2027549600E6ACB0 /* ParserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserData.m; path = Sources/ParserData.m; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 				665516C520287E8C00E6ACB0 /* NSData+RSParser.m */,
 				665516C820287E8C00E6ACB0 /* NSString+RSParser.h */,
 				665516C620287E8C00E6ACB0 /* NSString+RSParser.m */,
-				5113B86F22ADA4780018040E /* NSString+RSParser.swift */,
 				665516C320287E8C00E6ACB0 /* RSDateParser.h */,
 				665516CA20287E8C00E6ACB0 /* RSDateParser.m */,
 				665516C420287E8C00E6ACB0 /* RSParserInternal.h */,
@@ -710,7 +707,6 @@
 				66551664202754B800E6ACB0 /* ParsedItem.swift in Sources */,
 				665516B720287E5700E6ACB0 /* RSOPMLError.m in Sources */,
 				6655166A202754DB00E6ACB0 /* JSONFeedParser.swift in Sources */,
-				5113B87022ADA4780018040E /* NSString+RSParser.swift in Sources */,
 				66551685202754EB00E6ACB0 /* AtomParser.swift in Sources */,
 				66551687202754EB00E6ACB0 /* RSParsedEnclosure.m in Sources */,
 				6655169620287E1700E6ACB0 /* RSSAXHTMLParser.m in Sources */,

@@ -123,11 +123,7 @@ private extension RSSInJSONParser {
 					s = contentText!
 				}
 			}
-			if #available(iOS 13.0, OSX 10.15, *) {
-				uniqueID = (s as NSString).insecureMD5Hash() as String?
-			} else {
-				uniqueID = (s as NSString).rsparser_md5Hash() as String?
-			}
+			uniqueID = (s as NSString).rsparser_md5Hash()
 		}
 
 		if let uniqueID = uniqueID {

@@ -110,8 +110,6 @@ static NSString *RSParserStringWithValue(unichar value);
 	return nil;
 }
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (NSData *)_rsparser_md5HashData {
 
 	NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
@@ -120,7 +118,6 @@ static NSString *RSParserStringWithValue(unichar value);
 
 	return [NSData dataWithBytes:(const void *)hash length:CC_MD5_DIGEST_LENGTH];
 }
-#pragma GCC diagnostic pop
 
 - (NSString *)rsparser_md5Hash {
 
@@ -128,6 +125,8 @@ static NSString *RSParserStringWithValue(unichar value);
 	const Byte *bytes = md5Data.bytes;
 	return [NSString stringWithFormat:@"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x", bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5], bytes[6], bytes[7], bytes[8], bytes[9], bytes[10], bytes[11], bytes[12], bytes[13], bytes[14], bytes[15]];
 }
+
+
 
 @end
 
