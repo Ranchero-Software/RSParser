@@ -92,6 +92,13 @@ class FeedParserTypeTests: XCTestCase {
 		XCTAssertTrue(type == .rss)
 	}
 
+	func testDontHitSaveRSSWithBOMType() {
+
+		let d = parserData("donthitsave", "xml", "http://donthitsave.com/donthitsavefeed.xml")
+		let type = feedType(d)
+		XCTAssertTrue(type == .rss)
+	}
+
 	// MARK: Atom
 
 	func testDaringFireballAtomType() {

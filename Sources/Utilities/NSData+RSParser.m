@@ -103,6 +103,10 @@ static BOOL bytesStartWithStringIgnoringWhitespace(const char *string, const cha
 		if (ch == string[0]) {
 			return strnstr(bytes, string, numberOfBytes) == bytes + i;
 		}
+		
+		// Allow for a BOM of up to four bytes.  ASSUMPTION: BOM will only be at the start of the data.
+		if (i < 4) continue;
+		
 		break;
 	}
 	return NO;
