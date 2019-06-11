@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38BF0E8D22AF18C300DC5E74 /* donthitsave.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3845C98222A12AB300F7318E /* donthitsave.xml */; };
 		6655164F2027549600E6ACB0 /* ParserData.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164C2027549600E6ACB0 /* ParserData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516502027549600E6ACB0 /* RSParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6655164D2027549600E6ACB0 /* RSParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		665516512027549600E6ACB0 /* ParserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6655164E2027549600E6ACB0 /* ParserData.m */; };
@@ -129,6 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3845C98222A12AB300F7318E /* donthitsave.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = donthitsave.xml; sourceTree = "<group>"; };
 		6655164C2027549600E6ACB0 /* ParserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserData.h; path = Sources/ParserData.h; sourceTree = "<group>"; };
 		6655164D2027549600E6ACB0 /* RSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSParser.h; path = Sources/RSParser.h; sourceTree = "<group>"; };
 		6655164E2027549600E6ACB0 /* ParserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserData.m; path = Sources/ParserData.m; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 		849A03C41F0081EA00122600 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3845C98222A12AB300F7318E /* donthitsave.xml */,
 				84387336200338F500757651 /* curt.json */,
 				849A03C51F0081EA00122600 /* DaringFireball.html */,
 				840FDCB71F0218670041F61B /* DaringFireball.atom */,
@@ -631,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BF0E8D22AF18C300DC5E74 /* donthitsave.xml in Resources */,
 				845213251FCB3C76003B6E93 /* coco.html in Resources */,
 				849A03D51F0081EA00122600 /* KatieFloyd.rss in Resources */,
 				849A03D81F0081EA00122600 /* scriptingNews.rss in Resources */,
