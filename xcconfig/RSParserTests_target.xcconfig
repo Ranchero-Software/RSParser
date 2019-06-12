@@ -1,0 +1,17 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "./RSParser_project.xcconfig"
+
+CODE_SIGN_IDENTITY =
+DEVELOPMENT_TEAM = M8L2WTLA8W
+
+// See the notes in RSParser_target.xcconfig on why the
+// DeveloperSettings.xcconfig is #included here
+#include? "../../../SharedXcodeSettings/DeveloperSettings.xcconfig"
+
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks
+INFOPLIST_FILE = RSWebTests/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParserTests
+PRODUCT_NAME = $(TARGET_NAME)
+CLANG_ENABLE_OBJC_WEAK = YES

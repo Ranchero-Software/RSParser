@@ -33,6 +33,4 @@ jobs:
       # Build the app and run tests
       - run:
           name: build and test
-          command: xcodebuild
-      # NOTE(heckj) project needs to be tweaked to support tests due to signing
-      #    command: xcodebuild -scheme RSCoreTests test -showBuildTimingSummary
+          command: xcodebuild -scheme RSParser test -showBuildTimingSummary
