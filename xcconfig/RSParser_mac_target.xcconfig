@@ -1,0 +1,24 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "./RSParser_project.xcconfig"
+
+CODE_SIGN_IDENTITY =
+DEVELOPMENT_TEAM = M8L2WTLA8W
+
+// See the notes in RSParser_target.xcconfig on why the
+// DeveloperSettings.xcconfig is #included here
+#include? "../../../SharedXcodeSettings/DeveloperSettings.xcconfig"
+
+INFOPLIST_FILE = RSParser/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser
+
+INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
+SKIP_INSTALL = YES
+DYLIB_COMPATIBILITY_VERSION = 1
+DYLIB_CURRENT_VERSION = 1
+DYLIB_INSTALL_NAME_BASE = @rpath
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks
+DEFINES_MODULE = YES
+FRAMEWORK_VERSION = A
+PRODUCT_NAME = $(TARGET_NAME)
+CLANG_ENABLE_MODULES = YES
