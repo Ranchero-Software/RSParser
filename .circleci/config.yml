@@ -33,4 +33,8 @@ jobs:
       # Build the app and run tests
       - run:
           name: build and test
-          command: xcodebuild -scheme RSParser test -showBuildTimingSummary
+          command: xcodebuild -scheme RSParser test -showBuildTimingSummary | xcpretty -r junit -o testout/unittests.xml
+      - store_test_results:
+          path: testout
+      - store_artifacts:
+          path: testout
