@@ -116,6 +116,7 @@
 		84D4D23C22055B8100CC4BEB /* atp.rss in Resources */ = {isa = PBXBuildFile; fileRef = 84D4D23B22055B8100CC4BEB /* atp.rss */; };
 		84D97ED0229E464800E8884F /* livemint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 84D97ECF229E464800E8884F /* livemint.xml */; };
 		84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */; };
+		84E54CF2231650AF00DB0D1C /* bio.rdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E54CF1231650AF00DB0D1C /* bio.rdf */; };
 		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +249,7 @@
 		84D81BD91EFA28E700652332 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D97ECF229E464800E8884F /* livemint.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livemint.xml; sourceTree = "<group>"; };
 		84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDecodingTests.swift; sourceTree = "<group>"; };
+		84E54CF1231650AF00DB0D1C /* bio.rdf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bio.rdf; sourceTree = "<group>"; };
 		84FF5F841EFA285800C15A01 /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F941EFA285800C15A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				849A03C61F0081EA00122600 /* DaringFireball.rss */,
 				842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */,
 				849A03C71F0081EA00122600 /* EMarley.rss */,
+				84E54CF1231650AF00DB0D1C /* bio.rdf */,
 				84D4D23B22055B8100CC4BEB /* atp.rss */,
 				849A03C81F0081EA00122600 /* furbo.html */,
 				849A03C91F0081EA00122600 /* inessential.html */,
@@ -679,6 +682,7 @@
 				849A03D31F0081EA00122600 /* furbo.html in Resources */,
 				849A03E81F01F88600122600 /* ScriptingNews.json in Resources */,
 				845F73AE2131D1A60050A6DD /* rose.json in Resources */,
+				84E54CF2231650AF00DB0D1C /* bio.rdf in Resources */,
 				84D4D23C22055B8100CC4BEB /* atp.rss in Resources */,
 				8476F79621A67C4300C808C3 /* 489.rss in Resources */,
 				846EBEA8208AFA510070D2FD /* pxlnv.json in Resources */,

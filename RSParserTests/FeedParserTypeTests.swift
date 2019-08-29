@@ -99,6 +99,12 @@ class FeedParserTypeTests: XCTestCase {
 		XCTAssertTrue(type == .rss)
 	}
 
+	func testBioRDF() {
+		let d = parserData("bio", "rdf", "http://connect.biorxiv.org/")
+		let type = feedType(d)
+		XCTAssertTrue(type == .rss)
+	}
+
 	// MARK: Atom
 
 	func testDaringFireballAtomType() {
