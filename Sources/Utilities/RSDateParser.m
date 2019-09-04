@@ -409,7 +409,7 @@ static BOOL dateIsPubDate(const char *bytes, NSUInteger numberOfBytes) {
 
 
 static BOOL numberOfBytesIsOutsideReasonableRange(NSUInteger numberOfBytes) {
-	return numberOfBytes < 6 || numberOfBytes > 50;
+	return numberOfBytes < 6 || numberOfBytes > 150;
 }
 
 
