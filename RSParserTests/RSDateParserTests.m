@@ -92,7 +92,17 @@ static NSDate *dateWithValues(NSInteger year, NSInteger month, NSInteger day, NS
 	expectedDateResult = dateWithValues(2010, 11, 17, 13, 40, 07);
 	d = RSDateWithString(@"2010-11-17T08:40:07-05:00");
 	XCTAssertEqualObjects(d, expectedDateResult);
+
 }
 
+- (void)testAtomDateWithMissingTCharacter {
+
+	// https://github.com/brentsimmons/NetNewsWire/issues/908
+	// Atom-style date but missing the middle T character.
+
+	NSDate *expectedDateResult = dateWithValues(2010, 11, 17, 13, 40, 07);
+	NSDate *d = RSDateWithString(@"2010-11-17 08:40:07-05:00");
+	XCTAssertEqualObjects(d, expectedDateResult);
+}
 
 @end

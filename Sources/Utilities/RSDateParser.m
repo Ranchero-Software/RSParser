@@ -408,6 +408,26 @@ static BOOL dateIsPubDate(const char *bytes, NSUInteger numberOfBytes) {
 }
 
 
+static BOOL dateIsW3CDate(const char *bytes, NSUInteger numberOfBytes) {
+
+	// Something like 2010-11-17T08:40:07-05:00
+	// But might be missing T character in the middle.
+	// Looks for four digits in a row followed by a -.
+
+	for (NSUInteger i = 0; i < numberOfBytes; i++) {
+		char ch = bytes[i];
+		if (ch == ' ' || ch == '\r' || ch == '\n' || ch == '\t') {
+			continue;
+		}
+		if (numberOfBytes - i < 5) {
+			return NO;
+		}
+		return isdigit(ch) && isdigit(bytes[i + 1]) && isdigit(bytes[i + 2]) && isdigit(bytes[i + 3]) && bytes[i + 4] == '-';
+	}
+
+	return NO;
+}
+
 static BOOL numberOfBytesIsOutsideReasonableRange(NSUInteger numberOfBytes) {
 	return numberOfBytes < 6 || numberOfBytes > 150;
 }
@@ -420,9 +440,13 @@ NSDate *RSDateWithBytes(const char *bytes, NSUInteger numberOfBytes) {
 	if (numberOfBytesIsOutsideReasonableRange(numberOfBytes))
 		return nil;
 
+	if (dateIsW3CDate(bytes, numberOfBytes)) {
+		return RSParseW3CWithBytes(bytes, numberOfBytes);
+	}
 	if (dateIsPubDate(bytes, numberOfBytes))
 		return RSParsePubDateWithBytes(bytes, numberOfBytes);
 
+	// Fallback, in case our detection fails.
 	return RSParseW3CWithBytes(bytes, numberOfBytes);
 }
 
