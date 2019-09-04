@@ -82,6 +82,7 @@
 		842A42011FB77A5A00EA22E4 /* dcrainmaker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */; };
 		842E5EC322067BE60012DBE1 /* SubsNoTitleAttributes.opml in Resources */ = {isa = PBXBuildFile; fileRef = 842E5EC222067BE50012DBE1 /* SubsNoTitleAttributes.opml */; };
 		84387337200338F500757651 /* curt.json in Resources */ = {isa = PBXBuildFile; fileRef = 84387336200338F500757651 /* curt.json */; };
+		84484F04231F63E5008012C4 /* cloudblog.rss in Resources */ = {isa = PBXBuildFile; fileRef = 84484F03231F63E5008012C4 /* cloudblog.rss */; };
 		844B5B3E1FE9A13C00C7C76A /* 4fsodonline.atom in Resources */ = {isa = PBXBuildFile; fileRef = 844B5B3D1FE9A13B00C7C76A /* 4fsodonline.atom */; };
 		844B5B401FE9A45200C7C76A /* expertopinionent.atom in Resources */ = {isa = PBXBuildFile; fileRef = 844B5B3F1FE9A45200C7C76A /* expertopinionent.atom */; };
 		845213251FCB3C76003B6E93 /* coco.html in Resources */ = {isa = PBXBuildFile; fileRef = 845213241FCB3C75003B6E93 /* coco.html */; };
@@ -214,6 +215,7 @@
 		842A42001FB77A5A00EA22E4 /* dcrainmaker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dcrainmaker.xml; sourceTree = "<group>"; };
 		842E5EC222067BE50012DBE1 /* SubsNoTitleAttributes.opml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SubsNoTitleAttributes.opml; sourceTree = "<group>"; };
 		84387336200338F500757651 /* curt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curt.json; sourceTree = "<group>"; };
+		84484F03231F63E5008012C4 /* cloudblog.rss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cloudblog.rss; sourceTree = "<group>"; };
 		844B5B3D1FE9A13B00C7C76A /* 4fsodonline.atom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 4fsodonline.atom; sourceTree = "<group>"; };
 		844B5B3F1FE9A45200C7C76A /* expertopinionent.atom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = expertopinionent.atom; sourceTree = "<group>"; };
 		845213241FCB3C75003B6E93 /* coco.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = coco.html; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				3845C98222A12AB300F7318E /* donthitsave.xml */,
+				84484F03231F63E5008012C4 /* cloudblog.rss */,
 				84387336200338F500757651 /* curt.json */,
 				849A03C51F0081EA00122600 /* DaringFireball.html */,
 				840FDCB71F0218670041F61B /* DaringFireball.atom */,
@@ -687,6 +690,7 @@
 				8476F79621A67C4300C808C3 /* 489.rss in Resources */,
 				846EBEA8208AFA510070D2FD /* pxlnv.json in Resources */,
 				84D97ED0229E464800E8884F /* livemint.xml in Resources */,
+				84484F04231F63E5008012C4 /* cloudblog.rss in Resources */,
 				844B5B3E1FE9A13C00C7C76A /* 4fsodonline.atom in Resources */,
 				840FDCB81F0218670041F61B /* DaringFireball.atom in Resources */,
 				849A03D91F0081EA00122600 /* sixcolors.html in Resources */,

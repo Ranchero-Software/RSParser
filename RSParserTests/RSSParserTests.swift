@@ -146,4 +146,16 @@ class RSSParserTests: XCTestCase {
 			XCTAssertNil(article.url)
 		}
 	}
+
+	func testAuthorsWithTitlesInside() {
+		// This feed uses atom authors, and we don’t want author/title to be used as item/title.
+		// https://github.com/brentsimmons/NetNewsWire/issues/943
+		let d = parserData("cloudblog", "rss", "https://cloudblog.withgoogle.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		for article in parsedFeed.items {
+			XCTAssertNotEqual(article.title, "Product Manager, Office of the CTO")
+			XCTAssertNotEqual(article.title, "Developer Programs Engineer")
+			XCTAssertNotEqual(article.title, "Product Director")
+		}
+	}
 }

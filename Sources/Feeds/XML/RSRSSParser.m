@@ -26,6 +26,7 @@
 @property (nonatomic) RSSAXParser *parser;
 @property (nonatomic) NSMutableArray *articles;
 @property (nonatomic) BOOL parsingArticle;
+@property (nonatomic) BOOL parsingAuthor;
 @property (nonatomic, readonly) RSParsedArticle *currentArticle;
 @property (nonatomic) BOOL parsingChannelImage;
 @property (nonatomic, readonly) NSDate *currentDate;
@@ -369,7 +370,7 @@ static const NSInteger kEnclosureLength = 10;
 			self.currentArticle.body = [self currentString];
 		}
 	}
-	else if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
+	else if (!self.parsingAuthor && RSSAXEqualTags(localName, kTitle, kTitleLength)) {
 		self.currentArticle.title = [self currentString];
 	}
 	else if (RSSAXEqualTags(localName, kEnclosure, kEnclosureLength)) {
@@ -419,6 +420,11 @@ static const NSInteger kEnclosureLength = 10;
 	else if (!prefix && RSSAXEqualTags(localName, kImage, kImageLength)) {
 		self.parsingChannelImage = YES;
 	}
+	else if (!prefix && RSSAXEqualTags(localName, kAuthor, kAuthorLength)) {
+		if (self.parsingArticle) {
+			self.parsingAuthor = true;
+		}
+	}
 
 	if (!self.parsingChannelImage) {
 		[self.parser beginStoringCharacters];
@@ -450,6 +456,9 @@ static const NSInteger kEnclosureLength = 10;
 
 	else if (self.parsingArticle) {
 		[self addArticleElement:localName prefix:prefix];
+		if (RSSAXEqualTags(localName, kAuthor, kAuthorLength)) {
+			self.parsingAuthor = NO;
+		}
 	}
 
 	else if (!self.parsingChannelImage) {
