@@ -281,19 +281,13 @@ static const NSInteger kEnclosureLength = 10;
 	 and not even a relative path. This may need to evolve over time as we find
 	 feeds broken in different ways.*/
 
-	if ([s hasPrefix:@"http"]) {
-		return YES;
-	}
-	NSString *lowercaseString = [s lowercaseString];
-	if ([lowercaseString hasPrefix:@"tag:"]) { // A common non-URL guid form
+	if (![s rsparser_contains:@"/"]) {
+		// This seems to be just about the best possible check.
+		// Bad guids are often just integers, for instance.
 		return NO;
 	}
-	if ([lowercaseString hasPrefix:@"http"]) {
-		return YES;
-	}
-	if ([s rsparser_contains:@":"] && ![s rsparser_contains:@"/"]) {
-		// Example: <guid>cocoa-dom:tcmportmapper</guid>
-		// From https://coding.monkeydom.de/posts.rss
+
+	if ([s.lowercaseString hasPrefix:@"tag:"]) { // A common non-URL guid form
 		return NO;
 	}
 	return YES;
