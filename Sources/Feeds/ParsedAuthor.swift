@@ -21,5 +21,24 @@ public struct ParsedAuthor: Hashable {
 		self.avatarURL = avatarURL
 		self.emailAddress = emailAddress
 	}
-	
+
+	// MARK: - Hashable
+
+	public func hash(into hasher: inout Hasher) {
+		if let name = name {
+			hasher.combine(name)
+		}
+		else if let url = url {
+			hasher.combine(url)
+		}
+		else if let emailAddress = emailAddress {
+			hasher.combine(emailAddress)
+		}
+		else if let avatarURL = avatarURL {
+			hasher.combine(avatarURL)
+		}
+		else {
+			hasher.combine("")
+		}
+	}
 }

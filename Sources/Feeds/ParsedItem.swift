@@ -47,7 +47,18 @@ public struct ParsedItem: Hashable {
 		self.authors = authors
 		self.tags = tags
 		self.attachments = attachments
-		
+	}
+
+	// MARK: - Hashable
+
+	public func hash(into hasher: inout Hasher) {
+		if let syncServiceID = syncServiceID {
+			hasher.combine(syncServiceID)
+		}
+		else {
+			hasher.combine(uniqueID)
+			hasher.combine(feedURL)
+		}
 	}
 }
 
