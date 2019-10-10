@@ -11,9 +11,10 @@ PROVISIONING_PROFILE_SPECIFIER =
 // DeveloperSettings.xcconfig is #included here
 #include? "../../../SharedXcodeSettings/DeveloperSettings.xcconfig"
 
-INFOPLIST_FILE = RSParser/Info.plist
+INFOPLIST_FILE = Info.plist
 PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RSParser
 
+HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
 SKIP_INSTALL = YES
 DYLIB_COMPATIBILITY_VERSION = 1

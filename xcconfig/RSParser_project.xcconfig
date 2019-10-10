@@ -1,6 +1,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-CODE_SIGN_IDENTITY =
 
     // developers can locally override the Xcode settings for code signing
     // by creating a DeveloperSettings.xcconfig file locally at the appropriate path
@@ -28,6 +27,7 @@ CODE_SIGN_IDENTITY =
 SDKROOT = macosx
 MACOSX_DEPLOYMENT_TARGET = 10.13
 IPHONEOS_DEPLOYMENT_TARGET = 13.0
+SUPPORTED_PLATFORMS = macosx iphoneos iphonesimulator
 
 CLANG_ENABLE_OBJC_WEAK = YES
 SWIFT_VERSION = 5.1
