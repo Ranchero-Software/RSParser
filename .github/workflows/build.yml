@@ -1,0 +1,27 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v1
+
+    - name: Switch to Xcode 11
+      run: sudo xcode-select -s /Applications/Xcode_11.app
+
+    - name: Build Version
+      run: xcodebuild -version
+
+    - name: Build Settings
+      run: xcodebuild -showBuildSettings
+      
+    - name: Build SDK
+      run: xcodebuild -showsdks
+
+    - name: Run Build
+      run: xcodebuild -scheme RSParser test -showBuildTimingSummary CODE_SIGN_IDENTITY=
