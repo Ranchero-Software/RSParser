@@ -138,6 +138,7 @@
 		1AF5AA7B22B17D2B0058F6C8 /* RSParser_mac_target.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RSParser_mac_target.xcconfig; sourceTree = "<group>"; };
 		1AF5AA7C22B17D440058F6C8 /* RSParserTests_target.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RSParserTests_target.xcconfig; sourceTree = "<group>"; };
 		3845C98222A12AB300F7318E /* donthitsave.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = donthitsave.xml; sourceTree = "<group>"; };
+		518B2EAB2351372A00400001 /* RSParser_project_test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RSParser_project_test.xcconfig; sourceTree = "<group>"; };
 		6655164C2027549600E6ACB0 /* ParserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserData.h; path = Sources/ParserData.h; sourceTree = "<group>"; };
 		6655164D2027549600E6ACB0 /* RSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSParser.h; path = Sources/RSParser.h; sourceTree = "<group>"; };
 		6655164E2027549600E6ACB0 /* ParserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserData.m; path = Sources/ParserData.m; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 			children = (
 				1AF5AA7722B17C0B0058F6C8 /* RSParser_project.xcconfig */,
 				1AF5AA7922B17C9E0058F6C8 /* RSParser_project_debug.xcconfig */,
+				518B2EAB2351372A00400001 /* RSParser_project_test.xcconfig */,
 				1AF5AA7A22B17CEE0058F6C8 /* RSParser_project_release.xcconfig */,
 				1AF5AA7B22B17D2B0058F6C8 /* RSParser_mac_target.xcconfig */,
 				1AF5AA7C22B17D440058F6C8 /* RSParserTests_target.xcconfig */,
@@ -798,6 +800,27 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		51EC89432351207F0061B6F6 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 518B2EAB2351372A00400001 /* RSParser_project_test.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
+		51EC89442351207F0061B6F6 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF5AA7B22B17D2B0058F6C8 /* RSParser_mac_target.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
+		51EC89452351207F0061B6F6 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF5AA7C22B17D440058F6C8 /* RSParserTests_target.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
 		84FF5F961EFA285800C15A01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AF5AA7922B17C9E0058F6C8 /* RSParser_project_debug.xcconfig */;
@@ -847,6 +870,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84FF5F961EFA285800C15A01 /* Debug */,
+				51EC89432351207F0061B6F6 /* Test */,
 				84FF5F971EFA285800C15A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -856,6 +880,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84FF5F991EFA285800C15A01 /* Debug */,
+				51EC89442351207F0061B6F6 /* Test */,
 				84FF5F9A1EFA285800C15A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -865,6 +890,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84FF5F9C1EFA285800C15A01 /* Debug */,
+				51EC89452351207F0061B6F6 /* Test */,
 				84FF5F9D1EFA285800C15A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
