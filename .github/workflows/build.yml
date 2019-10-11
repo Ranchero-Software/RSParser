@@ -6,7 +6,10 @@ jobs:
   build:
 
     runs-on: macOS-latest
-    
+    strategy: 
+      matrix:
+        destination: ['platform=macOS', 'platform=iOS Simulator,OS=13.0,name=iPhone 11']
+
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
@@ -22,6 +25,11 @@ jobs:
       
     - name: Build SDK
       run: xcodebuild -showsdks
+    
+    - name: Show Available Destinations
+      run: xcodebuild -scheme RSParser -showdestinations
 
     - name: Run Build
-      run: xcodebuild -scheme RSParser test -showBuildTimingSummary CODE_SIGN_IDENTITY=
+      env:
+        destination: ${{ matrix.destination }}
+      run: xcodebuild -scheme RSParser -destination "${destination}" -showBuildTimingSummary CODE_SIGN_IDENTITY=
