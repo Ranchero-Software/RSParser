@@ -59,10 +59,8 @@ static NSString *kTypeKey = @"type";
 
 	_baseURLString = urlString;
 	_tags = tags;
-	_faviconLink = [self resolvedLinkFromFirstLinkTagWithMatchingRel:kShortcutIconRelValue];
-	if (_faviconLink == nil) {
-		_faviconLink = [self resolvedLinkFromFirstLinkTagWithMatchingRel:kIconRelValue];
-	}
+
+	_faviconLinks = [self resolvedLinksFromLinkTagsWithMatchingRel:kIconRelValue];
 	
 	NSArray *appleTouchIconTags = [self appleTouchIconTags];
 	_appleTouchIcons = objectsOfClassWithTags([RSHTMLMetadataAppleTouchIcon class], appleTouchIconTags, urlString);
@@ -76,6 +74,9 @@ static NSString *kTypeKey = @"type";
 	return self;
 }
 
+- (NSString *)faviconLink {
+	return self.faviconLinks.firstObject;
+}
 
 #pragma mark - Private
 
@@ -95,6 +96,34 @@ static NSString *kTypeKey = @"type";
 	}
 
 	return nil;
+}
+
+
+- (NSArray<RSHTMLTag *> *)linkTagsWithMatchingRel:(NSString *)valueToMatch {
+
+	// Case-insensitive; matches a whitespace-delimited word
+
+	NSMutableArray<RSHTMLTag *> *tags = [NSMutableArray array];
+
+	for (RSHTMLTag *tag in self.tags) {
+
+		if (tag.type != RSHTMLTagTypeLink) {
+			continue;
+		}
+		NSString *oneRelValue = relValue(tag.attributes);
+		if (oneRelValue) {
+			NSArray *relValues = [oneRelValue componentsSeparatedByCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+
+			for (NSString *relValue in relValues) {
+				if ([relValue compare:valueToMatch options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+					[tags addObject:tag];
+					break;
+				}
+			}
+		}
+	}
+
+	return tags;
 }
 
 
@@ -153,6 +182,19 @@ static NSString *kTypeKey = @"type";
 
 	RSHTMLTag *tag = [self firstLinkTagWithMatchingRel:relValue];
 	return absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
+}
+
+
+- (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue {
+
+	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:relValue];
+	NSMutableArray *links = [NSMutableArray array];
+
+	for (RSHTMLTag *tag in tags) {
+		[links addObject:absoluteURLStringWithDictionary(tag.attributes, self.baseURLString)];
+	}
+
+	return links;
 }
 
 @end
