@@ -17,7 +17,6 @@ static NSArray *objectsOfClassWithTags(Class class, NSArray *tags, NSString *bas
 static NSString *relValue(NSDictionary *d);
 static BOOL typeIsFeedType(NSString *type);
 
-static NSString *kShortcutIconRelValue = @"shortcut icon";
 static NSString *kIconRelValue = @"icon";
 static NSString *kHrefKey = @"href";
 static NSString *kSrcKey = @"src";
@@ -74,30 +73,7 @@ static NSString *kTypeKey = @"type";
 	return self;
 }
 
-- (NSString *)faviconLink {
-	return self.faviconLinks.firstObject;
-}
-
 #pragma mark - Private
-
-- (RSHTMLTag *)firstLinkTagWithMatchingRel:(NSString *)valueToMatch {
-
-	// Case-insensitive.
-
-	for (RSHTMLTag *tag in self.tags) {
-
-		if (tag.type != RSHTMLTagTypeLink) {
-			continue;
-		}
-		NSString *oneRelValue = relValue(tag.attributes);
-		if (oneRelValue && [oneRelValue compare:valueToMatch options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-			return tag;
-		}
-	}
-
-	return nil;
-}
-
 
 - (NSArray<RSHTMLTag *> *)linkTagsWithMatchingRel:(NSString *)valueToMatch {
 
@@ -177,21 +153,17 @@ static NSString *kTypeKey = @"type";
 	return tags;
 }
 
-
-- (NSString *)resolvedLinkFromFirstLinkTagWithMatchingRel:(NSString *)relValue {
-
-	RSHTMLTag *tag = [self firstLinkTagWithMatchingRel:relValue];
-	return absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
-}
-
-
 - (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue {
 
 	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:relValue];
 	NSMutableArray *links = [NSMutableArray array];
 
 	for (RSHTMLTag *tag in tags) {
-		[links addObject:absoluteURLStringWithDictionary(tag.attributes, self.baseURLString)];
+		NSString *value = absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
+
+		if (![links containsObject:value]) {
+			[links addObject:value];
+		}
 	}
 
 	return links;
