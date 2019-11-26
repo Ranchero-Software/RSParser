@@ -197,7 +197,7 @@ static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLStr
 	}
 
 	NSURL *absoluteURL = [NSURL URLWithString:relativeURLString relativeToURL:url];
-	return absoluteURL.absoluteString;
+	return absoluteURL.standardizedURL.absoluteString;
 }
 
 
