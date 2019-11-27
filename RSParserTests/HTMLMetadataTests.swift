@@ -16,7 +16,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("DaringFireball", "html", "http://daringfireball.net/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLink, "http://daringfireball.net/graphics/favicon.ico?v=005")
+		XCTAssertEqual(metadata.faviconLinks.first, "http://daringfireball.net/graphics/favicon.ico?v=005")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 
@@ -40,7 +40,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("furbo", "html", "http://furbo.org/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLink, "http://furbo.org/favicon.ico")
+		XCTAssertEqual(metadata.faviconLinks.first, "http://furbo.org/favicon.ico")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 
@@ -63,7 +63,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("inessential", "html", "http://inessential.com/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertNil(metadata.faviconLink)
+		XCTAssertNil(metadata.faviconLinks.first)
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 		let feedLink = metadata.feedLinks.first!
@@ -97,7 +97,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("sixcolors", "html", "http://sixcolors.com/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLink, "https://sixcolors.com/images/favicon.ico")
+		XCTAssertEqual(metadata.faviconLinks.first, "https://sixcolors.com/images/favicon.ico")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1);
 		let feedLink = metadata.feedLinks.first!

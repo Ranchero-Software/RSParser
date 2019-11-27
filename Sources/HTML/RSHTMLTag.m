@@ -36,4 +36,8 @@ NSString *RSHTMLTagNameMeta = @"meta";
 	return [[self alloc] initWithType:RSHTMLTagTypeMeta attributes:attributes];
 }
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"<%@: %p> type: %ld attributes: %@", NSStringFromClass([self class]), self, (long)self.type, self.attributes];
+}
+
 @end

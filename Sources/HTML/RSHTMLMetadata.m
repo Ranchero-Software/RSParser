@@ -17,7 +17,6 @@ static NSArray *objectsOfClassWithTags(Class class, NSArray *tags, NSString *bas
 static NSString *relValue(NSDictionary *d);
 static BOOL typeIsFeedType(NSString *type);
 
-static NSString *kShortcutIconRelValue = @"shortcut icon";
 static NSString *kIconRelValue = @"icon";
 static NSString *kHrefKey = @"href";
 static NSString *kSrcKey = @"src";
@@ -59,10 +58,8 @@ static NSString *kTypeKey = @"type";
 
 	_baseURLString = urlString;
 	_tags = tags;
-	_faviconLink = [self resolvedLinkFromFirstLinkTagWithMatchingRel:kShortcutIconRelValue];
-	if (_faviconLink == nil) {
-		_faviconLink = [self resolvedLinkFromFirstLinkTagWithMatchingRel:kIconRelValue];
-	}
+
+	_faviconLinks = [self resolvedLinksFromLinkTagsWithMatchingRel:kIconRelValue];
 	
 	NSArray *appleTouchIconTags = [self appleTouchIconTags];
 	_appleTouchIcons = objectsOfClassWithTags([RSHTMLMetadataAppleTouchIcon class], appleTouchIconTags, urlString);
@@ -76,12 +73,13 @@ static NSString *kTypeKey = @"type";
 	return self;
 }
 
-
 #pragma mark - Private
 
-- (RSHTMLTag *)firstLinkTagWithMatchingRel:(NSString *)valueToMatch {
+- (NSArray<RSHTMLTag *> *)linkTagsWithMatchingRel:(NSString *)valueToMatch {
 
-	// Case-insensitive.
+	// Case-insensitive; matches a whitespace-delimited word
+
+	NSMutableArray<RSHTMLTag *> *tags = [NSMutableArray array];
 
 	for (RSHTMLTag *tag in self.tags) {
 
@@ -89,12 +87,19 @@ static NSString *kTypeKey = @"type";
 			continue;
 		}
 		NSString *oneRelValue = relValue(tag.attributes);
-		if (oneRelValue && [oneRelValue compare:valueToMatch options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-			return tag;
+		if (oneRelValue) {
+			NSArray *relValues = [oneRelValue componentsSeparatedByCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+
+			for (NSString *relValue in relValues) {
+				if ([relValue compare:valueToMatch options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+					[tags addObject:tag];
+					break;
+				}
+			}
 		}
 	}
 
-	return nil;
+	return tags;
 }
 
 
@@ -148,11 +153,20 @@ static NSString *kTypeKey = @"type";
 	return tags;
 }
 
+- (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue {
 
-- (NSString *)resolvedLinkFromFirstLinkTagWithMatchingRel:(NSString *)relValue {
+	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:relValue];
+	NSMutableArray *links = [NSMutableArray array];
 
-	RSHTMLTag *tag = [self firstLinkTagWithMatchingRel:relValue];
-	return absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
+	for (RSHTMLTag *tag in tags) {
+		NSString *value = absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
+
+		if (![links containsObject:value]) {
+			[links addObject:value];
+		}
+	}
+
+	return links;
 }
 
 @end
@@ -183,7 +197,7 @@ static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLStr
 	}
 
 	NSURL *absoluteURL = [NSURL URLWithString:relativeURLString relativeToURL:url];
-	return absoluteURL.absoluteString;
+	return absoluteURL.standardizedURL.absoluteString;
 }
 
 

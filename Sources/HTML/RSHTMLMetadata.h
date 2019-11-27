@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) NSString *baseURLString;
 @property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
 
-@property (nonatomic, readonly) NSString *faviconLink;
+@property (nonatomic, readonly) NSArray <NSString *> *faviconLinks;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 
