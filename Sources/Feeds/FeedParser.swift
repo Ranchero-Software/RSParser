@@ -69,18 +69,18 @@ public struct FeedParser {
 		catch { throw error }
 	}
 
-	public static func parse(_ parserData: ParserData, _ callback: @escaping FeedParserCallback) {
+	public static func parse(_ parserData: ParserData, _ completion: @escaping FeedParserCallback) {
 
 		DispatchQueue.global(qos: .background).async {
 			do {
 				let parsedFeed = try parse(parserData)
 				DispatchQueue.main.async {
-					callback(parsedFeed, nil)
+					completion(parsedFeed, nil)
 				}
 			}
 			catch {
 				DispatchQueue.main.async {
-					callback(nil, error)
+					completion(nil, error)
 				}
 			}
 		}
