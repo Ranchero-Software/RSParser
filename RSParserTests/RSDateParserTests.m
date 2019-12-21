@@ -105,4 +105,11 @@ static NSDate *dateWithValues(NSInteger year, NSInteger month, NSInteger day, NS
 	XCTAssertEqualObjects(d, expectedDateResult);
 }
 
+- (void)testFeedbinDate {
+
+	NSDate *expectedDateResult = dateWithValues(2019, 9, 27, 21, 01, 48);
+	NSDate *d = RSDateWithString(@"2019-09-27T21:01:48.000000Z");
+	XCTAssertEqualObjects(d, expectedDateResult);
+}
+
 @end
