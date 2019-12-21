@@ -160,7 +160,9 @@ static NSString *kTypeKey = @"type";
 
 	for (RSHTMLTag *tag in tags) {
 		NSString *value = absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
-
+		if (RSParserStringIsEmpty(value)) {
+			continue;
+		}
 		if (![links containsObject:value]) {
 			[links addObject:value];
 		}
