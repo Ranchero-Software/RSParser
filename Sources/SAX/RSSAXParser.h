@@ -28,6 +28,7 @@
 
 - (void)saxParser:(RSSAXParser *)SAXParser XMLEndElement:(const unsigned char *)localName prefix:(const unsigned char *)prefix uri:(const unsigned char *)uri;
 
+// Length is guaranteed to be greater than 0.
 - (void)saxParser:(RSSAXParser *)SAXParser XMLCharactersFound:(const unsigned char *)characters length:(NSUInteger)length;
 
 - (void)saxParserDidReachEndOfDocument:(RSSAXParser *)SAXParser; /*If canceled, may not get called (but might).*/

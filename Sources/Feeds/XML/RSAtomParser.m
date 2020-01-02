@@ -646,6 +646,10 @@ static BOOL equalBytes(const void *bytes1, const void *bytes2, NSUInteger length
 - (void)saxParser:(RSSAXParser *)SAXParser XMLCharactersFound:(const unsigned char *)characters length:(NSUInteger)length {
 
 	if (self.parsingXHTML) {
+		NSString *s = [[NSString alloc] initWithBytesNoCopy:(void *)characters length:length encoding:NSUTF8StringEncoding freeWhenDone:NO];
+		if (s == nil) {
+			return;
+		}
 		[self.xhtmlString appendString:[[NSString alloc] initWithBytesNoCopy:(void *)characters length:length encoding:NSUTF8StringEncoding freeWhenDone:NO]];
 	}
 }

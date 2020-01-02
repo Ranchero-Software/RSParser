@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLEndElement:(nullable const unsigned char *)localName;
 
+// Length is guaranteed to be greater than 0.
 - (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLCharactersFound:(nullable const unsigned char *)characters length:(NSUInteger)length;
 
 - (void)saxParserDidReachEndOfDocument:(RSSAXHTMLParser *)SAXParser; // If canceled, may not get called (but might).

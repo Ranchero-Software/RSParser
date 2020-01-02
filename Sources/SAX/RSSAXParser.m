@@ -242,6 +242,10 @@ BOOL RSSAXEqualTags(const xmlChar *localName, const char *tag, NSInteger tagLeng
 
 - (void)xmlCharactersFound:(const xmlChar *)ch length:(NSUInteger)length {
 
+	if (length < 1) {
+		return;
+	}
+	
 	@autoreleasepool {
 		if (self.storingCharacters) {
 			[self.characters appendBytes:(const void *)ch length:length];
