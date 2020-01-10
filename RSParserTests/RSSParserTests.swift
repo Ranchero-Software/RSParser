@@ -158,4 +158,15 @@ class RSSParserTests: XCTestCase {
 			XCTAssertNotEqual(article.title, "Product Director")
 		}
 	}
+
+//	func testFeedWithGB2312Encoding() {
+//		// This feed has an encoding we don’t run into very often.
+//		// https://github.com/Ranchero-Software/NetNewsWire/issues/1477
+//		let d = parserData("kc0011", "rss", "http://kc0011.net/")
+//		let parsedFeed = try! FeedParser.parse(d)!
+//		XCTAssert(parsedFeed.items.count > 0)
+//		for article in parsedFeed.items {
+//			XCTAssertNotNil(article.contentHTML)
+//		}
+//	}
 }
