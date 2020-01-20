@@ -120,6 +120,7 @@
 		84DCCC661FF80E0100D2DDF1 /* EntityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCCC651FF80E0100D2DDF1 /* EntityDecodingTests.swift */; };
 		84E54CF2231650AF00DB0D1C /* bio.rdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E54CF1231650AF00DB0D1C /* bio.rdf */; };
 		84FF5F8E1EFA285800C15A01 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5F841EFA285800C15A01 /* RSParser.framework */; };
+		B2E1D50523D5555900B4D144 /* String+RSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1D50423D5555900B4D144 /* String+RSParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +259,7 @@
 		84FF5F841EFA285800C15A01 /* RSParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F8D1EFA285800C15A01 /* RSParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF5F941EFA285800C15A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E1D50423D5555900B4D144 /* String+RSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+RSParser.swift"; path = "Sources/Utilities/String+RSParser.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +427,7 @@
 				665516CA20287E8C00E6ACB0 /* RSDateParser.m */,
 				665516C420287E8C00E6ACB0 /* RSParserInternal.h */,
 				665516C920287E8C00E6ACB0 /* RSParserInternal.m */,
+				B2E1D50423D5555900B4D144 /* String+RSParser.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -627,7 +630,7 @@
 					84FF5F831EFA285800C15A01 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0930;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					84FF5F8C1EFA285800C15A01 = {
 						CreatedOnToolsVersion = 9.0;
@@ -767,6 +770,7 @@
 				66551664202754B800E6ACB0 /* ParsedItem.swift in Sources */,
 				665516B720287E5700E6ACB0 /* RSOPMLError.m in Sources */,
 				6655166A202754DB00E6ACB0 /* JSONFeedParser.swift in Sources */,
+				B2E1D50523D5555900B4D144 /* String+RSParser.swift in Sources */,
 				66551685202754EB00E6ACB0 /* AtomParser.swift in Sources */,
 				66551687202754EB00E6ACB0 /* RSParsedEnclosure.m in Sources */,
 				6655169620287E1700E6ACB0 /* RSSAXHTMLParser.m in Sources */,

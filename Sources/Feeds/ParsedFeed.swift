@@ -22,5 +22,19 @@ public struct ParsedFeed {
 	public let expired: Bool
 	public let hubs: Set<ParsedHub>?
 	public let items: Set<ParsedItem>
-}
 
+	public init(type: FeedType, title: String?, homePageURL: String?, feedURL: String?, feedDescription: String?, nextURL: String?, iconURL: String?, faviconURL: String?, authors: Set<ParsedAuthor>?, expired: Bool, hubs: Set<ParsedHub>?, items: Set<ParsedItem>) {
+		self.type = type
+		self.title = title
+		self.homePageURL = homePageURL?.nilIfEmptyOrWhitespace
+		self.feedURL = feedURL
+		self.feedDescription = feedDescription
+		self.nextURL = nextURL
+		self.iconURL = iconURL
+		self.faviconURL = faviconURL
+		self.authors = authors
+		self.expired = expired
+		self.hubs = hubs
+		self.items = items
+	}
+}
