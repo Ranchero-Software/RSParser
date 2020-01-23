@@ -12,7 +12,7 @@
 
 @implementation RSParsedFeed
 
-- (instancetype)initWithURLString:(NSString *)urlString title:(NSString *)title link:(NSString *)link language:(NSString *)language articles:(NSSet *)articles {
+- (instancetype)initWithURLString:(NSString *)urlString title:(NSString *)title link:(NSString *)link language:(NSString *)language articles:(NSArray *)articles {
 	
 	self = [super init];
 	if (!self) {

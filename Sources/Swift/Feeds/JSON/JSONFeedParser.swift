@@ -117,11 +117,11 @@ private extension JSONFeedParser {
 		return hubs.isEmpty ? nil : Set(hubs)
 	}
 
-	static func parseItems(_ itemsArray: JSONArray, _ feedURL: String) -> Set<ParsedItem> {
+	static func parseItems(_ itemsArray: JSONArray, _ feedURL: String) -> [ParsedItem] {
 
-		return Set(itemsArray.compactMap { (oneItemDictionary) -> ParsedItem? in
+		return itemsArray.compactMap { (oneItemDictionary) -> ParsedItem? in
 			return parseItem(oneItemDictionary, feedURL)
-		})
+		}
 	}
 
 	static func parseItem(_ itemDictionary: JSONDictionary, _ feedURL: String) -> ParsedItem? {

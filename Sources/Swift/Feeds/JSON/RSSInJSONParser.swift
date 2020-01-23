@@ -62,12 +62,12 @@ public struct RSSInJSONParser {
 
 private extension RSSInJSONParser {
 
-	static func parseItems(_ itemsObject: JSONArray, _ feedURL: String) -> Set<ParsedItem> {
+	static func parseItems(_ itemsObject: JSONArray, _ feedURL: String) -> [ParsedItem] {
 
-		return Set(itemsObject.compactMap{ (oneItemDictionary) -> ParsedItem? in
+		return itemsObject.compactMap{ (oneItemDictionary) -> ParsedItem? in
 
 			return parsedItemWithDictionary(oneItemDictionary, feedURL)
-		})
+		}
 	}
 
 	static func parsedItemWithDictionary(_ itemDictionary: JSONDictionary, _ feedURL: String) -> ParsedItem? {

@@ -27,11 +27,9 @@ struct RSParsedFeedTransformer {
 
 private extension RSParsedFeedTransformer {
 
-	static func parsedItems(_ parsedArticles: Set<RSParsedArticle>) -> Set<ParsedItem> {
+	static func parsedItems(_ parsedArticles: [RSParsedArticle]) -> [ParsedItem] {
 
-		// Create Set<ParsedItem> from Set<RSParsedArticle>
-
-		return Set(parsedArticles.map(parsedItem))
+		return parsedArticles.map(parsedItem)
 	}
 
 	static func parsedItem(_ parsedArticle: RSParsedArticle) -> ParsedItem {
