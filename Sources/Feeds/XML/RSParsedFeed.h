@@ -18,6 +18,6 @@
 @property (nonatomic, readonly, nullable) NSString *title;
 @property (nonatomic, readonly, nullable) NSString *link;
 @property (nonatomic, readonly, nullable) NSString *language;
-@property (nonatomic, readonly, nonnull) NSSet <RSParsedArticle *>*articles;
+@property (nonatomic, readonly, nonnull) NSArray <RSParsedArticle *>*articles;
 
 @end
