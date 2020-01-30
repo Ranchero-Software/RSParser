@@ -30,6 +30,8 @@ static NSString *kRSSSuffix = @"/rss+xml";
 static NSString *kAtomSuffix = @"/atom+xml";
 static NSString *kJSONSuffix = @"/json";
 static NSString *kTypeKey = @"type";
+static NSString *kSVGMimeType = @"image/svg+xml";
+static NSString *kSVGExtension = @"svg";
 
 @interface RSHTMLMetadataAppleTouchIcon ()
 
@@ -59,8 +61,8 @@ static NSString *kTypeKey = @"type";
 	_baseURLString = urlString;
 	_tags = tags;
 
-	_faviconLinks = [self resolvedLinksFromLinkTagsWithMatchingRel:kIconRelValue];
-	
+	_faviconLinks = [self resolvedLinksFromLinkTagsWithMatchingRel:kIconRelValue disallowedTypes:@[kSVGMimeType, kSVGExtension]];
+
 	NSArray *appleTouchIconTags = [self appleTouchIconTags];
 	_appleTouchIcons = objectsOfClassWithTags([RSHTMLMetadataAppleTouchIcon class], appleTouchIconTags, urlString);
 
@@ -153,13 +155,20 @@ static NSString *kTypeKey = @"type";
 	return tags;
 }
 
-- (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue {
+- (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue disallowedTypes:(nullable NSArray<NSString *> *)disallowedTypes {
 
 	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:relValue];
 	NSMutableArray *links = [NSMutableArray array];
 
 	for (RSHTMLTag *tag in tags) {
+		NSString *type = tag.attributes[@"type"];
+		if (type && [disallowedTypes containsObject:type]) {
+			continue;
+		}
 		NSString *value = absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
+		if (!type && [disallowedTypes containsObject:value.pathExtension]) { // If they forget the type attribute
+			continue;
+		}
 		if (RSParserStringIsEmpty(value)) {
 			continue;
 		}
