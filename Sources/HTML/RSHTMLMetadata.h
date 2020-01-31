@@ -11,6 +11,7 @@
 
 @class RSHTMLMetadataFeedLink;
 @class RSHTMLMetadataAppleTouchIcon;
+@class RSHTMLMetadataFavicon;
 @class RSHTMLOpenGraphProperties;
 @class RSHTMLOpenGraphImage;
 @class RSHTMLTag;
@@ -23,7 +24,7 @@
 @property (nonatomic, readonly) NSString *baseURLString;
 @property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
 
-@property (nonatomic, readonly) NSArray <NSString *> *faviconLinks;
+@property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *faviconLinks;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 
@@ -48,6 +49,13 @@
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *type;
 @property (nonatomic, readonly) NSString *urlString; // Absolute.
+
+@end
+
+@interface RSHTMLMetadataFavicon : NSObject
+
+@property (nonatomic, readonly)	NSString *type;
+@property (nonatomic, readonly) NSString *urlString;
 
 @end
 
