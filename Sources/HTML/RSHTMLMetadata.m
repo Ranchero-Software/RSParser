@@ -303,6 +303,7 @@ static BOOL typeIsFeedType(NSString *type) {
 @implementation RSHTMLMetadataFavicon
 
 - (instancetype)initWithTag:(RSHTMLTag *)tag baseURLString:(NSString *)baseURLString {
+
 	self = [super init];
 	if (!self) {
 		return nil;
@@ -313,7 +314,6 @@ static BOOL typeIsFeedType(NSString *type) {
 	_type = [d rsparser_objectForCaseInsensitiveKey:kTypeKey];
 
 	return self;
-
 }
 
 @end
