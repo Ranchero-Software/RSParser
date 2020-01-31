@@ -24,7 +24,8 @@
 @property (nonatomic, readonly) NSString *baseURLString;
 @property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
 
-@property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *faviconLinks;
+@property (nonatomic, readonly) NSArray <NSString *> *faviconLinks DEPRECATED_MSG_ATTRIBUTE("Use the favicons property instead.");
+@property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *favicons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 

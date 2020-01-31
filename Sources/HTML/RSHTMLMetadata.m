@@ -64,7 +64,7 @@ static NSString *kTypeKey = @"type";
 	_baseURLString = urlString;
 	_tags = tags;
 
-	_faviconLinks = [self resolvedFaviconLinks];
+	_favicons = [self resolvedFaviconLinks];
 	
 	NSArray *appleTouchIconTags = [self appleTouchIconTags];
 	_appleTouchIcons = objectsOfClassWithTags([RSHTMLMetadataAppleTouchIcon class], appleTouchIconTags, urlString);
@@ -156,6 +156,16 @@ static NSString *kTypeKey = @"type";
 	}
 
 	return tags;
+}
+
+- (NSArray<NSString *> *)faviconLinks {
+	NSMutableArray *urls = [NSMutableArray array];
+
+	for (RSHTMLMetadataFavicon *favicon in self.favicons) {
+		[urls addObject:favicon.urlString];
+	}
+
+	return urls;
 }
 
 - (NSArray<RSHTMLMetadataFavicon *> *)resolvedFaviconLinks {
