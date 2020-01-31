@@ -55,7 +55,7 @@
 
 @interface RSHTMLMetadataFavicon : NSObject
 
-@property (nonatomic, readonly)	NSString *type;
+@property (nonatomic, readonly) NSString *type;
 @property (nonatomic, readonly) NSString *urlString;
 
 @end
