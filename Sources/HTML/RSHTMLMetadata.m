@@ -44,6 +44,11 @@ static NSString *kTypeKey = @"type";
 
 @end
 
+@interface RSHTMLMetadataFavicon ()
+
+- (instancetype)initWithTag:(RSHTMLTag *)tag baseURLString:(NSString *)baseURLString;
+
+@end
 
 @implementation RSHTMLMetadata
 
@@ -59,7 +64,7 @@ static NSString *kTypeKey = @"type";
 	_baseURLString = urlString;
 	_tags = tags;
 
-	_faviconLinks = [self resolvedLinksFromLinkTagsWithMatchingRel:kIconRelValue];
+	_favicons = [self resolvedFaviconLinks];
 	
 	NSArray *appleTouchIconTags = [self appleTouchIconTags];
 	_appleTouchIcons = objectsOfClassWithTags([RSHTMLMetadataAppleTouchIcon class], appleTouchIconTags, urlString);
@@ -83,7 +88,7 @@ static NSString *kTypeKey = @"type";
 
 	for (RSHTMLTag *tag in self.tags) {
 
-		if (tag.type != RSHTMLTagTypeLink) {
+		if (tag.type != RSHTMLTagTypeLink || RSParserStringIsEmpty(tag.attributes[kHrefKey])) {
 			continue;
 		}
 		NSString *oneRelValue = relValue(tag.attributes);
@@ -103,7 +108,7 @@ static NSString *kTypeKey = @"type";
 }
 
 
-- (NSArray *)appleTouchIconTags {
+- (NSArray<RSHTMLTag *> *)appleTouchIconTags {
 
 	NSMutableArray *tags = [NSMutableArray new];
 
@@ -122,7 +127,7 @@ static NSString *kTypeKey = @"type";
 }
 
 
-- (NSArray *)feedLinkTags {
+- (NSArray<RSHTMLTag *> *)feedLinkTags {
 
 	NSMutableArray *tags = [NSMutableArray new];
 
@@ -153,18 +158,28 @@ static NSString *kTypeKey = @"type";
 	return tags;
 }
 
-- (NSArray<NSString *> *)resolvedLinksFromLinkTagsWithMatchingRel:(NSString *)relValue {
+- (NSArray<NSString *> *)faviconLinks {
+	NSMutableArray *urls = [NSMutableArray array];
 
-	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:relValue];
+	for (RSHTMLMetadataFavicon *favicon in self.favicons) {
+		[urls addObject:favicon.urlString];
+	}
+
+	return urls;
+}
+
+- (NSArray<RSHTMLMetadataFavicon *> *)resolvedFaviconLinks {
+	NSArray<RSHTMLTag *> *tags = [self linkTagsWithMatchingRel:kIconRelValue];
 	NSMutableArray *links = [NSMutableArray array];
+	NSMutableSet<NSString *> *seenHrefs = [NSMutableSet setWithCapacity:tags.count];
 
 	for (RSHTMLTag *tag in tags) {
-		NSString *value = absoluteURLStringWithDictionary(tag.attributes, self.baseURLString);
-		if (RSParserStringIsEmpty(value)) {
-			continue;
-		}
-		if (![links containsObject:value]) {
-			[links addObject:value];
+		RSHTMLMetadataFavicon *link = [[RSHTMLMetadataFavicon alloc] initWithTag:tag baseURLString:self.baseURLString];
+		NSString *urlString = link.urlString;
+
+		if (![seenHrefs containsObject:urlString]) {
+			[links addObject:link];
+			[seenHrefs addObject:urlString];
 		}
 	}
 
@@ -199,7 +214,7 @@ static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLStr
 	}
 
 	NSURL *absoluteURL = [NSURL URLWithString:relativeURLString relativeToURL:url];
-	return absoluteURL.standardizedURL.absoluteString;
+	return absoluteURL.absoluteURL.standardizedURL.absoluteString;
 }
 
 
@@ -278,6 +293,24 @@ static BOOL typeIsFeedType(NSString *type) {
 	NSDictionary *d = tag.attributes;
 	_urlString = absoluteURLStringWithDictionary(d, baseURLString);
 	_title = [d rsparser_objectForCaseInsensitiveKey:kTitleKey];
+	_type = [d rsparser_objectForCaseInsensitiveKey:kTypeKey];
+
+	return self;
+}
+
+@end
+
+@implementation RSHTMLMetadataFavicon
+
+- (instancetype)initWithTag:(RSHTMLTag *)tag baseURLString:(NSString *)baseURLString {
+
+	self = [super init];
+	if (!self) {
+		return nil;
+	}
+
+	NSDictionary *d = tag.attributes;
+	_urlString = absoluteURLStringWithDictionary(d, baseURLString);
 	_type = [d rsparser_objectForCaseInsensitiveKey:kTypeKey];
 
 	return self;

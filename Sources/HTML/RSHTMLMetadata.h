@@ -11,23 +11,27 @@
 
 @class RSHTMLMetadataFeedLink;
 @class RSHTMLMetadataAppleTouchIcon;
+@class RSHTMLMetadataFavicon;
 @class RSHTMLOpenGraphProperties;
 @class RSHTMLOpenGraphImage;
 @class RSHTMLTag;
 @class RSHTMLTwitterProperties;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface RSHTMLMetadata : NSObject
 
 - (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
 
-@property (nonatomic, readonly) NSString *baseURLString;
-@property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
+@property (nonatomic, readonly, nonnull) NSString *baseURLString;
+@property (nonatomic, readonly, nonnull) NSArray <RSHTMLTag *> *tags;
 
-@property (nonatomic, readonly) NSArray <NSString *> *faviconLinks;
-@property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
+@property (nonatomic, readonly) NSArray <NSString *> *faviconLinks DEPRECATED_MSG_ATTRIBUTE("Use the favicons property instead.");
+@property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *favicons;
+@property (nonatomic, nullable, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 
-@property (nonatomic, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
+@property (nonatomic, nullable, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
 @property (nonatomic, readonly) RSHTMLTwitterProperties *twitterProperties;
 
 @end
@@ -36,7 +40,7 @@
 @interface RSHTMLMetadataAppleTouchIcon : NSObject
 
 @property (nonatomic, readonly) NSString *rel;
-@property (nonatomic, readonly) NSString *sizes;
+@property (nonatomic, nullable, readonly) NSString *sizes;
 @property (nonatomic, readonly) CGSize size;
 @property (nonatomic, readonly) NSString *urlString; // Absolute.
 
@@ -45,9 +49,16 @@
 
 @interface RSHTMLMetadataFeedLink : NSObject
 
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) NSString *urlString; // Absolute.
+@property (nonatomic, nullable, readonly) NSString *title;
+@property (nonatomic, nullable, readonly) NSString *type;
+@property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
+
+@end
+
+@interface RSHTMLMetadataFavicon : NSObject
+
+@property (nonatomic, nullable, readonly) NSString *type;
+@property (nonatomic, readonly) NSString *urlString;
 
 @end
 
@@ -64,12 +75,12 @@
 
 @interface RSHTMLOpenGraphImage : NSObject
 
-@property (nonatomic, readonly) NSString *url;
-@property (nonatomic, readonly) NSString *secureURL;
-@property (nonatomic, readonly) NSString *mimeType;
+@property (nonatomic, nullable, readonly) NSString *url;
+@property (nonatomic, nullable, readonly) NSString *secureURL;
+@property (nonatomic, nullable, readonly) NSString *mimeType;
 @property (nonatomic, readonly) CGFloat width;
 @property (nonatomic, readonly) CGFloat height;
-@property (nonatomic, readonly) NSString *altText;
+@property (nonatomic, nullable, readonly) NSString *altText;
 
 @end
 
@@ -79,7 +90,8 @@
 
 - (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
 
-@property (nonatomic, readonly) NSString *imageURL; // twitter:image:src
+@property (nonatomic, nullable, readonly) NSString *imageURL; // twitter:image:src
 
 @end
 
+NS_ASSUME_NONNULL_END
