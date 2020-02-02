@@ -28,10 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSArray <NSString *> *faviconLinks DEPRECATED_MSG_ATTRIBUTE("Use the favicons property instead.");
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *favicons;
-@property (nonatomic, nullable, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
+@property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 
-@property (nonatomic, nullable, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
+@property (nonatomic, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
 @property (nonatomic, readonly) RSHTMLTwitterProperties *twitterProperties;
 
 @end
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, nullable, readonly) NSString *title;
 @property (nonatomic, nullable, readonly) NSString *type;
-@property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
+@property (nonatomic, readonly) NSString *urlString; // Absolute.
 
 @end
 
