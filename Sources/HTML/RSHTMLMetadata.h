@@ -23,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
 
-@property (nonatomic, readonly, nonnull) NSString *baseURLString;
-@property (nonatomic, readonly, nonnull) NSArray <RSHTMLTag *> *tags;
+@property (nonatomic, readonly) NSString *baseURLString;
+@property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
 
 @property (nonatomic, readonly) NSArray <NSString *> *faviconLinks DEPRECATED_MSG_ATTRIBUTE("Use the favicons property instead.");
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *favicons;
