@@ -176,7 +176,9 @@ static NSString *kTypeKey = @"type";
 	for (RSHTMLTag *tag in tags) {
 		RSHTMLMetadataFavicon *link = [[RSHTMLMetadataFavicon alloc] initWithTag:tag baseURLString:self.baseURLString];
 		NSString *urlString = link.urlString;
-
+		if (urlString == nil) {
+			continue;
+		}
 		if (![seenHrefs containsObject:urlString]) {
 			[links addObject:link];
 			[seenHrefs addObject:urlString];

@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RSHTMLMetadataFavicon : NSObject
 
 @property (nonatomic, nullable, readonly) NSString *type;
-@property (nonatomic, readonly) NSString *urlString;
+@property (nonatomic, nullable, readonly) NSString *urlString;
 
 @end
 
