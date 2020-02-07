@@ -16,7 +16,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("DaringFireball", "html", "http://daringfireball.net/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLinks.first, "http://daringfireball.net/graphics/favicon.ico?v=005")
+		XCTAssertEqual(metadata.favicons.first?.urlString, "http://daringfireball.net/graphics/favicon.ico?v=005")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 
@@ -40,7 +40,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("furbo", "html", "http://furbo.org/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLinks.first, "http://furbo.org/favicon.ico")
+		XCTAssertEqual(metadata.favicons.first?.urlString, "http://furbo.org/favicon.ico")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 
@@ -63,7 +63,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("inessential", "html", "http://inessential.com/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertNil(metadata.faviconLinks.first)
+		XCTAssertNil(metadata.favicons.first?.urlString)
 
 		XCTAssertEqual(metadata.feedLinks.count, 1)
 		let feedLink = metadata.feedLinks.first!
@@ -97,7 +97,7 @@ class HTMLMetadataTests: XCTestCase {
 		let d = parserData("sixcolors", "html", "http://sixcolors.com/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
 
-		XCTAssertEqual(metadata.faviconLinks.first, "https://sixcolors.com/images/favicon.ico")
+		XCTAssertEqual(metadata.favicons.first?.urlString, "https://sixcolors.com/images/favicon.ico")
 
 		XCTAssertEqual(metadata.feedLinks.count, 1);
 		let feedLink = metadata.feedLinks.first!
@@ -125,7 +125,7 @@ class HTMLMetadataTests: XCTestCase {
 
 		let d = parserData("coco", "html", "https://www.theatlantic.com/entertainment/archive/2017/11/coco-is-among-pixars-best-movies-in-years/546695/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
-		let openGraphData = metadata.openGraphProperties!
+		let openGraphData = metadata.openGraphProperties
 		let image = openGraphData.images.first!
 		XCTAssert(image.url == "https://cdn.theatlantic.com/assets/media/img/mt/2017/11/1033101_first_full_length_trailer_arrives_pixars_coco/facebook.jpg?1511382177")
 	}
@@ -134,7 +134,7 @@ class HTMLMetadataTests: XCTestCase {
 
 		let d = parserData("coco", "html", "https://www.theatlantic.com/entertainment/archive/2017/11/coco-is-among-pixars-best-movies-in-years/546695/")
 		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
-		let twitterData = metadata.twitterProperties!
+		let twitterData = metadata.twitterProperties
 		let imageURL = twitterData.imageURL!
 		XCTAssert(imageURL == "https://cdn.theatlantic.com/assets/media/img/mt/2017/11/1033101_first_full_length_trailer_arrives_pixars_coco/facebook.jpg?1511382177")
 	}
