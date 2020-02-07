@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *rel;
 @property (nonatomic, nullable, readonly) NSString *sizes;
 @property (nonatomic, readonly) CGSize size;
-@property (nonatomic, readonly) NSString *urlString; // Absolute.
+@property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
 
 @end
 
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, nullable, readonly) NSString *title;
 @property (nonatomic, nullable, readonly) NSString *type;
-@property (nonatomic, readonly) NSString *urlString; // Absolute.
+@property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
 
 @end
 
