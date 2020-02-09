@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString *RSHTMLTagNameLink; // @"link"
 extern NSString *RSHTMLTagNameMeta; // @"meta"
 
@@ -27,3 +29,5 @@ typedef NS_ENUM(NSInteger, RSHTMLTagType) {
 @property (nonatomic, readonly) NSDictionary *attributes;
 
 @end
+
+NS_ASSUME_NONNULL_END

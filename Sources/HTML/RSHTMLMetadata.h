@@ -23,15 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
 
-@property (nonatomic, readonly, nonnull) NSString *baseURLString;
-@property (nonatomic, readonly, nonnull) NSArray <RSHTMLTag *> *tags;
+@property (nonatomic, readonly) NSString *baseURLString;
+@property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
 
 @property (nonatomic, readonly) NSArray <NSString *> *faviconLinks DEPRECATED_MSG_ATTRIBUTE("Use the favicons property instead.");
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFavicon *> *favicons;
-@property (nonatomic, nullable, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
+@property (nonatomic, readonly) NSArray <RSHTMLMetadataAppleTouchIcon *> *appleTouchIcons;
 @property (nonatomic, readonly) NSArray <RSHTMLMetadataFeedLink *> *feedLinks;
 
-@property (nonatomic, nullable, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
+@property (nonatomic, readonly) RSHTMLOpenGraphProperties *openGraphProperties;
 @property (nonatomic, readonly) RSHTMLTwitterProperties *twitterProperties;
 
 @end
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *rel;
 @property (nonatomic, nullable, readonly) NSString *sizes;
 @property (nonatomic, readonly) CGSize size;
-@property (nonatomic, readonly) NSString *urlString; // Absolute.
+@property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
 
 @end
 

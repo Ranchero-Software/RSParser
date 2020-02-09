@@ -88,7 +88,7 @@ static NSString *kTypeKey = @"type";
 
 	for (RSHTMLTag *tag in self.tags) {
 
-		if (tag.type != RSHTMLTagTypeLink || RSParserStringIsEmpty(tag.attributes[kHrefKey])) {
+		if (tag.type != RSHTMLTagTypeLink || RSParserStringIsEmpty(urlStringFromDictionary(tag.attributes))) {
 			continue;
 		}
 		NSString *oneRelValue = relValue(tag.attributes);

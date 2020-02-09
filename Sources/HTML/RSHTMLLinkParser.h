@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*Returns all <a href="some_url">some_text</a> as RSHTMLLink object array.*/
 
 @class ParserData;
@@ -24,8 +26,10 @@
 
 // Any of these, even urlString, may be nil, because HTML can be bad.
 
-@property (nonatomic, readonly) NSString *urlString; //absolute
-@property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSString *title; //title attribute inside anchor tag
+@property (nonatomic, nullable, readonly) NSString *urlString; //absolute
+@property (nonatomic, nullable, readonly) NSString *text;
+@property (nonatomic, nullable, readonly) NSString *title; //title attribute inside anchor tag
 
 @end
+
+NS_ASSUME_NONNULL_END
