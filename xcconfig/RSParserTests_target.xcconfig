@@ -3,7 +3,6 @@
 #include "./RSParser_project.xcconfig"
 
 CODE_SIGN_IDENTITY =
-DEVELOPMENT_TEAM = M8L2WTLA8W
 
 // See the notes in RSParser_target.xcconfig on why the
 // DeveloperSettings.xcconfig is #included here

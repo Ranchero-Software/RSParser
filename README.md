@@ -18,6 +18,20 @@ It also includes Objective-C wrappers for libXML2’s XML SAX and HTML SAX parse
 
 This framework builds for macOS. It *could* be made to build for iOS also, but I haven’t gotten around to it yet.
 
+## How to compile
+
+Go to Xcode menu → Preferences… → Locations → Custom Paths and enter [your development team identifier](https://stackoverflow.com/questions/18727894/how-can-i-find-my-apple-developer-team-id-and-team-agent-apple-id/47732584#47732584) as shown in this screenshot:
+
+Name: `DEVELOPMENT_TEAM`
+
+Display Name: `Development Team`
+
+Path: *Your 10 characters development team identifier*
+
+![Development Team Configuration](xcconfig/DevelopmentTeamConfiguration.png)
+
+See [How to prevent Xcode 8 from saving “development team” in .pbxproj?](https://stackoverflow.com/questions/39669661/how-to-prevent-xcode-8-from-saving-development-team-in-pbxproj/40424891#40424891) on Stack Overflow for more information.
+
 ## How to parse feeds
 
 To get the type of a feed, even with partial data, call `FeedParser.feedType(parserData)`, which will return a `FeedType`.
