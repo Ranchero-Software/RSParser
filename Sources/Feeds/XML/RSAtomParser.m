@@ -37,6 +37,7 @@
 @property (nonatomic, readonly) RSParsedArticle *currentArticle;
 @property (nonatomic) RSParsedAuthor *currentAuthor;
 @property (nonatomic, readonly) NSDate *currentDate;
+@property (nonatomic) NSString *language;
 
 @end
 
@@ -77,7 +78,7 @@
 
 	[self parse];
 
-	RSParsedFeed *parsedFeed = [[RSParsedFeed alloc] initWithURLString:self.urlString title:self.title link:self.link articles:self.articles];
+	RSParsedFeed *parsedFeed = [[RSParsedFeed alloc] initWithURLString:self.urlString title:self.title link:self.link language:self.language articles:self.articles];
 
 	return parsedFeed;
 }
@@ -259,6 +260,14 @@ static const NSInteger kLengthLength = 7;
 
 	if (self.title.length < 1) {
 		self.title = [self currentString];
+	}
+}
+
+- (void)addFeedLanguage {
+
+	if (self.language.length < 0) {
+		self.language = self.currentAttributes[kXMLLangKey]
+;
 	}
 }
 
@@ -446,6 +455,10 @@ static const NSInteger kLengthLength = 7;
 	BOOL isSummaryTag = RSSAXEqualTags(localName, kSummary, kSummaryLength);
 	if (self.parsingArticle && (isContentTag || isSummaryTag)) {
 
+		if (isContentTag) {
+			self.currentArticle.language = xmlAttributes[kXMLLangKey];
+		}
+
 		NSString *contentType = xmlAttributes[kTypeKey];
 		if ([contentType isEqualToString:kXHTMLType]) {
 			self.parsingXHTML = YES;
@@ -457,6 +470,10 @@ static const NSInteger kLengthLength = 7;
 	if (!self.parsingArticle && RSSAXEqualTags(localName, kLink, kLinkLength)) {
 		[self addFeedLink];
 		return;
+	}
+
+	if (RSSAXEqualTags(localName, kFeed, kFeedLength)) {
+		[self addFeedLanguage];
 	}
 
 	[self.parser beginStoringCharacters];
@@ -537,6 +554,7 @@ static const NSInteger kLengthLength = 7;
 	else if (!self.parsingArticle && !self.parsingSource && RSSAXEqualTags(localName, kTitle, kTitleLength)) {
 		[self addFeedTitle];
 	}
+
 	[self.attributesStack removeLastObject];
 }
 

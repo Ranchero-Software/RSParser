@@ -46,10 +46,11 @@ public struct RSSInJSONParser {
 			let homePageURL = channelObject["link"] as? String
 			let feedURL = parserData.url
 			let feedDescription = channelObject["description"] as? String
+			let feedLanguage = channelObject["language"] as? String
 
 			let items = parseItems(itemsObject!, parserData.url)
 
-			return ParsedFeed(type: .rssInJSON, title: title, homePageURL: homePageURL, feedURL: feedURL, feedDescription: feedDescription, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items)
+			return ParsedFeed(type: .rssInJSON, title: title, homePageURL: homePageURL, feedURL: feedURL, language: feedLanguage, feedDescription: feedDescription, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items)
 
 		}
 		catch { throw error }
@@ -127,7 +128,7 @@ private extension RSSInJSONParser {
 		}
 
 		if let uniqueID = uniqueID {
-			return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: nil, externalURL: externalURL, title: title, contentHTML: contentHTML, contentText: contentText, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: nil, authors: authors, tags: tags, attachments: attachments)
+			return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: nil, externalURL: externalURL, title: title, language: nil, contentHTML: contentHTML, contentText: contentText, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: nil, authors: authors, tags: tags, attachments: attachments)
 		}
 		return nil
 	}

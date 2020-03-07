@@ -35,6 +35,7 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSDate *dateParsed;
 @property (nonatomic) BOOL isRDF;
+@property (nonatomic) NSString *language;
 
 @end
 
@@ -72,7 +73,7 @@
 	
 	[self parse];
 
-	RSParsedFeed *parsedFeed = [[RSParsedFeed alloc] initWithURLString:self.urlString title:self.title link:self.link articles:self.articles];
+	RSParsedFeed *parsedFeed = [[RSParsedFeed alloc] initWithURLString:self.urlString title:self.title link:self.link language:self.language articles:self.articles];
 
 	return parsedFeed;
 }
@@ -163,6 +164,9 @@ static const NSInteger kUppercaseRDFLength = 4;
 static const char *kEnclosure = "enclosure";
 static const NSInteger kEnclosureLength = 10;
 
+static const char *kLanguage = "language";
+static const NSInteger kLanguageLength = 9;
+
 #pragma mark - Parsing
 
 - (void)parse {
@@ -205,6 +209,10 @@ static const NSInteger kEnclosureLength = 10;
 
 	else if (RSSAXEqualTags(localName, kTitle, kTitleLength)) {
 		self.title = [self currentString];
+	}
+
+	else if (RSSAXEqualTags(localName, kLanguage, kLanguageLength)) {
+		self.language = [self currentString];
 	}
 }
 

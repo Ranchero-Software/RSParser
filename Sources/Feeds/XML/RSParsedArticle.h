@@ -28,6 +28,7 @@
 @property (nonatomic, nullable) NSDate *datePublished;
 @property (nonatomic, nullable) NSDate *dateModified;
 @property (nonatomic, nonnull) NSDate *dateParsed;
+@property (nonatomic, nullable)	NSString *language;
 
 - (void)addEnclosure:(RSParsedEnclosure *_Nonnull)enclosure;
 - (void)addAuthor:(RSParsedAuthor *_Nonnull)author;

@@ -43,6 +43,7 @@ public struct JSONFeedParser {
 		static let mimeType = "mime_type"
 		static let sizeInBytes = "size_in_bytes"
 		static let durationInSeconds = "duration_in_seconds"
+		static let language = "language"
 	}
 
 	static let jsonFeedVersionMarker = "://jsonfeed.org/version/" // Allow for the mistake of not getting the scheme exactly correct.
@@ -72,10 +73,11 @@ public struct JSONFeedParser {
 		let faviconURL = d[Key.favicon] as? String
 		let expired = d[Key.expired] as? Bool ?? false
 		let hubs = parseHubs(d)
+		let language = d[Key.language] as? String
 
 		let items = parseItems(itemsArray, parserData.url)
 
-		return ParsedFeed(type: .jsonFeed, title: title, homePageURL: homePageURL, feedURL: feedURL, feedDescription: feedDescription, nextURL: nextURL, iconURL: iconURL, faviconURL: faviconURL, authors: authors, expired: expired, hubs: hubs, items: items)
+		return ParsedFeed(type: .jsonFeed, title: title, homePageURL: homePageURL, feedURL: feedURL, language: language, feedDescription: feedDescription, nextURL: nextURL, iconURL: iconURL, faviconURL: faviconURL, authors: authors, expired: expired, hubs: hubs, items: items)
 	}
 }
 
@@ -134,6 +136,7 @@ private extension JSONFeedParser {
 		let url = itemDictionary[Key.url] as? String
 		let externalURL = itemDictionary[Key.externalURL] as? String
 		let title = parseTitle(itemDictionary, feedURL)
+		let language = itemDictionary[Key.language] as? String
 		let summary = itemDictionary[Key.summary] as? String
 		let imageURL = itemDictionary[Key.image] as? String
 		let bannerImageURL = itemDictionary[Key.bannerImage] as? String
@@ -148,7 +151,7 @@ private extension JSONFeedParser {
 		}
 		let attachments = parseAttachments(itemDictionary)
 
-		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: url, externalURL: externalURL, title: title, contentHTML: contentHTML, contentText: contentText, summary: summary, imageURL: imageURL, bannerImageURL: bannerImageURL, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: tags, attachments: attachments)
+		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: contentText, summary: summary, imageURL: imageURL, bannerImageURL: bannerImageURL, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: tags, attachments: attachments)
 	}
 
 	static func parseTitle(_ itemDictionary: JSONDictionary, _ feedURL: String) -> String? {
