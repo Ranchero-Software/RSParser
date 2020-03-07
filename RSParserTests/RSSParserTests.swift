@@ -159,6 +159,12 @@ class RSSParserTests: XCTestCase {
 		}
 	}
 
+	func testFeedLanguage() {
+		let d = parserData("manton", "rss", "http://manton.org/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.language, "en-US")
+	}
+
 //	func testFeedWithGB2312Encoding() {
 //		// This feed has an encoding we don’t run into very often.
 //		// https://github.com/Ranchero-Software/NetNewsWire/issues/1477

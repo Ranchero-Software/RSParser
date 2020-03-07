@@ -19,4 +19,10 @@ class RSSInJSONParserTests: XCTestCase {
 			let _ = try! FeedParser.parse(d)
 		}
 	}
+
+	func testFeedLanguage() {
+		let d = parserData("ScriptingNews", "json", "http://scripting.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.language, "en-us")
+	}
 }
