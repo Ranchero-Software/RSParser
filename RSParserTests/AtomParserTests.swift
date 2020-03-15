@@ -65,6 +65,8 @@ class AtomParserTests: XCTestCase {
 
 			XCTAssertNotNil(article.datePublished)
 			XCTAssert(article.attachments == nil)
+
+			XCTAssertEqual(article.language, "en")
 		}
 	}
 

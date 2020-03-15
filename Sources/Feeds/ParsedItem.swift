@@ -16,6 +16,7 @@ public struct ParsedItem: Hashable {
 	public let url: String?
 	public let externalURL: String?
 	public let title: String?
+	public let language: String?
 	public let contentHTML: String?
 	public let contentText: String?
 	public let summary: String?
@@ -28,8 +29,9 @@ public struct ParsedItem: Hashable {
 	public let attachments: Set<ParsedAttachment>?
 	
 	public init(syncServiceID: String?, uniqueID: String, feedURL: String, url: String?, externalURL: String?, title: String?,
-				contentHTML: String?, contentText: String?, summary: String?, imageURL: String?, bannerImageURL: String?,
-				datePublished: Date?, dateModified: Date?, authors: Set<ParsedAuthor>?, tags: Set<String>?, attachments: Set<ParsedAttachment>?) {
+				language: String?, contentHTML: String?, contentText: String?, summary: String?, imageURL: String?,
+				bannerImageURL: String?,datePublished: Date?, dateModified: Date?, authors: Set<ParsedAuthor>?,
+				tags: Set<String>?, attachments: Set<ParsedAttachment>?) {
 		
 		self.syncServiceID = syncServiceID
 		self.uniqueID = uniqueID
@@ -37,6 +39,7 @@ public struct ParsedItem: Hashable {
 		self.url = url
 		self.externalURL = externalURL
 		self.title = title
+		self.language = language
 		self.contentHTML = contentHTML
 		self.contentText = contentText
 		self.summary = summary
