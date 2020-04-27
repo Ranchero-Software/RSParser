@@ -185,6 +185,7 @@ static NSDictionary *RSEntitiesDictionary(void) {
 		
 		entitiesDictionary =
 		@{
+			// ISO-8859-1 codepoints
 			@"#145": @"‘",
 			@"#146": @"’",
 			@"#147": @"“",
@@ -194,6 +195,7 @@ static NSDictionary *RSEntitiesDictionary(void) {
 			@"#151": @"—", // EM DASH
 			@"#153": @"™",
 
+			// Named entities
 			@"AElig": @"Æ",
 			@"Aacute": @"Á",
 			@"Acirc": @"Â",

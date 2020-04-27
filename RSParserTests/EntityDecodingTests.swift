@@ -35,5 +35,8 @@ class EntityDecodingTests: XCTestCase {
 		decoded = s.rsparser_stringByDecodingHTMLEntities()
 		XCTAssertEqual(decoded, "'")
 
+		s = "&#167;"
+		decoded = s.rsparser_stringByDecodingHTMLEntities()
+		XCTAssertEqual(decoded, "§")
 	}
 }
