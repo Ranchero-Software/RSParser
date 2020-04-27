@@ -20,4 +20,20 @@ class EntityDecodingTests: XCTestCase {
 
 		XCTAssertEqual(decoded, "These are the times that try men's souls.")
 	}
+
+	func testEntities() {
+		var s = "&#8230;"
+		var decoded = s.rsparser_stringByDecodingHTMLEntities()
+
+		XCTAssertEqual(decoded, "…")
+
+		s = "&#x2026;"
+		decoded = s.rsparser_stringByDecodingHTMLEntities()
+		XCTAssertEqual(decoded, "…")
+
+		s = "&#039;"
+		decoded = s.rsparser_stringByDecodingHTMLEntities()
+		XCTAssertEqual(decoded, "'")
+
+	}
 }
