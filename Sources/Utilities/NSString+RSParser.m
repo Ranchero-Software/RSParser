@@ -179,7 +179,7 @@ static NSString *RSParserStringWithValue(uint32_t value) {
 		0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178  // 98-9F
 	};
 
-	if ((value & ~0x1Ful) == 0x80ul) {
+	if ((value & ~0x1Fu) == 0x80u) {
 		value = windowsLatin1ExtensionArray[value - 0x80];
 	}
 
