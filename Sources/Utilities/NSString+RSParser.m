@@ -171,6 +171,18 @@ static NSString *RSParserStringWithValue(uint32_t value);
 @end
 
 static NSString *RSParserStringWithValue(uint32_t value) {
+	// From WebCore's HTMLEntityParser
+	static const uint32_t windowsLatin1ExtensionArray[32] = {
+		0x20AC, 0x0081, 0x201A, 0x0192, 0x201E, 0x2026, 0x2020, 0x2021, // 80-87
+		0x02C6, 0x2030, 0x0160, 0x2039, 0x0152, 0x008D, 0x017D, 0x008F, // 88-8F
+		0x0090, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022, 0x2013, 0x2014, // 90-97
+		0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178  // 98-9F
+	};
+
+	if ((value & ~0x1Ful) == 0x80ul) {
+		value = windowsLatin1ExtensionArray[value - 0x80];
+	}
+
 	value = CFSwapInt32HostToLittle(value);
 	
 	return [[NSString alloc] initWithBytes:&value length:sizeof(value) encoding:NSUTF32LittleEndianStringEncoding];
@@ -183,18 +195,7 @@ static NSDictionary *RSEntitiesDictionary(void) {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		
-		entitiesDictionary =
-		@{
-			// ISO-8859-1 codepoints
-			@"#145": @"‘",
-			@"#146": @"’",
-			@"#147": @"“",
-			@"#148": @"”",
-			@"#149": @"•",
-			@"#150": @"–", // EN DASH
-			@"#151": @"—", // EM DASH
-			@"#153": @"™",
-
+		entitiesDictionary = @{
 			// Named entities
 			@"AElig": @"Æ",
 			@"Aacute": @"Á",
