@@ -88,9 +88,9 @@ static NSString *RSParserStringWithValue(uint32_t value);
 		return decodedEntity;
 	}
 	
-	if ([s hasPrefix:@"#x"]) { // Hex
+	if ([s hasPrefix:@"#x"] || [s hasPrefix:@"#X"]) { // Hex
 		NSScanner *scanner = [[NSScanner alloc] initWithString:s];
-		scanner.charactersToBeSkipped = [NSCharacterSet characterSetWithCharactersInString:@"#x"];
+		scanner.charactersToBeSkipped = [NSCharacterSet characterSetWithCharactersInString:@"#xX"];
 		unsigned int hexValue = 0;
 		if ([scanner scanHexInt:&hexValue]) {
 			return RSParserStringWithValue((uint32_t)hexValue);
