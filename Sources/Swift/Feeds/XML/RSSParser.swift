@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RSParser_ObjC
+import RSParserObjC
 
 // RSSParser wraps the Objective-C RSRSSParser.
 //

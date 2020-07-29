@@ -12,8 +12,8 @@ let package = Package(
             name: "RSParser",
             targets: ["RSParser"]),
         .library(
-            name: "RSParser-ObjC",
-            targets: ["RSParser-ObjC"]),
+            name: "RSParserObjC",
+            targets: ["RSParserObjC"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,10 +24,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "RSParser",
-            dependencies: ["RSParser-ObjC"],
+            dependencies: ["RSParserObjC"],
             path: "Sources/Swift"),
         .target(
-            name: "RSParser-ObjC",
+            name: "RSParserObjC",
             dependencies: [],
             path: "Sources/ObjC",
             cSettings: [

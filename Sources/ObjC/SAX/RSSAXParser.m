@@ -10,8 +10,8 @@
 #import "RSSAXParser.h"
 #import "RSParserInternal.h"
 #else
-#import <RSParser_ObjC/RSSAXParser.h>
-#import <RSParser_ObjC/RSParserInternal.h>
+#import <RSParserObjC/RSSAXParser.h>
+#import <RSParserObjC/RSParserInternal.h>
 #endif
 
 

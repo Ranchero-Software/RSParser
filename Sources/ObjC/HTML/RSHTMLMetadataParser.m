@@ -16,13 +16,13 @@
 #import "ParserData.h"
 #import "RSHTMLTag.h"
 #else
-#import <RSParser_ObjC/RSHTMLMetadataParser.h>
-#import <RSParser_ObjC/RSHTMLMetadata.h>
-#import <RSParser_ObjC/RSSAXHTMLParser.h>
-#import <RSParser_ObjC/RSSAXParser.h>
-#import <RSParser_ObjC/RSParserInternal.h>
-#import <RSParser_ObjC/ParserData.h>
-#import <RSParser_ObjC/RSHTMLTag.h>
+#import <RSParserObjC/RSHTMLMetadataParser.h>
+#import <RSParserObjC/RSHTMLMetadata.h>
+#import <RSParserObjC/RSSAXHTMLParser.h>
+#import <RSParserObjC/RSSAXParser.h>
+#import <RSParserObjC/RSParserInternal.h>
+#import <RSParserObjC/ParserData.h>
+#import <RSParserObjC/RSHTMLTag.h>
 #endif
 
 #import <libxml/xmlstring.h>

@@ -16,13 +16,13 @@
 #import "RSOPMLParser.h"
 #import "ParserData.h"
 #else
-#import <RSParser_ObjC/RSOPMLParser.h>
-#import <RSParser_ObjC/RSSAXParser.h>
-#import <RSParser_ObjC/RSOPMLItem.h>
-#import <RSParser_ObjC/RSOPMLDocument.h>
-#import <RSParser_ObjC/RSOPMLAttributes.h>
-#import <RSParser_ObjC/RSOPMLError.h>
-#import <RSParser_ObjC/ParserData.h>
+#import <RSParserObjC/RSOPMLParser.h>
+#import <RSParserObjC/RSSAXParser.h>
+#import <RSParserObjC/RSOPMLItem.h>
+#import <RSParserObjC/RSOPMLDocument.h>
+#import <RSParserObjC/RSOPMLAttributes.h>
+#import <RSParserObjC/RSOPMLError.h>
+#import <RSParserObjC/ParserData.h>
 #endif
 
 #import <libxml/xmlstring.h>

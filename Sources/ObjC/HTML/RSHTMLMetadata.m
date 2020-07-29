@@ -11,9 +11,9 @@
 #import "RSParserInternal.h"
 #import "RSHTMLTag.h"
 #else
-#import <RSParser_ObjC/RSHTMLMetadata.h>
-#import <RSParser_ObjC/RSParserInternal.h>
-#import <RSParser_ObjC/RSHTMLTag.h>
+#import <RSParserObjC/RSHTMLMetadata.h>
+#import <RSParserObjC/RSParserInternal.h>
+#import <RSParserObjC/RSHTMLTag.h>
 #endif
 
 

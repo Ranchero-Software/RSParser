@@ -9,7 +9,7 @@
 #if SWIFT_PACKAGE
 #import "RSOPMLError.h"
 #else
-#import <RSParser_ObjC/RSOPMLError.h>
+#import <RSParserObjC/RSOPMLError.h>
 #endif
 
 NSString *RSOPMLErrorDomain = @"com.ranchero.OPML";

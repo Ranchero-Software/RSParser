@@ -10,7 +10,7 @@
 #import "NSString+RSParser.h"
 #import <CommonCrypto/CommonDigest.h>
 #else
-#import <RSParser_ObjC/NSString+RSParser.h>
+#import <RSParserObjC/NSString+RSParser.h>
 #import <CommonCrypto/CommonDigest.h>
 #endif
 

@@ -8,7 +8,7 @@
 
 import Foundation
 #if SWIFT_PACKAGE
-import RSParser_ObjC
+import RSParserObjC
 #endif
 
 // See https://github.com/scripting/Scripting-News/blob/master/rss-in-json/README.md

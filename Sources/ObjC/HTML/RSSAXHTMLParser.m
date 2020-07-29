@@ -11,9 +11,9 @@
 #import "RSSAXParser.h"
 #import "RSParserInternal.h"
 #else
-#import <RSParser_ObjC/RSParserInternal.h>
-#import <RSParser_ObjC/RSSAXHTMLParser.h>
-#import <RSParser_ObjC/RSSAXParser.h>
+#import <RSParserObjC/RSParserInternal.h>
+#import <RSParserObjC/RSSAXHTMLParser.h>
+#import <RSParserObjC/RSSAXParser.h>
 #endif
 
 #import <libxml/tree.h>

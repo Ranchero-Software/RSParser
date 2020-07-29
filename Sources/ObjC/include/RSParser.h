@@ -51,48 +51,48 @@
 #else
 // To parse RSS, Atom, JSON Feed, and RSS-in-JSON the easy way, see FeedParser.swift.
 
-#import <RSParser_ObjC/ParserData.h>
+#import <RSParserObjC/ParserData.h>
 
 // Dates
 
-#import <RSParser_ObjC/RSDateParser.h>
+#import <RSParserObjC/RSDateParser.h>
 
 // OPML
 
-#import <RSParser_ObjC/RSOPMLParser.h>
-#import <RSParser_ObjC/RSOPMLDocument.h>
-#import <RSParser_ObjC/RSOPMLItem.h>
-#import <RSParser_ObjC/RSOPMLAttributes.h>
-#import <RSParser_ObjC/RSOPMLFeedSpecifier.h>
-#import <RSParser_ObjC/RSOPMLError.h>
+#import <RSParserObjC/RSOPMLParser.h>
+#import <RSParserObjC/RSOPMLDocument.h>
+#import <RSParserObjC/RSOPMLItem.h>
+#import <RSParserObjC/RSOPMLAttributes.h>
+#import <RSParserObjC/RSOPMLFeedSpecifier.h>
+#import <RSParserObjC/RSOPMLError.h>
 
 // For writing your own XML parser.
 
-#import <RSParser_ObjC/RSSAXParser.h>
+#import <RSParserObjC/RSSAXParser.h>
 
 // You should use FeedParser (Swift) instead of these two specific parsers
 // and the objects they create.
 // But they’re available if you want them.
 
-#import <RSParser_ObjC/RSRSSParser.h>
-#import <RSParser_ObjC/RSAtomParser.h>
-#import <RSParser_ObjC/RSParsedFeed.h>
-#import <RSParser_ObjC/RSParsedArticle.h>
-#import <RSParser_ObjC/RSParsedEnclosure.h>
-#import <RSParser_ObjC/RSParsedAuthor.h>
+#import <RSParserObjC/RSRSSParser.h>
+#import <RSParserObjC/RSAtomParser.h>
+#import <RSParserObjC/RSParsedFeed.h>
+#import <RSParserObjC/RSParsedArticle.h>
+#import <RSParserObjC/RSParsedEnclosure.h>
+#import <RSParserObjC/RSParsedAuthor.h>
 
 // HTML
 
-#import <RSParser_ObjC/RSHTMLMetadataParser.h>
-#import <RSParser_ObjC/RSHTMLMetadata.h>
-#import <RSParser_ObjC/RSHTMLLinkParser.h>
-#import <RSParser_ObjC/RSSAXHTMLParser.h> // For writing your own HTML parser.
-#import <RSParser_ObjC/RSHTMLTag.h>
+#import <RSParserObjC/RSHTMLMetadataParser.h>
+#import <RSParserObjC/RSHTMLMetadata.h>
+#import <RSParserObjC/RSHTMLLinkParser.h>
+#import <RSParserObjC/RSSAXHTMLParser.h> // For writing your own HTML parser.
+#import <RSParserObjC/RSHTMLTag.h>
 
 // Utilities
 
-#import <RSParser_ObjC/NSData+RSParser.h>
-#import <RSParser_ObjC/NSString+RSParser.h>
+#import <RSParserObjC/NSData+RSParser.h>
+#import <RSParserObjC/NSString+RSParser.h>
 #endif
 
 

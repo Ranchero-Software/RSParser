@@ -8,7 +8,7 @@
 
 import Foundation
 #if SWIFT_PACKAGE
-import RSParser_ObjC
+import RSParserObjC
 #endif
 
 // FeedParser handles RSS, Atom, JSON Feed, and RSS-in-JSON.

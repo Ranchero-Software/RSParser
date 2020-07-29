@@ -10,7 +10,7 @@
 #if SWIFT_PACKAGE
 #import "RSOPMLDocument.h"
 #else
-#import <RSParser_ObjC/RSOPMLDocument.h>
+#import <RSParserObjC/RSOPMLDocument.h>
 #endif
 
 

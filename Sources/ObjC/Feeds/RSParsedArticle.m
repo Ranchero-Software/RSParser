@@ -14,11 +14,11 @@
 #import "RSParsedAuthor.h"
 #import "RSParsedEnclosure.h"
 #else
-#import <RSParser_ObjC/RSParsedArticle.h>
-#import <RSParser_ObjC/RSParserInternal.h>
-#import <RSParser_ObjC/NSString+RSParser.h>
-#import <RSParser_ObjC/RSParsedAuthor.h>
-#import <RSParser_ObjC/RSParsedEnclosure.h>
+#import <RSParserObjC/RSParsedArticle.h>
+#import <RSParserObjC/RSParserInternal.h>
+#import <RSParserObjC/NSString+RSParser.h>
+#import <RSParserObjC/RSParsedAuthor.h>
+#import <RSParserObjC/RSParsedEnclosure.h>
 #endif
 
 

@@ -10,8 +10,8 @@
 #import "RSOPMLFeedSpecifier.h"
 #import "RSParserInternal.h"
 #else
-#import <RSParser_ObjC/RSOPMLFeedSpecifier.h>
-#import <RSParser_ObjC/RSParserInternal.h>
+#import <RSParserObjC/RSOPMLFeedSpecifier.h>
+#import <RSParserObjC/RSParserInternal.h>
 #endif
 
 

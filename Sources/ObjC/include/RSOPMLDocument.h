@@ -11,7 +11,7 @@
 #if SWIFT_PACKAGE
 #import "RSOPMLItem.h"
 #else
-#import <RSParser_ObjC/RSOPMLItem.h>
+#import <RSParserObjC/RSOPMLItem.h>
 #endif
 
 

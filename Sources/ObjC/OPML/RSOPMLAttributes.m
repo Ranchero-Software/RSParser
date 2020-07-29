@@ -10,8 +10,8 @@
 #import "RSOPMLAttributes.h"
 #import "RSParserInternal.h"
 #else
-#import <RSParser_ObjC/RSOPMLAttributes.h>
-#import <RSParser_ObjC/RSParserInternal.h>
+#import <RSParserObjC/RSOPMLAttributes.h>
+#import <RSParserObjC/RSParserInternal.h>
 #endif
 
 
