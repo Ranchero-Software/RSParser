@@ -8,7 +8,7 @@
 
 @import Foundation;
 
-#if SWIFT_PACKAGE
+
 #import "ParserData.h"
 #import "RSDateParser.h"
 
@@ -48,8 +48,10 @@
 
 #import "NSData+RSParser.h"
 #import "NSString+RSParser.h"
-#else
+
 // To parse RSS, Atom, JSON Feed, and RSS-in-JSON the easy way, see FeedParser.swift.
+
+/*
 
 #import <RSParserObjC/ParserData.h>
 
@@ -93,7 +95,7 @@
 
 #import <RSParserObjC/NSData+RSParser.h>
 #import <RSParserObjC/NSString+RSParser.h>
-#endif
+*/
 
 
 
