@@ -32,6 +32,7 @@ let package = Package(
             path: "Sources/ObjC",
             cSettings: [
                 .headerSearchPath("include"),
+                .define("SWIFT_PACKAGE")
              ]),
         .testTarget(
             name: "RSParserTests",
