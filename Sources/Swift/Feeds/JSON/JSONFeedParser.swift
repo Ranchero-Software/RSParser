@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import RSParser
+#endif
 
 // See https://jsonfeed.org/version/1
 

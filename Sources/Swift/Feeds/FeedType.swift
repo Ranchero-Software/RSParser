@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import RSParser
+#endif
 
 public enum FeedType {
 	case rss

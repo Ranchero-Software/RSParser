@@ -6,7 +6,11 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+#import "RSOPMLError.h"
+#else
 #import <RSParser/RSOPMLError.h>
+#endif
 
 NSString *RSOPMLErrorDomain = @"com.ranchero.OPML";
 

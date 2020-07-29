@@ -6,9 +6,17 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+#import "RSHTMLMetadata.h"
+#import "RSParserInternal.h"
+#import "RSHTMLTag.h"
+#else
 #import <RSParser/RSHTMLMetadata.h>
 #import <RSParser/RSParserInternal.h>
 #import <RSParser/RSHTMLTag.h>
+#endif
+
+
 
 static NSString *urlStringFromDictionary(NSDictionary *d);
 static NSString *absoluteURLStringWithRelativeURLString(NSString *relativeURLString, NSString *baseURLString);

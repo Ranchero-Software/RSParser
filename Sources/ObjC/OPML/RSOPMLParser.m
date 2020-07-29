@@ -6,14 +6,27 @@
 //  Copyright © 2015 Ranchero Software, LLC. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
 #import "RSOPMLParser.h"
-#import <libxml/xmlstring.h>
+#import "RSSAXParser.h"
+#import "RSOPMLItem.h"
+#import "RSOPMLDocument.h"
+#import "RSOPMLAttributes.h"
+#import "RSOPMLError.h"
+#import "RSOPMLParser.h"
+#import "ParserData.h"
+#else
+#import <RSParser/RSOPMLParser.h>
 #import <RSParser/RSSAXParser.h>
 #import <RSParser/RSOPMLItem.h>
 #import <RSParser/RSOPMLDocument.h>
 #import <RSParser/RSOPMLAttributes.h>
 #import <RSParser/RSOPMLError.h>
 #import <RSParser/ParserData.h>
+#endif
+
+#import <libxml/xmlstring.h>
+
 
 
 @interface RSOPMLParser () <RSSAXParserDelegate>

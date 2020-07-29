@@ -6,7 +6,12 @@
 //  Copyright © 2017 Ranchero Software, LLC. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+#import "NSString+RSParser.h"
+#else
 #import <RSParser/NSString+RSParser.h>
+#endif
+
 #import "RSParsedAuthor.h"
 
 @implementation RSParsedAuthor

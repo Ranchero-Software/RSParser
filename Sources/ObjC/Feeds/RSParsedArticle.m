@@ -6,11 +6,22 @@
 //  Copyright (c) 2014 Ranchero Software LLC. All rights reserved.
 //
 
+
+#if SWIFT_PACKAGE
+#import "RSParsedArticle.h"
+#import "RSParserInternal.h"
+#import "NSString+RSParser.h"
+#import "RSParsedAuthor.h"
+#import "RSParsedEnclosure.h"
+#else
 #import <RSParser/RSParsedArticle.h>
 #import <RSParser/RSParserInternal.h>
 #import <RSParser/NSString+RSParser.h>
 #import <RSParser/RSParsedAuthor.h>
 #import <RSParser/RSParsedEnclosure.h>
+#endif
+
+
 
 @implementation RSParsedArticle
 

@@ -7,7 +7,14 @@
 //
 
 @import Foundation;
+
+#if SWIFT_PACKAGE
+#import "RSOPMLItem.h"
+#else
 #import <RSParser/RSOPMLItem.h>
+#endif
+
+
 
 
 @interface RSOPMLDocument : RSOPMLItem

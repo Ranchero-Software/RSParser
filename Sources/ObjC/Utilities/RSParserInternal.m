@@ -6,8 +6,14 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
+
+#if SWIFT_PACKAGE
+#import "RSParserInternal.h"
+#import <CommonCrypto/CommonDigest.h>
+#else
 #import <CommonCrypto/CommonDigest.h>
 #import <RSParser/RSParserInternal.h>
+#endif
 
 
 static BOOL RSParserIsNil(id obj) {

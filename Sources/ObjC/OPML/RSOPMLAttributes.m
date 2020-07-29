@@ -6,8 +6,15 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+#import "RSOPMLAttributes.h"
+#import "RSParserInternal.h"
+#else
 #import <RSParser/RSOPMLAttributes.h>
 #import <RSParser/RSParserInternal.h>
+#endif
+
+
 
 
 NSString *OPMLTextKey = @"text";

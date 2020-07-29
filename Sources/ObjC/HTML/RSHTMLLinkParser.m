@@ -6,12 +6,23 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
-#import <libxml/xmlstring.h>
+
+#if SWIFT_PACKAGE
+#import "RSHTMLLinkParser.h"
+#import "RSSAXHTMLParser.h"
+#import "RSSAXParser.h"
+#import "RSParserInternal.h"
+#import "ParserData.h"
+#else
 #import <RSParser/RSHTMLLinkParser.h>
 #import <RSParser/RSSAXHTMLParser.h>
 #import <RSParser/RSSAXParser.h>
 #import <RSParser/RSParserInternal.h>
 #import <RSParser/ParserData.h>
+#endif
+
+#import <libxml/xmlstring.h>
+
 
 
 @interface RSHTMLLinkParser() <RSSAXHTMLParserDelegate>

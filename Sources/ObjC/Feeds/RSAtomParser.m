@@ -6,7 +6,18 @@
 //  Copyright (c) 2015 Ranchero Software LLC. All rights reserved.
 //
 
-#import <libxml/xmlstring.h>
+
+#if SWIFT_PACKAGE
+#import "RSAtomParser.h"
+#import "RSSAXParser.h"
+#import "RSParsedFeed.h"
+#import "RSParsedArticle.h"
+#import "NSString+RSParser.h"
+#import "RSDateParser.h"
+#import "ParserData.h"
+#import "RSParsedEnclosure.h"
+#import "RSParsedAuthor.h"
+#else
 #import <RSParser/RSAtomParser.h>
 #import <RSParser/RSSAXParser.h>
 #import <RSParser/RSParsedFeed.h>
@@ -16,6 +27,9 @@
 #import <RSParser/ParserData.h>
 #import <RSParser/RSParsedEnclosure.h>
 #import <RSParser/RSParsedAuthor.h>
+#endif
+
+#import <libxml/xmlstring.h>
 
 @interface RSAtomParser () <RSSAXParserDelegate>
 

@@ -6,8 +6,15 @@
 //  Copyright (c) 2015 Ranchero Software, LLC. All rights reserved.
 //
 
+
+#if SWIFT_PACKAGE
+#import "RSDateParser.h"
 #import <time.h>
-#import <RSParser/RSDateParser.h>
+#else
+#import <MyModule/RSDateParser.h>
+#import <time.h>
+#endif
+
 
 typedef struct {
 	const char *abbreviation;
