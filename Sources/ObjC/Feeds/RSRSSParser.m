@@ -18,16 +18,16 @@
 #import "RSParsedEnclosure.h"
 #import "RSParsedAuthor.h"
 #else
-#import <RSParser/RSRSSParser.h>
-#import <RSParser/RSSAXParser.h>
-#import <RSParser/RSParsedFeed.h>
-#import <RSParser/RSParsedArticle.h>
-#import <RSParser/RSParserInternal.h>
-#import <RSParser/NSString+RSParser.h>
-#import <RSParser/RSDateParser.h>
-#import <RSParser/ParserData.h>
-#import <RSParser/RSParsedEnclosure.h>
-#import <RSParser/RSParsedAuthor.h>
+#import <RSParser_ObjC/RSRSSParser.h>
+#import <RSParser_ObjC/RSSAXParser.h>
+#import <RSParser_ObjC/RSParsedFeed.h>
+#import <RSParser_ObjC/RSParsedArticle.h>
+#import <RSParser_ObjC/RSParserInternal.h>
+#import <RSParser_ObjC/NSString+RSParser.h>
+#import <RSParser_ObjC/RSDateParser.h>
+#import <RSParser_ObjC/ParserData.h>
+#import <RSParser_ObjC/RSParsedEnclosure.h>
+#import <RSParser_ObjC/RSParsedAuthor.h>
 #endif
 
 

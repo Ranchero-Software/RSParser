@@ -9,7 +9,7 @@
 #if SWIFT_PACKAGE
 #import "NSData+RSParser.h"
 #else
-#import <RSParser/NSData+RSParser.h>
+#import <RSParser_ObjC/NSData+RSParser.h>
 #endif
 
 

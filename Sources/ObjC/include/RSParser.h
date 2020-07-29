@@ -51,48 +51,48 @@
 #else
 // To parse RSS, Atom, JSON Feed, and RSS-in-JSON the easy way, see FeedParser.swift.
 
-#import <RSParser/ParserData.h>
+#import <RSParser_ObjC/ParserData.h>
 
 // Dates
 
-#import <RSParser/RSDateParser.h>
+#import <RSParser_ObjC/RSDateParser.h>
 
 // OPML
 
-#import <RSParser/RSOPMLParser.h>
-#import <RSParser/RSOPMLDocument.h>
-#import <RSParser/RSOPMLItem.h>
-#import <RSParser/RSOPMLAttributes.h>
-#import <RSParser/RSOPMLFeedSpecifier.h>
-#import <RSParser/RSOPMLError.h>
+#import <RSParser_ObjC/RSOPMLParser.h>
+#import <RSParser_ObjC/RSOPMLDocument.h>
+#import <RSParser_ObjC/RSOPMLItem.h>
+#import <RSParser_ObjC/RSOPMLAttributes.h>
+#import <RSParser_ObjC/RSOPMLFeedSpecifier.h>
+#import <RSParser_ObjC/RSOPMLError.h>
 
 // For writing your own XML parser.
 
-#import <RSParser/RSSAXParser.h>
+#import <RSParser_ObjC/RSSAXParser.h>
 
 // You should use FeedParser (Swift) instead of these two specific parsers
 // and the objects they create.
 // But they’re available if you want them.
 
-#import <RSParser/RSRSSParser.h>
-#import <RSParser/RSAtomParser.h>
-#import <RSParser/RSParsedFeed.h>
-#import <RSParser/RSParsedArticle.h>
-#import <RSParser/RSParsedEnclosure.h>
-#import <RSParser/RSParsedAuthor.h>
+#import <RSParser_ObjC/RSRSSParser.h>
+#import <RSParser_ObjC/RSAtomParser.h>
+#import <RSParser_ObjC/RSParsedFeed.h>
+#import <RSParser_ObjC/RSParsedArticle.h>
+#import <RSParser_ObjC/RSParsedEnclosure.h>
+#import <RSParser_ObjC/RSParsedAuthor.h>
 
 // HTML
 
-#import <RSParser/RSHTMLMetadataParser.h>
-#import <RSParser/RSHTMLMetadata.h>
-#import <RSParser/RSHTMLLinkParser.h>
-#import <RSParser/RSSAXHTMLParser.h> // For writing your own HTML parser.
-#import <RSParser/RSHTMLTag.h>
+#import <RSParser_ObjC/RSHTMLMetadataParser.h>
+#import <RSParser_ObjC/RSHTMLMetadata.h>
+#import <RSParser_ObjC/RSHTMLLinkParser.h>
+#import <RSParser_ObjC/RSSAXHTMLParser.h> // For writing your own HTML parser.
+#import <RSParser_ObjC/RSHTMLTag.h>
 
 // Utilities
 
-#import <RSParser/NSData+RSParser.h>
-#import <RSParser/NSString+RSParser.h>
+#import <RSParser_ObjC/NSData+RSParser.h>
+#import <RSParser_ObjC/NSString+RSParser.h>
 #endif
 
 

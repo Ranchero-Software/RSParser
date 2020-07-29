@@ -12,7 +12,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #else
 #import <CommonCrypto/CommonDigest.h>
-#import <RSParser/RSParserInternal.h>
+#import <RSParser_ObjC/RSParserInternal.h>
 #endif
 
 
