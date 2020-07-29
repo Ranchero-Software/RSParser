@@ -8,11 +8,7 @@
 
 @import Foundation;
 
-#if SWIFT_PACKAGE
 #import "RSOPMLItem.h"
-#else
-#import <RSParserObjC/RSOPMLItem.h>
-#endif
 
 
 
