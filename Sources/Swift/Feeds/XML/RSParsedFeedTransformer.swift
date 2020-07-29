@@ -8,7 +8,7 @@
 
 import Foundation
 #if SWIFT_PACKAGE
-import RSParser
+import RSParser_ObjC
 #endif
 
 // RSRSSParser and RSAtomParser were written in Objective-C quite a while ago.

@@ -9,7 +9,7 @@
 import Foundation
 
 #if SWIFT_PACKAGE
-import RSParser
+import RSParser_ObjC
 #endif
 
 // RSSParser wraps the Objective-C RSAtomParser.
