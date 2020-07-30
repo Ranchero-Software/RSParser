@@ -8,6 +8,7 @@
 
 import XCTest
 import RSParser
+import RSParserObjC
 
 class OPMLTests: XCTestCase {
 
