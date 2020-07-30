@@ -7,13 +7,8 @@
 //
 
 
-#if SWIFT_PACKAGE
 #import "RSParserInternal.h"
 #import <CommonCrypto/CommonDigest.h>
-#else
-#import <CommonCrypto/CommonDigest.h>
-#import <RSParserObjC/RSParserInternal.h>
-#endif
 
 
 static BOOL RSParserIsNil(id obj) {

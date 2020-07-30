@@ -7,7 +7,6 @@
 //
 
 
-#if SWIFT_PACKAGE
 #import "RSAtomParser.h"
 #import "RSSAXParser.h"
 #import "RSParsedFeed.h"
@@ -17,17 +16,6 @@
 #import "ParserData.h"
 #import "RSParsedEnclosure.h"
 #import "RSParsedAuthor.h"
-#else
-#import <RSParserObjC/RSAtomParser.h>
-#import <RSParserObjC/RSSAXParser.h>
-#import <RSParserObjC/RSParsedFeed.h>
-#import <RSParserObjC/RSParsedArticle.h>
-#import <RSParserObjC/NSString+RSParser.h>
-#import <RSParserObjC/RSDateParser.h>
-#import <RSParserObjC/ParserData.h>
-#import <RSParserObjC/RSParsedEnclosure.h>
-#import <RSParserObjC/RSParsedAuthor.h>
-#endif
 
 #import <libxml/xmlstring.h>
 

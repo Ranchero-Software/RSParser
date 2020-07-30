@@ -6,7 +6,6 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
-#if SWIFT_PACKAGE
 #import "RSHTMLMetadataParser.h"
 #import "RSHTMLMetadata.h"
 #import "RSSAXHTMLParser.h"
@@ -15,15 +14,6 @@
 #import "RSParserInternal.h"
 #import "ParserData.h"
 #import "RSHTMLTag.h"
-#else
-#import <RSParserObjC/RSHTMLMetadataParser.h>
-#import <RSParserObjC/RSHTMLMetadata.h>
-#import <RSParserObjC/RSSAXHTMLParser.h>
-#import <RSParserObjC/RSSAXParser.h>
-#import <RSParserObjC/RSParserInternal.h>
-#import <RSParserObjC/ParserData.h>
-#import <RSParserObjC/RSHTMLTag.h>
-#endif
 
 #import <libxml/xmlstring.h>
 

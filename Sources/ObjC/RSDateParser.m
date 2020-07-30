@@ -7,13 +7,8 @@
 //
 
 
-#if SWIFT_PACKAGE
 #import "RSDateParser.h"
 #import <time.h>
-#else
-#import <MyModule/RSDateParser.h>
-#import <time.h>
-#endif
 
 
 typedef struct {

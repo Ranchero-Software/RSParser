@@ -7,19 +7,11 @@
 //
 
 
-#if SWIFT_PACKAGE
 #import "RSHTMLLinkParser.h"
 #import "RSSAXHTMLParser.h"
 #import "RSSAXParser.h"
 #import "RSParserInternal.h"
 #import "ParserData.h"
-#else
-#import <RSParserObjC/RSHTMLLinkParser.h>
-#import <RSParserObjC/RSSAXHTMLParser.h>
-#import <RSParserObjC/RSSAXParser.h>
-#import <RSParserObjC/RSParserInternal.h>
-#import <RSParserObjC/ParserData.h>
-#endif
 
 #import <libxml/xmlstring.h>
 

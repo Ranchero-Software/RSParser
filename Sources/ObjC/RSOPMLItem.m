@@ -6,17 +6,10 @@
 //  Copyright © 2016 Ranchero Software, LLC. All rights reserved.
 //
 
-#if SWIFT_PACKAGE
 #import "RSOPMLItem.h"
 #import "RSOPMLAttributes.h"
 #import "RSOPMLFeedSpecifier.h"
 #import "RSParserInternal.h"
-#else
-#import <RSParserObjC/RSOPMLItem.h>
-#import <RSParserObjC/RSOPMLAttributes.h>
-#import <RSParserObjC/RSOPMLFeedSpecifier.h>
-#import <RSParserObjC/RSParserInternal.h>
-#endif
 
 
 

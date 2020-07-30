@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Ranchero Software LLC. All rights reserved.
 //
 
-#if SWIFT_PACKAGE
 #import "RSRSSParser.h"
 #import "RSSAXParser.h"
 #import "RSParsedFeed.h"
@@ -17,18 +16,6 @@
 #import "ParserData.h"
 #import "RSParsedEnclosure.h"
 #import "RSParsedAuthor.h"
-#else
-#import <RSParserObjC/RSRSSParser.h>
-#import <RSParserObjC/RSSAXParser.h>
-#import <RSParserObjC/RSParsedFeed.h>
-#import <RSParserObjC/RSParsedArticle.h>
-#import <RSParserObjC/RSParserInternal.h>
-#import <RSParserObjC/NSString+RSParser.h>
-#import <RSParserObjC/RSDateParser.h>
-#import <RSParserObjC/ParserData.h>
-#import <RSParserObjC/RSParsedEnclosure.h>
-#import <RSParserObjC/RSParsedAuthor.h>
-#endif
 
 
 

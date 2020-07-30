@@ -6,13 +6,8 @@
 //  Copyright © 2015 Ranchero Software, LLC. All rights reserved.
 //
 
-#if SWIFT_PACKAGE
 #import "NSString+RSParser.h"
 #import <CommonCrypto/CommonDigest.h>
-#else
-#import <RSParserObjC/NSString+RSParser.h>
-#import <CommonCrypto/CommonDigest.h>
-#endif
 
 
 

@@ -7,19 +7,11 @@
 //
 
 
-#if SWIFT_PACKAGE
 #import "RSParsedArticle.h"
 #import "RSParserInternal.h"
 #import "NSString+RSParser.h"
 #import "RSParsedAuthor.h"
 #import "RSParsedEnclosure.h"
-#else
-#import <RSParserObjC/RSParsedArticle.h>
-#import <RSParserObjC/RSParserInternal.h>
-#import <RSParserObjC/NSString+RSParser.h>
-#import <RSParserObjC/RSParsedAuthor.h>
-#import <RSParserObjC/RSParsedEnclosure.h>
-#endif
 
 
 
