@@ -88,4 +88,37 @@ class JSONFeedParserTests: XCTestCase {
 			XCTAssertEqual(item.language, "de-DE")
 		}
 	}
+
+	func testAuthors() {
+		let d = parserData("authors", "json", "https://example.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.items.count, 4)
+
+		let rootAuthors = Set([
+			ParsedAuthor(name: "Root Author 1", url: nil, avatarURL: nil, emailAddress: nil),
+			ParsedAuthor(name: "Root Author 2", url: nil, avatarURL: nil, emailAddress: nil)
+		])
+		let itemAuthors = Set([
+			ParsedAuthor(name: "Item Author 1", url: nil, avatarURL: nil, emailAddress: nil),
+			ParsedAuthor(name: "Item Author 2", url: nil, avatarURL: nil, emailAddress: nil)
+		])
+		let legacyItemAuthors = Set([
+			ParsedAuthor(name: "Legacy Item Author", url: nil, avatarURL: nil, emailAddress: nil)
+		])
+
+		XCTAssertEqual(parsedFeed.authors?.count, 2)
+		XCTAssertEqual(parsedFeed.authors, rootAuthors)
+
+		let noAuthorsItem = parsedFeed.items.first { $0.uniqueID == "Item without authors" }!
+		XCTAssertEqual(noAuthorsItem.authors, nil)
+
+		let legacyAuthorItem = parsedFeed.items.first { $0.uniqueID == "Item with legacy author" }!
+		XCTAssertEqual(legacyAuthorItem.authors, legacyItemAuthors)
+
+		let modernAuthorsItem = parsedFeed.items.first { $0.uniqueID == "Item with modern authors" }!
+		XCTAssertEqual(modernAuthorsItem.authors, itemAuthors)
+
+		let bothAuthorsItem = parsedFeed.items.first { $0.uniqueID == "Item with both" }!
+		XCTAssertEqual(bothAuthorsItem.authors, itemAuthors)
+	}
 }
