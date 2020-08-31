@@ -11,7 +11,7 @@ import Foundation
 import RSParserObjC
 #endif
 
-// See https://jsonfeed.org/version/1
+// See https://jsonfeed.org/version/1.1
 
 public struct JSONFeedParser {
 
@@ -27,6 +27,7 @@ public struct JSONFeedParser {
 		static let favicon = "favicon"
 		static let expired = "expired"
 		static let author = "author"
+		static let authors = "authors"
 		static let name = "name"
 		static let url = "url"
 		static let avatar = "avatar"
@@ -88,18 +89,32 @@ private extension JSONFeedParser {
 
 	static func parseAuthors(_ dictionary: JSONDictionary) -> Set<ParsedAuthor>? {
 
-		guard let authorDictionary = dictionary[Key.author] as? JSONDictionary else {
+		if let authorsArray = dictionary[Key.authors] as? JSONArray {
+			var authors = Set<ParsedAuthor>()
+			for author in authorsArray {
+				if let parsedAuthor = parseAuthor(author) {
+					authors.insert(parsedAuthor)
+				}
+			}
+			return authors
+		}
+
+		guard let authorDictionary = dictionary[Key.author] as? JSONDictionary,
+			  let parsedAuthor = parseAuthor(authorDictionary) else {
 			return nil
 		}
 
-		let name = authorDictionary[Key.name] as? String
-		let url = authorDictionary[Key.url] as? String
-		let avatar = authorDictionary[Key.avatar] as? String
+		return Set([parsedAuthor])
+	}
+
+	static func parseAuthor(_ dictionary: JSONDictionary) -> ParsedAuthor? {
+		let name = dictionary[Key.name] as? String
+		let url = dictionary[Key.url] as? String
+		let avatar = dictionary[Key.avatar] as? String
 		if name == nil && url == nil && avatar == nil {
 			return nil
 		}
-		let parsedAuthor = ParsedAuthor(name: name, url: url, avatarURL: avatar, emailAddress: nil)
-		return Set([parsedAuthor])
+		return ParsedAuthor(name: name, url: url, avatarURL: avatar, emailAddress: nil)
 	}
 
 	static func parseHubs(_ dictionary: JSONDictionary) -> Set<ParsedHub>? {
@@ -191,7 +206,7 @@ private extension JSONFeedParser {
 		if let uniqueID = itemDictionary[Key.uniqueID] as? String {
 			return uniqueID // Spec says it must be a string
 		}
-		// Spec also says that if it’s a number, even though that’s incorrect, it should be coerced to a string.
+		// Version 1 spec also says that if it’s a number, even though that’s incorrect, it should be coerced to a string.
 		if let uniqueID = itemDictionary[Key.uniqueID] as? Int {
 			return "\(uniqueID)"
 		}
