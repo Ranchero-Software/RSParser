@@ -670,7 +670,8 @@ static BOOL equalBytes(const void *bytes1, const void *bytes2, NSUInteger length
 		if (s == nil) {
 			return;
 		}
-		[self.xhtmlString appendString:[[NSString alloc] initWithBytesNoCopy:(void *)characters length:length encoding:NSUTF8StringEncoding freeWhenDone:NO]];
+		// libxml decodes all entities; we need to re-encode less-than signs when inside XHTML content.
+		[self.xhtmlString appendString:s.rsparser_stringByEncodingRequiredEntities];
 	}
 }
 

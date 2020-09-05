@@ -112,6 +112,31 @@ static NSString *RSParserStringWithValue(uint32_t value);
 	return nil;
 }
 
+- (NSString *)rsparser_stringByEncodingRequiredEntities {
+	NSMutableString *result = [NSMutableString string];
+
+	for (NSUInteger i = 0; i < self.length; ++i) {
+		unichar c = [self characterAtIndex:i];
+
+		switch (c) {
+			case '<':
+				[result appendString:@"&lt;"];
+				break;
+			case '>':
+				[result appendString:@"&gt;"];
+				break;
+			case '&':
+				[result appendString:@"&amp;"];
+				break;
+			default:
+				[result appendFormat:@"%C", c];
+				break;
+		}
+	}
+
+	return [result copy];
+}
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (NSData *)_rsparser_md5HashData {
