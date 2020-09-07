@@ -668,7 +668,8 @@ static BOOL equalBytes(const void *bytes1, const void *bytes2, NSUInteger length
 		if (s == nil) {
 			return;
 		}
-		// libxml decodes all entities; we need to re-encode less-than signs when inside XHTML content.
+		// libxml decodes all entities; we need to re-encode certain characters
+		// (<, >, and &) when inside XHTML text content.
 		[self.xhtmlString appendString:s.rsparser_stringByEncodingRequiredEntities];
 	}
 }
