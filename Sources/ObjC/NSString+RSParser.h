@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)rsparser_stringByDecodingHTMLEntities;
 
+/// Returns a copy of \c self with <, >, and & entity-encoded.
 @property (readonly, copy)	NSString	*rsparser_stringByEncodingRequiredEntities;
 
 - (NSString *)rsparser_md5Hash;
