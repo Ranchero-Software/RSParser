@@ -289,12 +289,12 @@ static const NSInteger kLengthLength = 7;
 		rel = kAlternateValue;
 	}
 
-	if (rel == kAlternateValue) {
+	if (rel == kRelatedValue) {
 		if (!article.link) {
 			article.link = urlString;
 		}
 	}
-	else if (rel == kRelatedValue) {
+	else if (rel == kAlternateValue) {
 		if (!article.permalink) {
 			article.permalink = urlString;
 		}
