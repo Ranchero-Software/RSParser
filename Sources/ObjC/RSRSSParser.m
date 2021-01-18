@@ -363,7 +363,10 @@ static const NSInteger kLanguageLength = 9;
 		}
 	}
 	else if (!self.parsingAuthor && RSSAXEqualTags(localName, kTitle, kTitleLength)) {
-		self.currentArticle.title = [self currentString];
+        NSString *articleTitle = [self currentString];
+        if (articleTitle != nil) {
+            self.currentArticle.title = articleTitle;
+        }
 	}
 	else if (RSSAXEqualTags(localName, kEnclosure, kEnclosureLength)) {
 		[self addEnclosure];

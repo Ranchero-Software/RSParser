@@ -159,6 +159,16 @@ class RSSParserTests: XCTestCase {
 		}
 	}
 
+    func testTitlesWithInvalidFeedWithImageStructures() {
+        // This invalid feed has <image> elements inside <item>s.
+        // 17 Jan 2021 bug report — we’re not parsing titles in this feed.
+        let d = parserData("aktuality", "rss", "https://www.aktuality.sk/")
+        let parsedFeed = try! FeedParser.parse(d)!
+        for article in parsedFeed.items {
+            XCTAssertNotNil(article.title)
+        }
+    }
+
 	func testFeedLanguage() {
 		let d = parserData("manton", "rss", "http://manton.org/")
 		let parsedFeed = try! FeedParser.parse(d)!
