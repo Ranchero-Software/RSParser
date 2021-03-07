@@ -26,3 +26,11 @@ public struct ParsedExtension: Hashable {
     }
     
 }
+
+extension Set where Element == ParsedExtension {
+    
+    /// Access individual extensions by name.
+    public subscript(s: String) -> ParsedExtension? {
+        return first { $0.name == s }
+    }
+}

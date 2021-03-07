@@ -128,7 +128,10 @@ class JSONFeedParserTests: XCTestCase {
         
         XCTAssertEqual(parsedFeed.extensions?.count, 1)
         
-        let feedExtension = parsedFeed.extensions!.first!
+        let nonexistentExtension = parsedFeed.extensions?["_nonexistent"]
+        XCTAssertNil(nonexistentExtension)
+        
+        let feedExtension = parsedFeed.extensions!["_contoso"]!
         XCTAssertEqual(feedExtension.name, "_contoso")
         XCTAssertEqual(feedExtension.content["about"], "Contoso JSON feed extension. There is actually no such extension in real life. This file just tests if the JSONFeed parser can parse a feed with JSON Feed extensions.")
         XCTAssertEqual(feedExtension.content["someNumber"], 42)
@@ -137,13 +140,13 @@ class JSONFeedParserTests: XCTestCase {
         
         let chronologicalItems = parsedFeed.items.sorted { $0.datePublished! > $1.datePublished! }
         
-        let itemExtension = chronologicalItems[0].extensions!.first!
+        let itemExtension = chronologicalItems[0].extensions!["_contoso"]!
         XCTAssertEqual(itemExtension.name, "_contoso")
         XCTAssertEqual(itemExtension.content["someKey"], "SomeValue2")
         XCTAssertEqual(itemExtension.content["someBoolKey"], true)
         XCTAssertEqual(itemExtension.content["anotherKey"], "AnotherValue2")
 
-        let secondItemExtension = chronologicalItems[1].extensions!.first!
+        let secondItemExtension = chronologicalItems[1].extensions!["_contoso"]!
         XCTAssertEqual(secondItemExtension.content["someBoolKey"], false)
         XCTAssertEqual(secondItemExtension.content["someIntKey"], 43)
 
