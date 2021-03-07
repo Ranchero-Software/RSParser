@@ -31,6 +31,7 @@
             "_contoso": {
                 "someKey": "SomeValue1",
                 "someBoolKey": false,
+                "someIntKey": 43,
                 "anotherKey": "AnotherValue1"
             },
             "attachments": [
@@ -39,6 +40,11 @@
                     "mime_type": "application/zip"
                 }
             ]
+        },
+        {
+            "id": "0",
+            "content_html": "<p>Third item. Without an extension.</p>",
+            "date_published": "2021-02-25T15:04:04+02:00"
         }
     ]
 }

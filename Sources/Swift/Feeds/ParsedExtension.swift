@@ -1,0 +1,28 @@
+//
+//  ParsedExtension.swift
+//  
+//
+//  Created by Jaanus Kase on 07.03.2021.
+//
+
+import Foundation
+
+/// JSON Feed extension.
+public struct ParsedExtension: Hashable {
+    
+    /// Name of extension, beginning with “_” according to JSON Feed spec. RSParser doesn’t transform the name in any way.
+    public let name: String
+    
+    /*
+     JSON Feed spec isn’t exhaustive about what types of values an extension can contain.
+     We keep this ambiguity in implementation, only requiring values to be hashable,
+     so that these values can be stored in sets.
+     */
+    public let content: Dictionary<String, AnyHashable>
+    
+    public init(name: String, content: Dictionary<String, AnyHashable>) {
+        self.name = name
+        self.content = content
+    }
+    
+}
