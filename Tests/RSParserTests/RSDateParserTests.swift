@@ -99,5 +99,11 @@ class RSDateParserTests: XCTestCase {
 		let d = RSDateWithString("2019-09-27T21:01:48.000000Z")
 		XCTAssertEqual(d, expectedDateResult)
 	}
+
+	func testHighMillisecondDate() {
+		let expectedDateResult = Self.dateWithValues(2021, 03, 29, 10, 46, 56)
+		let d = RSDateWithString("2021-03-29T10:46:56.516941+00:00")
+		XCTAssertEqual(d, expectedDateResult)
+	}
 	
 }
