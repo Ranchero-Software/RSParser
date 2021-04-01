@@ -38,7 +38,7 @@ let package = Package(
         .testTarget(
             name: "RSParserTests",
             dependencies: ["RSParser"],
-            exclude: ["RSDateParserTests.m", "Info.plist"],
+            exclude: ["Info.plist"],
             resources: [.copy("Resources")]),
     ]
 )
