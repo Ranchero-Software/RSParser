@@ -24,6 +24,7 @@
 @property (nonatomic, readwrite) RSHTMLMetadata *metadata;
 @property (nonatomic) NSMutableArray *tags;
 @property (nonatomic) BOOL didFinishParsing;
+@property (nonatomic) BOOL shouldScanPastHeadSection;
 
 @end
 
@@ -54,6 +55,11 @@
 
 	_parserData = parserData;
 	_tags = [NSMutableArray new];
+
+	// YouTube has a weird bug where, on some pages, it puts the feed link tag after the head section, in the body section.
+	// This allows for a special case where we continue to scan after the head section.
+	// (Yes, this match could yield false positives, but it’s harmless.)
+	_shouldScanPastHeadSection = [parserData.url rangeOfString:@"youtube" options:NSCaseInsensitiveSearch].location != NSNotFound;
 
 	[self parse];
 
@@ -121,7 +127,7 @@ static const NSInteger kMetaLength = 5;
 		return;
 	}
 	
-	if (RSSAXEqualTags(localName, kBody, kBodyLength)) {
+	if (RSSAXEqualTags(localName, kBody, kBodyLength) && !self.shouldScanPastHeadSection) {
 		self.didFinishParsing = YES;
 		return;
 	}

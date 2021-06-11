@@ -139,4 +139,16 @@ class HTMLMetadataTests: XCTestCase {
 		let imageURL = twitterData.imageURL!
 		XCTAssert(imageURL == "https://cdn.theatlantic.com/assets/media/img/mt/2017/11/1033101_first_full_length_trailer_arrives_pixars_coco/facebook.jpg?1511382177")
 	}
+
+	func testYouTube() {
+		// YouTube is a special case — the feed links appear after the head section, in the body section.
+		let d = parserData("YouTubeTheVolvoRocks", "html", "https://www.youtube.com/user/TheVolvorocks")
+		let metadata = RSHTMLMetadataParser.htmlMetadata(with: d)
+
+		XCTAssertEqual(metadata.feedLinks.count, 1);
+		let feedLink = metadata.feedLinks.first!
+		XCTAssertEqual(feedLink.title, "RSS");
+		XCTAssertEqual(feedLink.type, "application/rss+xml");
+		XCTAssertEqual(feedLink.urlString, "https://www.youtube.com/feeds/videos.xml?channel_id=UCct7QF2jcWRY6dhXWMSq9LQ");
+	}
 }
