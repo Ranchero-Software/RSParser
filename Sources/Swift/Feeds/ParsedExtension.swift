@@ -25,6 +25,11 @@ public struct ParsedExtension: Hashable {
         self.content = content
     }
     
+    /// Access content items directly with subscript.
+    public subscript(s: String) -> AnyHashable? {
+        return self.content[s]
+    }
+    
 }
 
 extension Set where Element == ParsedExtension {
