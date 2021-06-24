@@ -44,12 +44,7 @@ class AtomParserTests: XCTestCase {
 
 		for article in parsedFeed.items {
 
-			XCTAssertNotNil(article.externalURL)
-
-			if !article.title!.hasPrefix("★ ") {
-				XCTAssertNotNil(article.url)
-				XCTAssert(article.url!.hasPrefix("https://daringfireball.net/"))
-			}
+			XCTAssertNotNil(article.url)
 
 			XCTAssertTrue(article.uniqueID.hasPrefix("tag:daringfireball.net,2017:/"))
 
