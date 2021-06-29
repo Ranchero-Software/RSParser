@@ -17,8 +17,10 @@ public struct ParsedExtension: Hashable {
      JSON Feed spec isn’t exhaustive about what types of values an extension can contain.
      We keep this ambiguity in implementation, only requiring values to be hashable,
      so that these values can be stored in sets.
+     
+     Public access to content values happens through subscript.
      */
-    public let content: Dictionary<String, AnyHashable>
+    private let content: Dictionary<String, AnyHashable>
     
     public init(name: String, content: Dictionary<String, AnyHashable>) {
         self.name = name
