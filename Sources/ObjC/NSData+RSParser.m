@@ -58,13 +58,6 @@ static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 
 - (BOOL)isProbablyRSS {
 
-	if (bytesStartWithRSS(self.bytes, self.length) || bytesStartWithRDF(self.bytes, self.length)) { // Macworld’s RSS feed does not start with xml header.
-		return YES;
-	}
-	if (![self isProbablyXML]) {
-		return NO;
-	}
-
 	if (didFindString("<rss", self.bytes, self.length) || didFindString("<rdf:RDF", self.bytes, self.length)) {
 		return YES;
 	}
@@ -74,13 +67,6 @@ static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 }
 
 - (BOOL)isProbablyAtom {
-
-	if (bytesStartWithAtom(self.bytes, self.length)) { // https://research.swtch.com/feed.atom does not start with xml header.
-		return YES;
-	}
-	if (![self isProbablyXML]) {
-		return NO;
-	}
 
 	return didFindString("<feed", self.bytes, self.length);
 }
@@ -150,19 +136,4 @@ static BOOL bytesAreProbablyHTML(const char *bytes, NSUInteger numberOfBytes) {
 static BOOL bytesAreProbablyXML(const char *bytes, NSUInteger numberOfBytes) {
 
 	return bytesStartWithStringIgnoringWhitespace("<?xml", bytes, numberOfBytes);
-}
-
-static BOOL bytesStartWithRSS(const char *bytes, NSUInteger numberOfBytes) {
-
-	return bytesStartWithStringIgnoringWhitespace("<rss", bytes, numberOfBytes);
-}
-
-static BOOL bytesStartWithRDF(const char *bytes, NSUInteger numberOfBytes) {
-
-	return bytesStartWithStringIgnoringWhitespace("<rdf:RDF", bytes, numberOfBytes);
-}
-
-static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes) {
-
-	return bytesStartWithStringIgnoringWhitespace("<feed", bytes, numberOfBytes);
 }

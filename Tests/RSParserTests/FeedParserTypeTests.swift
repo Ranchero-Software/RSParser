@@ -106,6 +106,12 @@ class FeedParserTypeTests: XCTestCase {
 		XCTAssertTrue(type == .rss)
 	}
 
+	func testPHPXML() {
+		let d = parserData("phpxml", "rss", "https://www.fcutrecht.net/")
+		let type = feedType(d)
+		XCTAssertTrue(type == .rss)
+	}
+
 	// MARK: Atom
 
 	func testDaringFireballAtomType() {
