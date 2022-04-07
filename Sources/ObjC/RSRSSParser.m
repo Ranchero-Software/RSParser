@@ -14,6 +14,7 @@
 #import "NSString+RSParser.h"
 #import "RSDateParser.h"
 #import "ParserData.h"
+#import "RSParsedMediaContent.h"
 #import "RSParsedEnclosure.h"
 #import "RSParsedAuthor.h"
 
@@ -168,6 +169,9 @@ static const NSInteger kUppercaseRDFLength = 4;
 static const char *kEnclosure = "enclosure";
 static const NSInteger kEnclosureLength = 10;
 
+static const char *kMediaContent = "media";
+static const NSInteger kMediaContentLength = 10;
+
 static const char *kLanguage = "language";
 static const NSInteger kLanguageLength = 9;
 
@@ -252,6 +256,21 @@ static const NSInteger kLanguageLength = 9;
 			self.currentArticle.permalink = [self urlString:guid];
 		}
 	}
+}
+
+- (void)addMediaContent {
+
+    NSDictionary *attributes = self.currentAttributes;
+    NSString *url = attributes[kURLKey];
+    if (!url || url.length < 1) {
+        return;
+    }
+
+    RSParsedMediaContent *mediaContent = [[RSParsedMediaContent alloc] init];
+    mediaContent.url = url;
+    mediaContent.mimeType = attributes[kTypeKey];
+
+    [self.currentArticle addMediaContent:mediaContent];
 }
 
 - (void)addEnclosure {
@@ -340,6 +359,11 @@ static const NSInteger kLanguageLength = 9;
 		return;
 	}
 
+    if (RSSAXEqualTags(localName, kContent, kContentLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
+        [self addMediaContent];
+        return;
+    }
+
 	if (prefix != NULL) {
 		return;
 	}
@@ -394,12 +418,20 @@ static const NSInteger kLanguageLength = 9;
 	}
 
 	NSDictionary *xmlAttributes = nil;
-	if ((self.isRDF && RSSAXEqualTags(localName, kItem, kItemLength)) || RSSAXEqualTags(localName, kGuid, kGuidLength) || RSSAXEqualTags(localName, kEnclosure, kEnclosureLength)) {
+	if ((self.isRDF &&
+         RSSAXEqualTags(localName, kItem, kItemLength)) ||
+        RSSAXEqualTags(localName, kGuid, kGuidLength) ||
+        RSSAXEqualTags(localName, kEnclosure, kEnclosureLength) ||
+        (RSSAXEqualTags(localName, kContent, kContentLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength))) {
 		xmlAttributes = [self.parser attributesDictionary:attributes numberOfAttributes:numberOfAttributes];
 	}
-	if (self.currentAttributes != xmlAttributes) {
-		self.currentAttributes = xmlAttributes;
-	}
+
+	// TODO: Improve this logic
+    if (!(RSSAXEqualTags(localName, kDescription, kDescriptionLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength))) {
+        if (self.currentAttributes != xmlAttributes) {
+            self.currentAttributes = xmlAttributes;
+        }
+    }
 
 	if (!prefix && RSSAXEqualTags(localName, kItem, kItemLength)) {
 
