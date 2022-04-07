@@ -181,11 +181,19 @@ class RSSParserTests: XCTestCase {
         let parsedFeed = try! FeedParser.parse(d)!
 
         for article in parsedFeed.items {
-            XCTAssertNotNil(article.attachments)
-            XCTAssertEqual(article.attachments!.count, 1)
-            let attachment = Array(article.attachments!).first!
-            XCTAssertNotNil(attachment.mimeType)
-            XCTAssertEqual(attachment.mimeType, "image/jpeg")
+            let mediaContent = article.mediaContent
+            XCTAssertNotNil(mediaContent)
+            XCTAssertNotNil(mediaContent?.url)
+            XCTAssertEqual(mediaContent?.mimeType, "image/jpeg")
+            let mediaContentDescription = mediaContent?.mediaDescription
+            XCTAssertNotNil(mediaContentDescription)
+            XCTAssertEqual(mediaContentDescription?.mimeType, "plain")
+            if let mediaContentCredit = mediaContent?.mediaCredit {
+                XCTAssertNotNil(mediaContentCredit.mediaCreditRole)
+                XCTAssertEqual(mediaContentCredit.mediaCreditRole, "author")
+                XCTAssertNotNil(mediaContentCredit.mediaCreditScheme)
+                XCTAssertEqual(mediaContentCredit.mediaCreditScheme, "urn:ebu")
+            }
         }
     }
 

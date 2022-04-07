@@ -35,18 +35,6 @@
 	return self;
 }
 
-#pragma mark - Media Content
-
-- (void)addMediaContent:(RSParsedMediaContent *)mediaContent {
-
-    if (self.mediasContent) {
-        self.mediasContent = [self.mediasContent setByAddingObject:mediaContent];
-    }
-    else {
-        self.mediasContent = [NSSet setWithObject:mediaContent];
-    }
-}
-
 #pragma mark - Enclosures
 
 - (void)addEnclosure:(RSParsedEnclosure *)enclosure {

@@ -32,6 +32,7 @@
 @property (nonatomic) NSMutableArray *articles;
 @property (nonatomic) BOOL parsingArticle;
 @property (nonatomic) BOOL parsingAuthor;
+@property (nonatomic) BOOL parsingMedia;
 @property (nonatomic, readonly) RSParsedArticle *currentArticle;
 @property (nonatomic) BOOL parsingChannelImage;
 @property (nonatomic, readonly) NSDate *currentDate;
@@ -96,6 +97,8 @@ static NSString *kContentEncodedKey = @"content:encoded";
 static NSString *kDCDateKey = @"dc:date";
 static NSString *kDCCreatorKey = @"dc:creator";
 static NSString *kRDFAboutKey = @"rdf:about";
+static NSString *kMediaCreditRole = @"role";
+static NSString *kMediaCreditScheme = @"scheme";
 
 static const char *kItem = "item";
 static const NSInteger kItemLength = 5;
@@ -171,6 +174,9 @@ static const NSInteger kEnclosureLength = 10;
 
 static const char *kMediaContent = "media";
 static const NSInteger kMediaContentLength = 10;
+
+static const char *kMediaCredit = "credit";
+static const NSInteger kMediaCreditLengt = 10;
 
 static const char *kLanguage = "language";
 static const NSInteger kLanguageLength = 9;
@@ -259,7 +265,6 @@ static const NSInteger kLanguageLength = 9;
 }
 
 - (void)addMediaContent {
-
     NSDictionary *attributes = self.currentAttributes;
     NSString *url = attributes[kURLKey];
     if (!url || url.length < 1) {
@@ -270,7 +275,32 @@ static const NSInteger kLanguageLength = 9;
     mediaContent.url = url;
     mediaContent.mimeType = attributes[kTypeKey];
 
-    [self.currentArticle addMediaContent:mediaContent];
+    self.currentArticle.mediaContent = mediaContent;
+}
+
+- (void)addMediaDescription {
+
+    NSString *s = [self currentString];
+    if (!RSParserStringIsEmpty(s)) {
+        RSParsedMediaDescription *mediaDescription = [[RSParsedMediaDescription alloc] init];
+        mediaDescription.mediaDescription = s;
+        mediaDescription.mimeType = self.currentAttributes[kTypeKey];
+        self.currentArticle.mediaContent.mediaDescription = mediaDescription;
+    }
+}
+
+- (void)addMediaCredit {
+
+    NSDictionary *attributes = self.currentAttributes;
+    NSString *s = [self currentString];
+    if (!RSParserStringIsEmpty(s)) {
+        RSParsedMediaCredit *mediaCredit = [[RSParsedMediaCredit alloc] init];
+        mediaCredit.mediaCreditDescription = s;
+        mediaCredit.mediaCreditRole = attributes[kMediaCreditRole];
+        mediaCredit.mediaCreditScheme = attributes[kMediaCreditScheme];
+
+        self.currentArticle.mediaContent.mediaCredit = mediaCredit;
+    }
 }
 
 - (void)addEnclosure {
@@ -359,8 +389,15 @@ static const NSInteger kLanguageLength = 9;
 		return;
 	}
 
-    if (RSSAXEqualTags(localName, kContent, kContentLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
-        [self addMediaContent];
+
+    if (RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
+        if (RSSAXEqualTags(localName, kDescription, kDescription)) {
+            [self addMediaDescription];
+        }
+        else if (RSSAXEqualTags(localName, kMediaCredit, kMediaContentLength)) {
+            [self addMediaCredit];
+        }
+
         return;
     }
 
@@ -418,19 +455,16 @@ static const NSInteger kLanguageLength = 9;
 	}
 
 	NSDictionary *xmlAttributes = nil;
-	if ((self.isRDF &&
+    if ((self.isRDF &&
          RSSAXEqualTags(localName, kItem, kItemLength)) ||
         RSSAXEqualTags(localName, kGuid, kGuidLength) ||
         RSSAXEqualTags(localName, kEnclosure, kEnclosureLength) ||
-        (RSSAXEqualTags(localName, kContent, kContentLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength))) {
-		xmlAttributes = [self.parser attributesDictionary:attributes numberOfAttributes:numberOfAttributes];
-	}
+        RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
+        xmlAttributes = [self.parser attributesDictionary:attributes numberOfAttributes:numberOfAttributes];
+    }
 
-	// TODO: Improve this logic
-    if (!(RSSAXEqualTags(localName, kDescription, kDescriptionLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength))) {
-        if (self.currentAttributes != xmlAttributes) {
-            self.currentAttributes = xmlAttributes;
-        }
+    if (self.currentAttributes != xmlAttributes) {
+        self.currentAttributes = xmlAttributes;
     }
 
 	if (!prefix && RSSAXEqualTags(localName, kItem, kItemLength)) {
@@ -452,6 +486,12 @@ static const NSInteger kLanguageLength = 9;
 			self.parsingAuthor = true;
 		}
 	}
+    else if (prefix && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
+        if (self.parsingArticle && prefix && RSSAXEqualTags(localName, kContent, kContent)) {
+            [self addMediaContent];
+            self.parsingMedia = true;
+        }
+    }
 
 	if (!self.parsingChannelImage) {
 		[self.parser beginStoringCharacters];
@@ -480,6 +520,13 @@ static const NSInteger kLanguageLength = 9;
 	else if (RSSAXEqualTags(localName, kItem, kItemLength)) {
 		self.parsingArticle = NO;
 	}
+
+    else if (self.parsingMedia) {
+        [self addArticleElement:localName prefix:prefix];
+        if (RSSAXEqualTags(localName, kContent, kContentLength) && RSSAXEqualTags(prefix, kMediaContent, kMediaContentLength)) {
+            self.parsingMedia = NO;
+        }
+    }
 
 	else if (self.parsingArticle) {
 		[self addArticleElement:localName prefix:prefix];

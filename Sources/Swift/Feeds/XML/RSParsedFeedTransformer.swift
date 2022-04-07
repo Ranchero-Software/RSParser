@@ -45,9 +45,10 @@ private extension RSParsedFeedTransformer {
 		let datePublished = parsedArticle.datePublished
 		let dateModified = parsedArticle.dateModified
 		let authors = parsedAuthors(parsedArticle.authors)
-        let attachments = parsedAttachments(parsedArticle.enclosures, parsedArticle.mediasContent)
+        let mediaContent = parsedArticle.mediaContent
+        let attachments = parsedAttachments(parsedArticle.enclosures)
 
-		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: parsedArticle.feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: nil, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: nil, attachments: attachments)
+		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: parsedArticle.feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: nil, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: dateModified, mediaContent: mediaContent, authors: authors, tags: nil, attachments: attachments)
 	}
 
 	static func parsedAuthors(_ authors: Set<RSParsedAuthor>?) -> Set<ParsedAuthor>? {
@@ -63,31 +64,18 @@ private extension RSParsedFeedTransformer {
 		return transformedAuthors.isEmpty ? nil : Set(transformedAuthors)
 	}
 
-    static func parsedAttachments(_ enclosures: Set<RSParsedEnclosure>?, _ mediasContent: Set<RSParsedMediaContent>?) -> Set<ParsedAttachment>? {
-    
-        var attachments: [ParsedAttachment] = []
-        if let enclosures = enclosures, !enclosures.isEmpty {
-            let enclosureAttachments = enclosures.compactMap { (enclosure) -> ParsedAttachment? in
+    static func parsedAttachments(_ enclosures: Set<RSParsedEnclosure>?) -> Set<ParsedAttachment>? {
 
-                let sizeInBytes = enclosure.length > 0 ? enclosure.length : nil
-                return ParsedAttachment(url: enclosure.url, mimeType: enclosure.mimeType, title: nil, sizeInBytes: sizeInBytes, durationInSeconds: nil)
-            }
-
-            if !enclosureAttachments.isEmpty {
-                attachments += enclosureAttachments
-            }
+        guard let enclosures = enclosures, !enclosures.isEmpty else {
+            return nil
         }
 
-        if let mediasContent = mediasContent, !mediasContent.isEmpty {
-            let mediasContentAttachments = mediasContent.compactMap { (mediaContent) -> ParsedAttachment? in
-                return ParsedAttachment(url: mediaContent.url, mimeType: mediaContent.mimeType, title: nil, sizeInBytes: nil, durationInSeconds: nil)
-            }
+        let attachments = enclosures.compactMap { (enclosure) -> ParsedAttachment? in
 
-            if !mediasContentAttachments.isEmpty {
-                attachments += mediasContentAttachments
-            }
+            let sizeInBytes = enclosure.length > 0 ? enclosure.length : nil
+            return ParsedAttachment(url: enclosure.url, mimeType: enclosure.mimeType, title: nil, sizeInBytes: sizeInBytes, durationInSeconds: nil)
         }
 
         return attachments.isEmpty ? nil : Set(attachments)
-	}
+    }
 }

@@ -26,13 +26,12 @@
 @property (nonatomic, nullable) NSString *permalink;
 @property (nonatomic, nullable) NSSet<RSParsedAuthor *> *authors;
 @property (nonatomic, nullable) NSSet<RSParsedEnclosure *> *enclosures;
-@property (nonatomic, nullable) NSSet<RSParsedMediaContent *> *mediasContent;
+@property (nonatomic, nullable) RSParsedMediaContent *mediaContent;
 @property (nonatomic, nullable) NSDate *datePublished;
 @property (nonatomic, nullable) NSDate *dateModified;
 @property (nonatomic, nonnull) NSDate *dateParsed;
 @property (nonatomic, nullable)	NSString *language;
 
-- (void)addMediaContent:(RSParsedMediaContent *_Nonnull)mediaContent;
 - (void)addEnclosure:(RSParsedEnclosure *_Nonnull)enclosure;
 - (void)addAuthor:(RSParsedAuthor *_Nonnull)author;
 
