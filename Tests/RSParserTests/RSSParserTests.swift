@@ -175,6 +175,28 @@ class RSSParserTests: XCTestCase {
 		XCTAssertEqual(parsedFeed.language, "en-US")
 	}
 
+    func testLaNacionMediaContentAttachments() {
+
+        let d = parserData("lanacion", "xml", "https://www.lanacion.com.ar/")
+        let parsedFeed = try! FeedParser.parse(d)!
+
+        for article in parsedFeed.items {
+            let mediaContent = article.mediaContent
+            XCTAssertNotNil(mediaContent)
+            XCTAssertNotNil(mediaContent?.url)
+            XCTAssertEqual(mediaContent?.mimeType, "image/jpeg")
+            let mediaContentDescription = mediaContent?.mediaDescription
+            XCTAssertNotNil(mediaContentDescription)
+            XCTAssertEqual(mediaContentDescription?.mimeType, "plain")
+            if let mediaContentCredit = mediaContent?.mediaCredit {
+                XCTAssertNotNil(mediaContentCredit.mediaCreditRole)
+                XCTAssertEqual(mediaContentCredit.mediaCreditRole, "author")
+                XCTAssertNotNil(mediaContentCredit.mediaCreditScheme)
+                XCTAssertEqual(mediaContentCredit.mediaCreditScheme, "urn:ebu")
+            }
+        }
+    }
+
 //	func testFeedWithGB2312Encoding() {
 //		// This feed has an encoding we don’t run into very often.
 //		// https://github.com/Ranchero-Software/NetNewsWire/issues/1477

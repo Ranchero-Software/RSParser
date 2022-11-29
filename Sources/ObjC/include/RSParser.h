@@ -33,6 +33,7 @@
 #import "../RSAtomParser.h"
 #import "../RSParsedFeed.h"
 #import "../RSParsedArticle.h"
+#import "../RSParsedMediaContent.h"
 #import "../RSParsedEnclosure.h"
 #import "../RSParsedAuthor.h"
 

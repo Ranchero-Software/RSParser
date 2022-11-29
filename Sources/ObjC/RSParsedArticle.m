@@ -12,7 +12,7 @@
 #import "NSString+RSParser.h"
 #import "RSParsedAuthor.h"
 #import "RSParsedEnclosure.h"
-
+#import "RSParsedMediaContent.h"
 
 
 @implementation RSParsedArticle
@@ -34,7 +34,6 @@
 	
 	return self;
 }
-
 
 #pragma mark - Enclosures
 

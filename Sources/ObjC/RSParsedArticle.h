@@ -8,6 +8,7 @@
 
 @import Foundation;
 
+@class RSParsedMediaContent;
 @class RSParsedEnclosure;
 @class RSParsedAuthor;
 
@@ -25,6 +26,7 @@
 @property (nonatomic, nullable) NSString *permalink;
 @property (nonatomic, nullable) NSSet<RSParsedAuthor *> *authors;
 @property (nonatomic, nullable) NSSet<RSParsedEnclosure *> *enclosures;
+@property (nonatomic, nullable) RSParsedMediaContent *mediaContent;
 @property (nonatomic, nullable) NSDate *datePublished;
 @property (nonatomic, nullable) NSDate *dateModified;
 @property (nonatomic, nonnull) NSDate *dateParsed;

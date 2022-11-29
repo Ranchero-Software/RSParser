@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RSParserObjC
 
 public struct ParsedItem: Hashable {
 
@@ -24,13 +25,14 @@ public struct ParsedItem: Hashable {
 	public let bannerImageURL: String?
 	public let datePublished: Date?
 	public let dateModified: Date?
+    public let mediaContent: RSParsedMediaContent?
 	public let authors: Set<ParsedAuthor>?
 	public let tags: Set<String>?
 	public let attachments: Set<ParsedAttachment>?
 	
 	public init(syncServiceID: String?, uniqueID: String, feedURL: String, url: String?, externalURL: String?, title: String?,
 				language: String?, contentHTML: String?, contentText: String?, summary: String?, imageURL: String?,
-				bannerImageURL: String?,datePublished: Date?, dateModified: Date?, authors: Set<ParsedAuthor>?,
+                bannerImageURL: String?,datePublished: Date?, dateModified: Date?, mediaContent: RSParsedMediaContent?, authors: Set<ParsedAuthor>?,
 				tags: Set<String>?, attachments: Set<ParsedAttachment>?) {
 		
 		self.syncServiceID = syncServiceID
@@ -48,6 +50,7 @@ public struct ParsedItem: Hashable {
 		self.datePublished = datePublished
 		self.dateModified = dateModified
 		self.authors = authors
+        self.mediaContent = mediaContent
 		self.tags = tags
 		self.attachments = attachments
 	}
