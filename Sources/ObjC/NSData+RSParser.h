@@ -11,14 +11,14 @@
 
 @interface NSData (RSParser)
 
-- (BOOL)isProbablyHTML;
-- (BOOL)isProbablyXML;
-- (BOOL)isProbablyJSON;
+- (BOOL)rsparser_isProbablyHTML;
+- (BOOL)rsparser_isProbablyXML;
+- (BOOL)rsparser_isProbablyJSON;
 
-- (BOOL)isProbablyJSONFeed;
-- (BOOL)isProbablyRSSInJSON;
-- (BOOL)isProbablyRSS;
-- (BOOL)isProbablyAtom;
+- (BOOL)rsparser_isProbablyJSONFeed;
+- (BOOL)rsparser_isProbablyRSSInJSON;
+- (BOOL)rsparser_isProbablyRSS;
+- (BOOL)rsparser_isProbablyAtom;
 
 @end
 

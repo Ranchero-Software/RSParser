@@ -23,32 +23,32 @@ static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 
 @implementation NSData (RSParser)
 
-- (BOOL)isProbablyHTML {
+- (BOOL)rsparser_isProbablyHTML {
 
 	return bytesAreProbablyHTML(self.bytes, self.length);
 }
 
-- (BOOL)isProbablyXML {
+- (BOOL)rsparser_isProbablyXML {
 
 	return bytesAreProbablyXML(self.bytes, self.length);
 }
 
-- (BOOL)isProbablyJSON {
+- (BOOL)rsparser_isProbablyJSON {
 
 	return bytesStartWithStringIgnoringWhitespace("{", self.bytes, self.length);
 }
 
-- (BOOL)isProbablyJSONFeed {
+- (BOOL)rsparser_isProbablyJSONFeed {
 
-	if (![self isProbablyJSON]) {
+	if (![self rsparser_isProbablyJSON]) {
 		return NO;
 	}
 	return didFindString("://jsonfeed.org/version/", self.bytes, self.length) || didFindString(":\\/\\/jsonfeed.org\\/version\\/", self.bytes, self.length);
 }
 
-- (BOOL)isProbablyRSSInJSON {
+- (BOOL)rsparser_isProbablyRSSInJSON {
 
-	if (![self isProbablyJSON]) {
+	if (![self rsparser_isProbablyJSON]) {
 		return NO;
 	}
 	const char *bytes = self.bytes;
@@ -56,7 +56,7 @@ static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 	return didFindString("rss", bytes, length) && didFindString("channel", bytes, length) && didFindString("item", bytes, length);
 }
 
-- (BOOL)isProbablyRSS {
+- (BOOL)rsparser_isProbablyRSS {
 
 	if (didFindString("<rss", self.bytes, self.length) || didFindString("<rdf:RDF", self.bytes, self.length)) {
 		return YES;
@@ -66,7 +66,7 @@ static BOOL bytesStartWithAtom(const char *bytes, NSUInteger numberOfBytes);
 	return (didFindString("<channel>", self.bytes, self.length) && didFindString("<pubDate>", self.bytes, self.length));
 }
 
-- (BOOL)isProbablyAtom {
+- (BOOL)rsparser_isProbablyAtom {
 
 	return didFindString("<feed", self.bytes, self.length);
 }

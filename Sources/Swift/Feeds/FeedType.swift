@@ -37,20 +37,20 @@ public func feedType(_ parserData: ParserData, isPartialData: Bool = false) -> F
 
 	let nsdata = parserData.data as NSData
 
-	if nsdata.isProbablyJSONFeed() {
+	if nsdata.rsparser_isProbablyJSONFeed() {
 		return .jsonFeed
 	}
-	if nsdata.isProbablyRSSInJSON() {
+	if nsdata.rsparser_isProbablyRSSInJSON() {
 		return .rssInJSON
 	}
-	if nsdata.isProbablyRSS() {
+	if nsdata.rsparser_isProbablyRSS() {
 		return .rss
 	}
-	if nsdata.isProbablyAtom() {
+	if nsdata.rsparser_isProbablyAtom() {
 		return .atom
 	}
 
-	if isPartialData && nsdata.isProbablyJSON() {
+	if isPartialData && nsdata.rsparser_isProbablyJSON() {
 		// Might not be able to detect a JSON Feed without all data.
 		// Dr. Drang’s JSON Feed (see althis.json and allthis-partial.json in tests)
 		// has, at this writing, the JSON version element at the end of the feed,
