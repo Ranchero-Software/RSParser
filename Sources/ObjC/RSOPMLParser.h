@@ -12,7 +12,9 @@
 @class ParserData;
 @class RSOPMLDocument;
 
-typedef void (^OPMLParserCallback)(RSOPMLDocument *opmlDocument, NSError *error);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^OPMLParserCallback)(RSOPMLDocument * _Nullable opmlDocument, NSError * _Nullable error);
 
 // Parses on background thread; calls back on main thread.
 void RSParseOPML(ParserData *parserData, OPMLParserCallback callback);
@@ -20,7 +22,8 @@ void RSParseOPML(ParserData *parserData, OPMLParserCallback callback);
 
 @interface RSOPMLParser: NSObject
 
-+ (RSOPMLDocument *)parseOPMLWithParserData:(ParserData *)parserData error:(NSError **)error;
++ (nullable RSOPMLDocument *)parseOPMLWithParserData:(ParserData *)parserData error:(NSError **)error;
 
 @end
 
+NS_ASSUME_NONNULL_END

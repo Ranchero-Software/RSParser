@@ -11,9 +11,13 @@
 @class ParserData;
 @class RSParsedFeed;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface RSRSSParser : NSObject
 
 + (RSParsedFeed *)parseFeedWithData:(ParserData *)parserData;
 
 
 @end
+
+NS_ASSUME_NONNULL_END

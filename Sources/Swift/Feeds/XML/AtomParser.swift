@@ -24,9 +24,7 @@ public struct AtomParser {
 
 	public static func parse(_ parserData: ParserData) -> ParsedFeed? {
 
-		if let rsParsedFeed = RSAtomParser.parseFeed(with: parserData) {
-			return RSParsedFeedTransformer.parsedFeed(rsParsedFeed)
-		}
-		return nil
+		let rsParsedFeed = RSAtomParser.parseFeed(with: parserData)
+		return RSParsedFeedTransformer.parsedFeed(rsParsedFeed)
 	}
 }

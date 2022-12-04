@@ -8,6 +8,7 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (RSParser)
 
@@ -22,5 +23,6 @@
 
 @end
 
+NS_ASSUME_NONNULL_END
 
 

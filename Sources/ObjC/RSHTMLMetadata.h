@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSHTMLMetadataAppleTouchIcon : NSObject
 
-@property (nonatomic, readonly) NSString *rel;
+@property (nonatomic, nullable, readonly) NSString *rel;
 @property (nonatomic, nullable, readonly) NSString *sizes;
 @property (nonatomic, readonly) CGSize size;
 @property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.

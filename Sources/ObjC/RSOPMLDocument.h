@@ -12,10 +12,13 @@
 
 
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface RSOPMLDocument : RSOPMLItem
 
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *url;
+@property (nonatomic, nullable) NSString *title;
+@property (nonatomic, nullable) NSString *url;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -16,12 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLStartElement:(const unsigned char *)localName attributes:(const unsigned char *_Nullable*_Nullable)attributes;
+- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLStartElement:(const unsigned char * _Nullable)localName attributes:(const unsigned char * _Nullable * _Nullable)attributes;
 
-- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLEndElement:(nullable const unsigned char *)localName;
+- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLEndElement:(const unsigned char * _Nullable)localName;
 
 // Length is guaranteed to be greater than 0.
-- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLCharactersFound:(nullable const unsigned char *)characters length:(NSUInteger)length;
+- (void)saxParser:(RSSAXHTMLParser *)SAXParser XMLCharactersFound:(const unsigned char * _Nullable)characters length:(NSUInteger)length;
 
 - (void)saxParserDidReachEndOfDocument:(RSSAXHTMLParser *)SAXParser; // If canceled, may not get called (but might).
 
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Delegate can call from within XMLStartElement.
 
-- (nullable NSDictionary *)attributesDictionary:(const unsigned char *_Nullable*_Nullable)attributes;
+- (nullable NSDictionary *)attributesDictionary:(const unsigned char * _Nullable * _Nullable)attributes;
 
 
 @end

@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 // OPML allows for arbitrary attributes.
 // These are the common attributes in OPML files used as RSS subscription lists.
 
@@ -25,12 +27,14 @@ extern NSString *OPMLXMLURLKey; //xmlUrl
 // A frequent error in OPML files is to mess up the capitalization,
 // so these do a case-insensitive lookup.
 
-@property (nonatomic, readonly) NSString *opml_text;
-@property (nonatomic, readonly) NSString *opml_title;
-@property (nonatomic, readonly) NSString *opml_description;
-@property (nonatomic, readonly) NSString *opml_type;
-@property (nonatomic, readonly) NSString *opml_version;
-@property (nonatomic, readonly) NSString *opml_htmlUrl;
-@property (nonatomic, readonly) NSString *opml_xmlUrl;
+@property (nonatomic, nullable, readonly) NSString *opml_text;
+@property (nonatomic, nullable, readonly) NSString *opml_title;
+@property (nonatomic, nullable, readonly) NSString *opml_description;
+@property (nonatomic, nullable, readonly) NSString *opml_type;
+@property (nonatomic, nullable, readonly) NSString *opml_version;
+@property (nonatomic, nullable, readonly) NSString *opml_htmlUrl;
+@property (nonatomic, nullable, readonly) NSString *opml_xmlUrl;
 
 @end
+
+NS_ASSUME_NONNULL_END

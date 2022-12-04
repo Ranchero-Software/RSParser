@@ -21,9 +21,7 @@ public struct RSSParser {
 
 	public static func parse(_ parserData: ParserData) -> ParsedFeed? {
 
-		if let rsParsedFeed = RSRSSParser.parseFeed(with: parserData) {
-			return RSParsedFeedTransformer.parsedFeed(rsParsedFeed)
-		}
-		return nil
+		let rsParsedFeed = RSRSSParser.parseFeed(with: parserData)
+		return RSParsedFeedTransformer.parsedFeed(rsParsedFeed)
 	}
 }
