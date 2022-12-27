@@ -175,6 +175,14 @@ class RSSParserTests: XCTestCase {
 		XCTAssertEqual(parsedFeed.language, "en-US")
 	}
 
+	func testFeedCategoriesAsTags() {
+		let d = parserData("dcrainmaker", "xml", "https://www.dcrainmaker.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		for article in parsedFeed.items {
+			XCTAssertNotNil(article.tags)
+		}
+	}
+
 //	func testFeedWithGB2312Encoding() {
 //		// This feed has an encoding we don’t run into very often.
 //		// https://github.com/Ranchero-Software/NetNewsWire/issues/1477

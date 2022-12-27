@@ -60,6 +60,18 @@
 	}
 }
 
+#pragma mark - Categories
+
+- (void)addCategory:(NSString *)category {
+
+	if (self.categories) {
+		self.categories = [self.categories setByAddingObject:category];
+	}
+	else {
+		self.categories = [NSSet setWithObject:category];
+	}
+}
+
 #pragma mark - articleID
 
 - (NSString *)articleID {
