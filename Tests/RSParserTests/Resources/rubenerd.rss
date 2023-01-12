@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xml:base="https://rubenerd.com/" xml:lang="en-SG" xmlns:blogChannel="http://backend.userland.com/blogChannelModule" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:derived="https://rubenerd.com/derived/" xmlns:source="http://source.scripting.com/">
+
+<channel>
+
+  <!-- WELCOME TO RUBENERD'S RSS FEEDS!            -->
+  <!-- ============================================-->
+  <!-- Weblog:     https://rubenerd.com/feed/      -->
+  <!-- Podcast:    http://showfeed.rubenerd.com/   -->
+  <!-- Help:       https://rubenerd.com/help/      -->
+  <!-- Omake OPML: https://rubenerd.com/omake.opml -->
+
+  <title>Rubenerd</title> 
+  <link>https://rubenerd.com/</link>
+  <category>Weblog</category>
+  <description>By Ruben Schade in s/Singapore/Sydney/. 🌻</description>
+  <copyright>© 2004–2023 Ruben Schade.</copyright>
+  <language>en-SG</language>
+  <generator>Hugo, Vim</generator>
+  <lastBuildDate>Wed, 11 Jan 2023 13:50:25 +1100</lastBuildDate>
+  <pubDate>2023-01-11T08:53:01+11:00</pubDate>
+  <docs>http://cyber.law.harvard.edu/rss/rss.html</docs>
+  <ttl>30</ttl>
+  <cloud domain="rpc.rsscloud.io" port="5337" path="/pleaseNotify" registerProcedure="" protocol="https-post"/>
+
+  <!-- Namespace extensions, for agents that suppport them -->
+  <blogChannel:blink>https://antranigv.am/weblog_en/index.xml</blogChannel:blink>
+  <blogChannel:blogRoll>http://feedland.org/opml?screenname=Rubenerd</blogChannel:blogRoll>
+  <dc:creator>Ruben Schade</dc:creator>
+  <dc:identifier>https://rubenerd.com/feed/</dc:identifier>
+  <dcterms:available>2004-12-21T01:08:00+10:00</dcterms:available>
+  <dcterms:license>https://creativecommons.org/licenses/by/3.0/</dcterms:license>
+  <dcterms:tableOfContents>https://rubenerd.com/archives/</dcterms:tableOfContents>
+  <source:account service="gitlab">rubenerd</source:account>
+  <source:account service="mastodon">@Rubenerd@bsd.network</source:account>
+  <source:account service="twitter">rubenerd</source:account>
+  <source:localTime>Wed, 11 Jan 2023 08:53 +1100</source:localTime>
+
+  <!-- Blog thumbnail -->
+  <image>
+    <url>https://rubenerd.com/rss.png</url>
+    <title>Rubenerd</title> 
+    <link>https://rubenerd.com/</link>
+    <width>72</width>
+    <height>72</height>
+    <description>By Ruben Schade in s/Singapore/Sydney/. 🌻</description>
+  </image>
+
+  <!-- Blog search field -->
+  <textInput>
+    <title>Search</title>
+	<description>Search Rubenerd</description>
+	<name>q</name>
+	<link>https://html.duckduckgo.com/html/</link>
+  </textInput>
+
+  <item>
+    <title>The great Commodore/Atari engineer swap</title>
+    <link>https://rubenerd.com/the-commodore-atari-engineer-swap/</link>
+    <guid isPermaLink="true">https://rubenerd.com/the-commodore-atari-engineer-swap/</guid>
+    <category>hardware</category>
+    <category domain="https://rubenerd.com/tag/atari/">atari</category>
+    <category domain="https://rubenerd.com/tag/commodore/">commodore</category>
+    <pubDate>Wed, 11 Jan 2023 08:53:01 +1100</pubDate>
+    <description><![CDATA[<p>Spend any time reading about the history of 1980s home computers, and you&rsquo;ll learn about Jack Trameil&rsquo;s famous departure from Commodore to Atari, two of the biggest names in the industry at the time. What I didn&rsquo;t realise was just how much engineering talent and design ended up being swapped between the two companies.</p>
+<p>Dave Farquhar has a <a href="https://dfarq.homeip.net/atari-st-vs-amiga/">great article</a> exploring the history:</p>
+<blockquote>
+<p>In some ways, it felt like the legitimate successors of two of the most influential 8-bit computers of the 1980s ended up being traded for one another. The ST resembled the C-64 more than it resembled the 800, and the Amiga resembled the 800 more than it resembled the 64. The Amiga was the Atariest Commodore ever, and the ST was the Commodoriest Atari ever.</p>
+</blockquote>
+<p>And a bit of history about how Amiga played into this:</p>
+<blockquote>
+<p>Amiga secured a short-term $500,000 loan from Atari in March 1984, just before the Tramiel purchase. Part of the agreement would allow Atari to use the Amiga chips in a new computer, which would be named the Atari 1850XLD. Amiga backed out of the agreement at the end of June when enough money to repay the loan, plus interest, and to terminate the contract turned up. The benefactor was Commodore, who provided the money to buy time to negotiate a win-win deal. Then in August 1984, Commodore purchased Amiga for $27 million.</p>
+<p>The result was by August 1984, key engineers from both companies had changed sides and the two companies had traded lawsuits.</p>
+</blockquote>
+<p>I&rsquo;ve always loved Ira Velinsky&rsquo;s industrial design of the Atari ST. It seems weird to think it has ex-Commodore fingerprints on it; but then the whole history of these companies and product lines are bizarre.</p>
+<p>I have a 1040ST and an Amiga 600 on the proverbial wishlist, but suffice to say space and finances won&rsquo;t be forthcoming for a while!</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/the-commodore-atari-engineer-swap/">Ruben Schade</a> in Sydney, 2023-01-11.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/the-commodore-atari-engineer-swap.md"/>
+  </item>
+
+  <item>
+    <title>Aerospace engineers are the new rocket scientists</title>
+    <link>https://rubenerd.com/aerospace-engineers-are-the-new-rocket-scientists/</link>
+    <guid isPermaLink="true">https://rubenerd.com/aerospace-engineers-are-the-new-rocket-scientists/</guid>
+    <category>thoughts</category>
+    <category domain="https://rubenerd.com/tag/advertising/">advertising</category>
+    <category domain="https://rubenerd.com/tag/language/">language</category>
+    <pubDate>Wed, 11 Jan 2023 07:55:40 +1100</pubDate>
+    <description><![CDATA[<p>Do you remember when everyone held <em>rocket scientists</em> with such high regard, that their intelligence was strategically launched as joke punchline? I feel like aerospace engineers are that for advertisers.</p>
+<p>In the space of a week I&rsquo;ve heard <em>aerospace engineers</em> (allegedly) support a mattress payment plan, a razor, and a breed of tomatoes.</p>
+<p>You&rsquo;d need to have a brain between your ears to juggle the physics, mathematics, and industrial design to be an aerospace engineer, but I&rsquo;m not sure what uniquely qualifies them to recommend such things! ✈️</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/aerospace-engineers-are-the-new-rocket-scientists/">Ruben Schade</a> in Sydney, 2023-01-11.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/aerospace-engineers-are-the-new-rocket-scientists.md"/>
+  </item>
+
+  <item>
+    <title>The solution to centralisation</title>
+    <link>https://rubenerd.com/the-solution-to-centralisation/</link>
+    <guid isPermaLink="true">https://rubenerd.com/the-solution-to-centralisation/</guid>
+    <category>internet</category>
+    <category domain="https://rubenerd.com/tag/om-malik/">om malik</category>
+    <category domain="https://rubenerd.com/tag/silos/">silos</category>
+    <category domain="https://rubenerd.com/tag/social-media/">social media</category>
+    <pubDate>Tue, 10 Jan 2023 15:07:03 +1100</pubDate>
+    <description><![CDATA[<p><a href="https://om.co/2023/01/04/why-internet-silos-win/">Om Malik</a> quoted a <a href="https://manuelmoreale.com/on-internet-silos">post by Manuel Moreale</a> about Twitter, Mastodon, and the broader question of Internet silos:</p>
+<blockquote>
+<p>I&rsquo;m convinced that there&rsquo;s no solution to the centralisation issue we&rsquo;re currently facing. And that&rsquo;s because I think that fundamentally people are, when it comes to the internet, lazy. And gathering where everyone else is definitely seems easier. It&rsquo;s also easier to delegate the job of moderating and policing to someone else and so as a result people will inevitably cluster around a few big websites, no matter what infrastructure we build.</p>
+</blockquote>
+<p>I empathise, and in my darker moments I may even agree. But podcasting is proof there&rsquo;s evidence to be optimistic. It&rsquo;s resistance to being silod isn&rsquo;t happenstance, it&rsquo;s a function of its design. Much as we expect to be able to load any webpage in our browser, we assume we can publish and listen to any podcast on any client we want. Platforms that have attempted to wrestle control away with proprietary extensions or exclusive content have failed for this reason.</p>
+<p>Software may help with discovery, subscriptions, and sharing, but the underlying protocols are the building blocks of the web. They&rsquo;re open, distributed, and owned by nobody. Social networks can be built the same way, with the same inherent resiliency.</p>
+<p>People don&rsquo;t cluster in silos because they&rsquo;re lazy, it&rsquo;s because its where everyone else is. Or more specifically, those they care about. People underestimate just how powerful the network effect really is. It&rsquo;s a roadblock right now, but it&rsquo;s also an opportunity.</p>
+<p>Captured audiences in silos may offer an attractive business model in the short term, but they&rsquo;re by no means an inevitable structure, or the inescapable end-game of the Internet&hellip; as grim as our current situation may seem.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/the-solution-to-centralisation/">Ruben Schade</a> in Sydney, 2023-01-10.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/the-solution-to-centralisation.md"/>
+  </item>
+
+  <item>
+    <title>Using PCI slots for SSD brackets</title>
+    <link>https://rubenerd.com/using-a-pci-slot-for-ssds/</link>
+    <guid isPermaLink="true">https://rubenerd.com/using-a-pci-slot-for-ssds/</guid>
+    <category>hardware</category>
+    <category domain="https://rubenerd.com/tag/servers/">servers</category>
+    <category domain="https://rubenerd.com/tag/ssds/">ssds</category>
+    <category domain="https://rubenerd.com/tag/storage/">storage</category>
+    <pubDate>Tue, 10 Jan 2023 11:28:12 +1100</pubDate>
+    <description><![CDATA[<p>I&rsquo;m spoiled in server land at work. The build quality of desktop cases has improved significantly over the last few years, but all the innovation is being poured into radiators, chintzy lighting, and vertical mount GPUs. Storage is relegated to awkward positions behind motherboards, in flimsy trays in the power supply shroud area, or eschewed (gesundheit) altogether. All together? English is weird.</p>
+<p>In what I dub a reverse-Tardis, cases are getting bigger, but their internal storage is shrinking. Some of this can be attributed to the introduction of NVMe and eMMC that cleanly mount directly to the motherboard without data or power cables. But their price, and limited board slots, make them ill-suited for bulk storage, scratch space, and redundancy. People often say that about me.</p>
+<p>What?</p>
+<p>With even the multi-purpose 5.25-inch bay vanishing from all but a <a href="https://www.fractal-design.com/products/cases/pop/" title="The Fractal Pop case">select few cases</a>, what other options do we have? It seems silly that we&rsquo;d use external drives when the cases are large enough to eat cases from a few years ago.</p>
+<p>I&rsquo;ve often wondered why we don&rsquo;t make better use of PCI slots, especially for storage. Desktop cases usually ship with far more slots than anyone will ever use, even with larger motherboards or graphics cards. And what if your use case is a NAS, or a home server?</p>
+<p>Searching around last weekend, like a gentleman, I found an unusual <a href="https://silverstonetek.com/en/product/info/storage/EXB01/">Silverstone EXB01</a> unit with a removable 9.5mm drive tray that mounts cleanly in a PCI slot.</p>
+<figure><p><img src="https://rubenerd.com/files/2023/exb01-34right-top.jpg" alt="Photo of the Silverstone EXB01, showing the PCI mointing bracket and frame for the 9.5 mm drive." style="width:280px; height:191px;" /></p></figure>
+<p>It uses standard SATA power and data connectors, meaning the PCI slot is only structural. This would be useful where the case extends beyond the motherboard, and you don&rsquo;t have any more PCI Express slots left for SATA, eMMC, or NVMe adaptors.</p>
+<p>I&rsquo;m tempted to buy a couple for the bottom of my Antec 300 FreeBSD bhyve box, if only to have a more solid place to mount drives instead of using double-sided tape or cable ties.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/using-a-pci-slot-for-ssds/">Ruben Schade</a> in Sydney, 2023-01-10.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/using-a-pci-slot-for-ssds.md"/>
+  </item>
+
+  <item>
+    <title>A rainbow Beatles shirt</title>
+    <link>https://rubenerd.com/a-rainbow-beatles-shirt/</link>
+    <guid isPermaLink="true">https://rubenerd.com/a-rainbow-beatles-shirt/</guid>
+    <category>thoughts</category>
+    <category domain="https://rubenerd.com/tag/clothes/">clothes</category>
+    <category domain="https://rubenerd.com/tag/music/">music</category>
+    <category domain="https://rubenerd.com/tag/music-monday/">music monday</category>
+    <category domain="https://rubenerd.com/tag/the-beatles/">the beatles</category>
+    <pubDate>Mon, 09 Jan 2023 18:15:12 +1100</pubDate>
+    <description><![CDATA[<p>Today&rsquo;s <em><a href="https://rubenerd.com/tag/music-monday/">Music Monday</a></em> concerns a purchase I made over the weekend. I was walking through one of our local music stores, like a gentleman, when I chanced upon this fetching garment depicting our favourite Liverpudlians; Mat from <a href="https://www.youtube.com/@Techmoan">Techmoan</a> notwithstanding:</p>
+<figure><p><img src="https://rubenerd.com/files/2023/beatles-shirt@1x.jpg" srcset="https://rubenerd.com/files/2023/beatles-shirt@2x.jpg" /></p></figure>
+<p>I&rsquo;m wearing it now as I write this post; it&rsquo;s rather comfortable and has <em>The Beatles</em> on it. Not that specific shirt above, that&rsquo;s a press shot; and not the actual <em>Beatles</em>, they&rsquo;re not/weren&rsquo;t that flat.</p>
+<p>I couldn&rsquo;t tell you why though, but the colours feel wrong. This is what I feel like they should be:</p>
+<ol>
+<li>George Harrison should be <span style="font-weight:bold; color:#fc3">yellow</span> (here comes the sun&hellip;)</li>
+<li>Paul McCartney should be <span style="font-weight:bold; color:#06f">blue</span></li>
+<li>Ringo Starr should be <span style="font-weight:bold; color:#c03">red</span></li>
+<li>George Martin should be <span style="font-weight:bold; color:#096">green</span></li>
+</ol>
+<p>I&rsquo;m not sure about John Lennon. Maybe he&rsquo;s the black in the shirt.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/a-rainbow-beatles-shirt/">Ruben Schade</a> in Sydney, 2023-01-09.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/a-rainbow-beatles-shirt.md"/>
+  </item>
+
+  <item>
+    <title>What happened to data sims for tablets?</title>
+    <link>https://rubenerd.com/what-happened-to-data-sims-for-tablets/</link>
+    <guid isPermaLink="true">https://rubenerd.com/what-happened-to-data-sims-for-tablets/</guid>
+    <category>hardware</category>
+    <category domain="https://rubenerd.com/tag/australia/">australia</category>
+    <category domain="https://rubenerd.com/tag/ipad/">ipad</category>
+    <category domain="https://rubenerd.com/tag/ipad-mini/">ipad mini</category>
+    <category domain="https://rubenerd.com/tag/telcos/">telcos</category>
+    <pubDate>Mon, 09 Jan 2023 08:46:05 +1100</pubDate>
+    <description><![CDATA[<p>Last year I <a href="https://rubenerd.com/farewell-to-my-kindle-paperwhite/">bought a iPad Mini 6</a> to read manga, light novels, books, newspapers, and RSS at coffee shops and the sofa. I find iOS frustrating for productive work, but it&rsquo;s fine in this role.</p>
+<p><em>(Transferring books to it has become more frustrating since it decided not to mount or appear on macOS anymore, meaning tedious use of a third party server to upload/download from. But that&rsquo;s for another post).</em></p>
+<p>I opted for the version with mobile support, but ended up tethering off my phone instead. Weirdly though, my iPhone SE 3 has been much flakier than my iPhone 8 in this regard, with multiple attempts to tether often going nowhere. It&rsquo;s the same experience with the MacBook Air, and my FreeBSD Panasonic Let&rsquo;s Note.</p>
+<p>I assumed I could go to our Australian telco and get an extra SIM to share Clara&rsquo;s and my shared mobile plan, or get a separate data SIM. The former was way too expensive to justify for a bit of convenience, and the latter doesn&rsquo;t exist anymore, unless you want to go the pre-paid route.</p>
+<p>Australian telcos have always sucked, especially after coming back from Singapore. But was the situation always like this? I swear I could get an affordable data SIM a few years ago.</p>
+<p>I miss services like AvantGo that would let me download news and books automatically before heading out. An iPad-sized Tungsten running classic PalmOS and AvantGo would be wonderful.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/what-happened-to-data-sims-for-tablets/">Ruben Schade</a> in Sydney, 2023-01-09.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/what-happened-to-data-sims-for-tablets.md"/>
+  </item>
+
+  <item>
+    <title>Dismissing criticism with workarounds</title>
+    <link>https://rubenerd.com/dismissing-criticism-with-workarounds/</link>
+    <guid isPermaLink="true">https://rubenerd.com/dismissing-criticism-with-workarounds/</guid>
+    <category>internet</category>
+    <category domain="https://rubenerd.com/tag/comments/">comments</category>
+    <category domain="https://rubenerd.com/tag/social-media/">social media</category>
+    <pubDate>Sun, 08 Jan 2023 10:10:47 +1100</pubDate>
+    <description><![CDATA[<p>With apologies to Douglas Adams:</p>
+<blockquote>
+<p><strong>OP:</strong> This new feature is so irritating! Every time I press return, a glove slaps me in the face. WHY!?</p>
+<p><strong>Reply Guy:</strong> Errrr/uhhhh/ummmm, <a href="https://www.urbandictionary.com/define.php?term=You+Do+Know">you do know</a> that you that can disable it by going to the planning office with a map and a flashlight, and opening the door marked &ldquo;BEWARE OF THE LEOPARD&rdquo;?</p>
+<p><strong>OP:</strong> Thanks, but even if that always worked, I&rsquo;m asking why it&rsquo;s the default. My face hurts.</p>
+<p><strong>Reply Guy:</strong> You can <a href="https://www.excitant.co.uk/just-is-a-dangerous-word/">just</a> disable it! I don&rsquo;t understand.</p>
+<p><strong>OP:</strong> I think you do.</p>
+</blockquote>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/dismissing-criticism-with-workarounds/">Ruben Schade</a> in Sydney, 2023-01-08.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/dismissing-criticism-with-workarounds.md"/>
+  </item>
+
+  <item>
+    <title>This driver must get around</title>
+    <link>https://rubenerd.com/this-driver-must-get-around/</link>
+    <guid isPermaLink="true">https://rubenerd.com/this-driver-must-get-around/</guid>
+    <category>internet</category>
+    <category domain="https://rubenerd.com/tag/australia/">australia</category>
+    <category domain="https://rubenerd.com/tag/networking/">networking</category>
+    <category domain="https://rubenerd.com/tag/photos/">photos</category>
+    <category domain="https://rubenerd.com/tag/pointless/">pointless</category>
+    <pubDate>Sun, 08 Jan 2023 09:43:36 +1100</pubDate>
+    <description><![CDATA[<figure><p><img src="https://rubenerd.com/files/2023/car-wan-licence-plate@1x.jpg" alt="Car with a licence plate starting with Wide Area Network." style="width:500px; height:333px;" srcset="https://rubenerd.com/files/2023/car-wan-licence-plate@2x.jpg 2x" /></p></figure>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/this-driver-must-get-around/">Ruben Schade</a> in Sydney, 2023-01-08.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/this-driver-must-get-around.md"/>
+  </item>
+
+  <item>
+    <title>Time spent looking at my phone</title>
+    <link>https://rubenerd.com/time-spent-looking-at-my-phone/</link>
+    <guid isPermaLink="true">https://rubenerd.com/time-spent-looking-at-my-phone/</guid>
+    <category>hardware</category>
+    <category domain="https://rubenerd.com/tag/health/">health</category>
+    <category domain="https://rubenerd.com/tag/personal/">personal</category>
+    <category domain="https://rubenerd.com/tag/phones/">phones</category>
+    <pubDate>Sun, 08 Jan 2023 08:35:59 +1100</pubDate>
+    <description><![CDATA[<p>I gave myself a few goals to meet this year, one of which was to be more aware of how I use my phones. Whenever I reach for them, I take deliberate note and have them justify their intrusion, or their flip cases remain closed. I&rsquo;ve found this reframing useful; I&rsquo;m not denying myself permission, I&rsquo;m the gatekeeper. Phones aren&rsquo;t the boss, <em>I am!</em></p>
+<p>My motivation was to see if my suspicion was true that I was filling a lot of time with mindless use of these devices, and for bonus points if they&rsquo;re contributing to stress, shorter attention spans, fatigue, and a lack of mindfulness. I&rsquo;ve already delegated certain things to a separate music player, ebook reader, and camera, so I figured it was the next logical step.</p>
+<p>I was pleasantly surprised that I <em>do</em> reach for a phone for productive uses more than I expected. I respond to messages, look up vintage computer specs, run currency conversions, check foreign timezones, do some basic calculations, look up the opening hours for a coffee shop, etc. A phone in this capacity is like a scientific calculator mixed with an encyclopaedia… the ultimate device I could have only dreamed about before smartphones.</p>
+<p>The other observations were a tad unsettling. The most alarming is what I&rsquo;m dubbing the lucid dream effect. I&rsquo;ve become more attuned to when I&rsquo;m reaching for my phone, but I&rsquo;ve still caught myself mindlessly scrolling well after the fact. It&rsquo;s become so rote, in some cases I had no recollection of picking it up in the first place. It&rsquo;s like realising you&rsquo;ve been in a dream this whole time.</p>
+<p>Mostly though, I&rsquo;ve realised just how often I reach for it to fill a spare moment. This is unsurprising; it&rsquo;s conventional wisdom that we&rsquo;re hooked on these devices and crave the sugar hit and dopamine that comes from a brief, superficial distraction. But I think we kid ourselves by thinking <em>yeah, but I&rsquo;m smart, and that doesn&rsquo;t happen to me!</em> It does.</p>
+<p>Walking to the coffee shop this morning to write this post, I caught myself reaching for the phone in the stairwell, walking down the street, waiting for the traffic light, waiting for the other traffic light, walking down another street, and while I was in the queue to order. None of these activities took more than a few minutes, but the pattern of behaviour has become so established that I didn&rsquo;t give it a second thought.</p>
+<p>And I&rsquo;ve already noticed a change, even after just a week. There isn&rsquo;t a way to talk about these without sounding cliché, but I&rsquo;ve become more aware of my surroundings. I&rsquo;ve smiled at more people! I look out the window more. But the biggest shift has been a higher tolerance for boredom. I can tolerate brushing my teeth for a few minutes without needing to check who&rsquo;s mentioning me on a thread about something.</p>
+<p>We can&rsquo;t use these devices on our own terms. We&rsquo;re expected to be on call and available 24/7, lest we be considered negligent in our jobs, or rude to our family and friends. But we can claw back a bit of control.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/time-spent-looking-at-my-phone/">Ruben Schade</a> in Sydney, 2023-01-08.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/time-spent-looking-at-my-phone.md"/>
+  </item>
+
+  <item>
+    <title>Your own little standard library</title>
+    <link>https://rubenerd.com/your-own-little-standard-library/</link>
+    <guid isPermaLink="true">https://rubenerd.com/your-own-little-standard-library/</guid>
+    <category>software</category>
+    <category domain="https://rubenerd.com/tag/personal/">personal</category>
+    <category domain="https://rubenerd.com/tag/scripts/">scripts</category>
+    <pubDate>Sat, 07 Jan 2023 11:54:25 +1000</pubDate>
+    <description><![CDATA[<p>I&rsquo;m sure every technical person and power user has a folder of scripts they use to automate repetitive tasks, or make their lives easier in specific use cases. I know this isn&rsquo;t strictly analogous to a &ldquo;standard library&rdquo; in a programming language or development environment, but I like to think of it as one we carry around for our lives. Why reinvent the wheel when our personal standard library has a function for us already?</p>
+<p>My folder of Perl, Bourne shell, and tcsh scripts is named <em>Mugboss</em>, for the delightful little desk organiser I&rsquo;ve had for years. It sits in my repos folder and is now version controlled with Git:</p>
+<pre><code>~/repos/mubgoss/
+</code></pre>
+<p>I refer to the folder in my oksh(1) <code>.kshrc</code> dotfile, so I can call up whichever script when needed:</p>
+<pre><code>[ -d ~/repos/mugboss ] &amp;&amp; export PATH ~/repos/mugboss/:$PATH
+</code></pre>
+<p>These really did start as rudimentary scripts. Some even got a promotion from one-liner functions or aliases in my dotfiles in the hopes of one day extending them. But they all have a rough structure:</p>
+<ol>
+<li>
+<p>A shebang, and a few comments about the date it was created, what problem it was attempting to solve, a list of parameters, and a TODO for features.</p>
+</li>
+<li>
+<p>A command(1) check against every external tool the script uses, to make sure it&rsquo;s installed.</p>
+</li>
+<li>
+<p>A basic parameter count, which returns an error if I don&rsquo;t supply the correct number.</p>
+</li>
+<li>
+<p>The actual script, written as a function for easy importing.</p>
+</li>
+</ol>
+<p>It&rsquo;s also a bit fun for some digital archaeology. I can see how my mind has changed over the years just by sorting these scripts by modification date. For all my love of Perl, I&rsquo;ve written more shell scripts over the last few years.</p>
+<p style="font-style:italic">By <a title="Link to original post" rel="canonical" href="https://rubenerd.com/your-own-little-standard-library/">Ruben Schade</a> in Sydney, 2023-01-07.</p>]]></description>
+	<dc:creator>Ruben Schade</dc:creator>
+	<derived:code type="text/markdown" url="https://gitlab.com/rubenerd/rubenerd.com/-/tree/trunk/content/post/2023/your-own-little-standard-library.md"/>
+  </item>
+
+</channel>
+</rss>

@@ -169,6 +169,14 @@ class RSSParserTests: XCTestCase {
         }
     }
 
+	func testFeedTitleWithTextInput() {
+		// This feed has a <textInput> element in the <channel>. This is valid, but uncommon.
+		// Previously, this incorrectly caused the parser to set the feed's title to the textInput's <title>.
+		let d = parserData("rubenerd", "rss", "https://rubenerd.com/")
+		let parsedFeed = try! FeedParser.parse(d)!
+		XCTAssertEqual(parsedFeed.title, "Rubenerd")
+	}
+
 	func testFeedLanguage() {
 		let d = parserData("manton", "rss", "http://manton.org/")
 		let parsedFeed = try! FeedParser.parse(d)!
