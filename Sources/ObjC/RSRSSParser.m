@@ -300,7 +300,18 @@ static const NSInteger kLanguageLength = 9;
 	}
 
 	if (!self.link) {
-		//TODO: get feed URL and use that to resolve URL.*/
+        NSURL *feedURL = [NSURL URLWithString:self.urlString];
+        if (!feedURL) {
+            return s;
+        }
+        NSURL *baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", feedURL.scheme, feedURL.host]];
+        if (!baseURL) {
+            return s;
+        }
+        NSURL *resolvedURL = [NSURL URLWithString:s relativeToURL:baseURL];
+        if (resolvedURL.absoluteString) {
+            return resolvedURL.absoluteString;
+        }
 		return s;
 	}
 
