@@ -80,8 +80,9 @@ public struct JSONFeedParser {
 		let language = d[Key.language] as? String
 
 		let items = parseItems(itemsArray, parserData.url)
+		let extensions = parseExtensions(d)
 
-		return ParsedFeed(type: .jsonFeed, title: title, homePageURL: homePageURL, feedURL: feedURL, language: language, feedDescription: feedDescription, nextURL: nextURL, iconURL: iconURL, faviconURL: faviconURL, authors: authors, expired: expired, hubs: hubs, items: items)
+		return ParsedFeed(type: .jsonFeed, title: title, homePageURL: homePageURL, feedURL: feedURL, language: language, feedDescription: feedDescription, nextURL: nextURL, iconURL: iconURL, faviconURL: faviconURL, authors: authors, expired: expired, hubs: hubs, items: items, extensions: extensions)
 	}
 }
 
@@ -168,8 +169,9 @@ private extension JSONFeedParser {
 			tags = Set(tagsArray)
 		}
 		let attachments = parseAttachments(itemDictionary)
+		let extensions = parseExtensions(itemDictionary)
 
-		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: contentText, summary: summary, imageURL: imageURL, bannerImageURL: bannerImageURL, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: tags, attachments: attachments)
+		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: contentText, summary: summary, imageURL: imageURL, bannerImageURL: bannerImageURL, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: tags, attachments: attachments, extensions: extensions)
 	}
 
 	static func parseTitle(_ itemDictionary: JSONDictionary, _ feedURL: String) -> String? {
@@ -246,5 +248,24 @@ private extension JSONFeedParser {
 		let durationInSeconds = attachmentObject[Key.durationInSeconds] as? Int
 
 		return ParsedAttachment(url: url, mimeType: mimeType, title: title, sizeInBytes: sizeInBytes, durationInSeconds: durationInSeconds)
+	}
+
+	static func parseExtensions(_ dictionary: JSONDictionary) -> Set<ParsedExtension>? {
+		
+		let extensions = dictionary
+			.filter { $0.key.hasPrefix("_") && $0.value is JSONDictionary }
+			.map { parseExtensionWithName($0.key, dictionary: $0.value as! JSONDictionary) }
+
+		if !extensions.isEmpty { return Set(extensions) }
+
+		return nil
+	}
+
+	static func parseExtensionWithName(_ name: String, dictionary: JSONDictionary) -> ParsedExtension {
+
+		let onlyHashables = dictionary
+			.compactMapValues { $0 as? AnyHashable }
+
+		return ParsedExtension(name: name, content: onlyHashables)
 	}
 }

@@ -21,7 +21,7 @@ struct RSParsedFeedTransformer {
 	static func parsedFeed(_ rsParsedFeed: RSParsedFeed) -> ParsedFeed {
 
 		let items = parsedItems(rsParsedFeed.articles)
-		return ParsedFeed(type: .rss, title: rsParsedFeed.title, homePageURL: rsParsedFeed.link, feedURL: rsParsedFeed.urlString, language: rsParsedFeed.language, feedDescription: nil, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items)
+		return ParsedFeed(type: .rss, title: rsParsedFeed.title, homePageURL: rsParsedFeed.link, feedURL: rsParsedFeed.urlString, language: rsParsedFeed.language, feedDescription: nil, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items, extensions: nil)
 	}
 }
 
@@ -47,7 +47,7 @@ private extension RSParsedFeedTransformer {
 		let authors = parsedAuthors(parsedArticle.authors)
 		let attachments = parsedAttachments(parsedArticle.enclosures)
 
-		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: parsedArticle.feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: nil, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: nil, attachments: attachments)
+		return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: parsedArticle.feedURL, url: url, externalURL: externalURL, title: title, language: language, contentHTML: contentHTML, contentText: nil, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: dateModified, authors: authors, tags: nil, attachments: attachments, extensions: nil)
 	}
 
 	static func parsedAuthors(_ authors: Set<RSParsedAuthor>?) -> Set<ParsedAuthor>? {

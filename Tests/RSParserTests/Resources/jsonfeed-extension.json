@@ -1,0 +1,50 @@
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "JSON Extension test feed",
+    "_contoso": {
+        "about": "Contoso JSON feed extension. There is actually no such extension in real life. This file just tests if the JSONFeed parser can parse a feed with JSON Feed extensions.",
+        "someNumber": 42,
+        "someBool": true,
+        "someString": "Hello Contoso"
+    },
+    "items": [
+        {
+            "id": "2",
+            "content_html": "<p>Second item.</p>",
+            "date_published": "2021-03-05T13:04:04+02:00",
+            "_contoso": {
+                "someKey": "SomeValue2",
+                "someBoolKey": true,
+                "anotherKey": "AnotherValue2"
+            },
+            "attachments": [
+                {
+                    "url": "https://example.com/SomeFile2.app.zip",
+                    "mime_type": "application/zip"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "content_html": "<p>First item.</p>",
+            "date_published": "2021-02-26T15:04:04+02:00",
+            "_contoso": {
+                "someKey": "SomeValue1",
+                "someBoolKey": false,
+                "someIntKey": 43,
+                "anotherKey": "AnotherValue1"
+            },
+            "attachments": [
+                {
+                    "url": "https://example.com/SomeFile1.app.zip",
+                    "mime_type": "application/zip"
+                }
+            ]
+        },
+        {
+            "id": "0",
+            "content_html": "<p>Third item. Without an extension.</p>",
+            "date_published": "2021-02-25T15:04:04+02:00"
+        }
+    ]
+}

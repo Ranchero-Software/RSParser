@@ -53,7 +53,7 @@ public struct RSSInJSONParser {
 
 			let items = parseItems(itemsObject!, parserData.url)
 
-			return ParsedFeed(type: .rssInJSON, title: title, homePageURL: homePageURL, feedURL: feedURL, language: feedLanguage, feedDescription: feedDescription, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items)
+			return ParsedFeed(type: .rssInJSON, title: title, homePageURL: homePageURL, feedURL: feedURL, language: feedLanguage, feedDescription: feedDescription, nextURL: nil, iconURL: nil, faviconURL: nil, authors: nil, expired: false, hubs: nil, items: items, extensions: nil)
 
 		}
 		catch { throw error }
@@ -131,7 +131,7 @@ private extension RSSInJSONParser {
 		}
 
 		if let uniqueID = uniqueID {
-			return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: nil, externalURL: externalURL, title: title, language: nil, contentHTML: contentHTML, contentText: contentText, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: nil, authors: authors, tags: tags, attachments: attachments)
+			return ParsedItem(syncServiceID: nil, uniqueID: uniqueID, feedURL: feedURL, url: nil, externalURL: externalURL, title: title, language: nil, contentHTML: contentHTML, contentText: contentText, summary: nil, imageURL: nil, bannerImageURL: nil, datePublished: datePublished, dateModified: nil, authors: authors, tags: tags, attachments: attachments, extensions: nil)
 		}
 		return nil
 	}

@@ -27,11 +27,12 @@ public struct ParsedItem: Hashable {
 	public let authors: Set<ParsedAuthor>?
 	public let tags: Set<String>?
 	public let attachments: Set<ParsedAttachment>?
+	public let extensions: Set<ParsedExtension>?
 	
 	public init(syncServiceID: String?, uniqueID: String, feedURL: String, url: String?, externalURL: String?, title: String?,
 				language: String?, contentHTML: String?, contentText: String?, summary: String?, imageURL: String?,
 				bannerImageURL: String?,datePublished: Date?, dateModified: Date?, authors: Set<ParsedAuthor>?,
-				tags: Set<String>?, attachments: Set<ParsedAttachment>?) {
+				tags: Set<String>?, attachments: Set<ParsedAttachment>?, extensions: Set<ParsedExtension>?) {
 		
 		self.syncServiceID = syncServiceID
 		self.uniqueID = uniqueID
@@ -50,6 +51,7 @@ public struct ParsedItem: Hashable {
 		self.authors = authors
 		self.tags = tags
 		self.attachments = attachments
+		self.extensions = extensions
 	}
 
 	// MARK: - Hashable
