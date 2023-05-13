@@ -266,8 +266,7 @@ static const NSInteger kLanguageLength = 9;
 		return;
 	}
 
-	RSParsedEnclosure *enclosure = [[RSParsedEnclosure alloc] init];
-	enclosure.url = url;
+	RSParsedEnclosure *enclosure = [[RSParsedEnclosure alloc] initWithURLString:url];
 	enclosure.length = [attributes[kLengthKey] integerValue];
 	enclosure.mimeType = attributes[kTypeKey];
 

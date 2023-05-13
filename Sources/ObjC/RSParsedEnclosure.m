@@ -10,4 +10,16 @@
 
 @implementation RSParsedEnclosure
 
+- (instancetype)initWithURLString:(NSString *)urlString {
+
+	self = [super init];
+	if (!self) {
+		return nil;
+	}
+
+	_url = urlString;
+
+	return self;
+}
+
 @end

@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSHTMLMetadata : NSObject
 
-- (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly) NSString *baseURLString;
 @property (nonatomic, readonly) NSArray <RSHTMLTag *> *tags;
@@ -39,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSHTMLMetadataAppleTouchIcon : NSObject
 
-@property (nonatomic, readonly) NSString *rel;
+@property (nonatomic, nullable, readonly) NSString *rel;
 @property (nonatomic, nullable, readonly) NSString *sizes;
 @property (nonatomic, readonly) CGSize size;
 @property (nonatomic, nullable, readonly) NSString *urlString; // Absolute.
@@ -67,7 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
 // TODO: the rest. At this writing (Nov. 26, 2017) I just care about og:image.
 // See http://ogp.me/
 
-- (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithURLString:(NSString *)urlString tags:(NSArray <RSHTMLTag *> *)tags NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly) NSArray <RSHTMLOpenGraphImage *> *images;
 

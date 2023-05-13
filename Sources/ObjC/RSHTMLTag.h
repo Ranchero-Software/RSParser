@@ -20,7 +20,8 @@ typedef NS_ENUM(NSInteger, RSHTMLTagType) {
 
 @interface RSHTMLTag : NSObject
 
-- (instancetype)initWithType:(RSHTMLTagType)type attributes:(NSDictionary *)attributes;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithType:(RSHTMLTagType)type attributes:(NSDictionary *)attributes NS_DESIGNATED_INITIALIZER;
 
 + (RSHTMLTag *)linkTagWithAttributes:(NSDictionary *)attributes;
 + (RSHTMLTag *)metaTagWithAttributes:(NSDictionary *)attributes;

@@ -11,12 +11,15 @@
 @class RSParsedEnclosure;
 @class RSParsedAuthor;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface RSParsedArticle : NSObject
 
-- (nonnull instancetype)initWithFeedURL:(NSString * _Nonnull)feedURL;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFeedURL:(NSString *)feedURL NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, readonly, nonnull) NSString *feedURL;
-@property (nonatomic, nonnull) NSString *articleID; //guid, if present, or calculated from other attributes. Should be unique to the feed, but not necessarily unique across different feeds. (Not suitable for a database ID.)
+@property (nonatomic, readonly) NSString *feedURL;
+@property (nonatomic) NSString *articleID; //guid, if present, or calculated from other attributes. Should be unique to the feed, but not necessarily unique across different feeds. (Not suitable for a database ID.)
 
 @property (nonatomic, nullable) NSString *guid;
 @property (nonatomic, nullable) NSString *title;
@@ -27,11 +30,12 @@
 @property (nonatomic, nullable) NSSet<RSParsedEnclosure *> *enclosures;
 @property (nonatomic, nullable) NSDate *datePublished;
 @property (nonatomic, nullable) NSDate *dateModified;
-@property (nonatomic, nonnull) NSDate *dateParsed;
+@property (nonatomic) NSDate *dateParsed;
 @property (nonatomic, nullable)	NSString *language;
 
-- (void)addEnclosure:(RSParsedEnclosure *_Nonnull)enclosure;
-- (void)addAuthor:(RSParsedAuthor *_Nonnull)author;
+- (void)addEnclosure:(RSParsedEnclosure *)enclosure;
+- (void)addAuthor:(RSParsedAuthor *)author;
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -10,14 +10,19 @@
 
 @class RSParsedArticle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface RSParsedFeed : NSObject
 
-- (nonnull instancetype)initWithURLString:(NSString * _Nonnull)urlString title:(NSString * _Nullable)title link:(NSString * _Nullable)link language:(NSString * _Nullable)language articles:(NSArray <RSParsedArticle *>* _Nonnull)articles;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithURLString:(NSString *)urlString title:(NSString * _Nullable)title link:(NSString * _Nullable)link language:(NSString * _Nullable)language articles:(NSArray <RSParsedArticle *>*)articles NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, readonly, nonnull) NSString *urlString;
+@property (nonatomic, readonly) NSString *urlString;
 @property (nonatomic, readonly, nullable) NSString *title;
 @property (nonatomic, readonly, nullable) NSString *link;
 @property (nonatomic, readonly, nullable) NSString *language;
-@property (nonatomic, readonly, nonnull) NSSet <RSParsedArticle *>*articles;
+@property (nonatomic, readonly) NSSet <RSParsedArticle *>*articles;
 
 @end
+
+NS_ASSUME_NONNULL_END

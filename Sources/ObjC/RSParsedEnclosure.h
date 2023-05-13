@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) NSString *mimeType;
 @property (nonatomic, nullable) NSString *title;
 
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithURLString:(NSString *)urlString NS_DESIGNATED_INITIALIZER;
+
 @end
 
 NS_ASSUME_NONNULL_END

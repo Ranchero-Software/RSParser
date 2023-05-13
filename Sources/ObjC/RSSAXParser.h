@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*Thread-safe, not re-entrant.
 
  Calls to the delegate will happen on the same thread where the parser runs.
@@ -24,18 +26,18 @@
 
 @optional
 
-- (void)saxParser:(RSSAXParser *)SAXParser XMLStartElement:(const unsigned char *)localName prefix:(const unsigned char *)prefix uri:(const unsigned char *)uri numberOfNamespaces:(NSInteger)numberOfNamespaces namespaces:(const unsigned char **)namespaces numberOfAttributes:(NSInteger)numberOfAttributes numberDefaulted:(int)numberDefaulted attributes:(const unsigned char **)attributes;
+- (void)saxParser:(RSSAXParser *)SAXParser XMLStartElement:(const unsigned char * _Nullable)localName prefix:(const unsigned char * _Nullable)prefix uri:(const unsigned char * _Nullable)uri numberOfNamespaces:(NSInteger)numberOfNamespaces namespaces:(const unsigned char * _Nullable * _Nullable)namespaces numberOfAttributes:(NSInteger)numberOfAttributes numberDefaulted:(int)numberDefaulted attributes:(const unsigned char * _Nullable * _Nullable)attributes;
 
-- (void)saxParser:(RSSAXParser *)SAXParser XMLEndElement:(const unsigned char *)localName prefix:(const unsigned char *)prefix uri:(const unsigned char *)uri;
+- (void)saxParser:(RSSAXParser *)SAXParser XMLEndElement:(const unsigned char * _Nullable)localName prefix:(const unsigned char * _Nullable)prefix uri:(const unsigned char * _Nullable)uri;
 
 // Length is guaranteed to be greater than 0.
-- (void)saxParser:(RSSAXParser *)SAXParser XMLCharactersFound:(const unsigned char *)characters length:(NSUInteger)length;
+- (void)saxParser:(RSSAXParser *)SAXParser XMLCharactersFound:(const unsigned char * _Nullable)characters length:(NSUInteger)length;
 
 - (void)saxParserDidReachEndOfDocument:(RSSAXParser *)SAXParser; /*If canceled, may not get called (but might).*/
 
-- (NSString *)saxParser:(RSSAXParser *)SAXParser internedStringForName:(const unsigned char *)name prefix:(const unsigned char *)prefix; /*Okay to return nil. Prefix may be nil.*/
+- (nullable NSString *)saxParser:(RSSAXParser *)SAXParser internedStringForName:(const unsigned char * _Nullable)name prefix:(const unsigned char * _Nullable)prefix; /*Okay to return nil. Prefix may be nil.*/
 
-- (NSString *)saxParser:(RSSAXParser *)SAXParser internedStringForValue:(const void *)bytes length:(NSUInteger)length;
+- (nullable NSString *)saxParser:(RSSAXParser *)SAXParser internedStringForValue:(const void * _Nullable)bytes length:(NSUInteger)length;
 
 @end
 
@@ -56,14 +58,16 @@ BOOL RSSAXEqualTags(const unsigned char *localName, const char *tag, NSInteger t
 - (void)finishParsing;
 - (void)cancel;
 
-@property (nonatomic, strong, readonly) NSData *currentCharacters; /*nil if not storing characters. UTF-8 encoded.*/
-@property (nonatomic, strong, readonly) NSString *currentString; /*Convenience to get string version of currentCharacters.*/
-@property (nonatomic, strong, readonly) NSString *currentStringWithTrimmedWhitespace;
+@property (nonatomic, strong, nullable, readonly) NSData *currentCharacters; /*nil if not storing characters. UTF-8 encoded.*/
+@property (nonatomic, strong, nullable, readonly) NSString *currentString; /*Convenience to get string version of currentCharacters.*/
+@property (nonatomic, strong, nullable, readonly) NSString *currentStringWithTrimmedWhitespace;
 
 - (void)beginStoringCharacters; /*Delegate can call from XMLStartElement. Characters will be available in XMLEndElement as currentCharacters property. Storing characters is stopped after each XMLEndElement.*/
 
 /*Delegate can call from within XMLStartElement. Returns nil if numberOfAttributes < 1.*/
 
-- (NSDictionary *)attributesDictionary:(const unsigned char **)attributes numberOfAttributes:(NSInteger)numberOfAttributes;
+- (NSDictionary *)attributesDictionary:(const unsigned char * _Nullable * _Nullable)attributes numberOfAttributes:(NSInteger)numberOfAttributes;
 
 @end
+
+NS_ASSUME_NONNULL_END

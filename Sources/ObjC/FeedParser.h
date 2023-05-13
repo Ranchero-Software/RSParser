@@ -8,17 +8,21 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class RSParsedFeed;
 @class RSXMLData;
 
 
 @protocol FeedParser <NSObject>
 
-+ (BOOL)canParseFeed:(RSXMLData * _Nonnull)xmlData;
++ (BOOL)canParseFeed:(RSXMLData *)xmlData;
 
-- (nonnull instancetype)initWithXMLData:(RSXMLData * _Nonnull)xmlData;
+- (instancetype)initWithXMLData:(RSXMLData *)xmlData;
 
-- (nullable RSParsedFeed *)parseFeed:(NSError * _Nullable * _Nullable)error;
+- (nullable RSParsedFeed *)parseFeed:(NSError **)error;
 
 
 @end
+
+NS_ASSUME_NONNULL_END

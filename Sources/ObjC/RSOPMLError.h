@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString *RSOPMLErrorDomain;
 
 
@@ -17,3 +19,5 @@ typedef NS_ENUM(NSInteger, RSOPMLErrorCode) {
 
 
 NSError *RSOPMLWrongFormatError(NSString *fileName);
+
+NS_ASSUME_NONNULL_END
