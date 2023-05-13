@@ -307,8 +307,7 @@ static const NSInteger kLengthLength = 7;
 
 - (RSParsedEnclosure *)enclosureWithURLString:(NSString *)urlString attributes:(NSDictionary *)attributes {
 
-	RSParsedEnclosure *enclosure = [[RSParsedEnclosure alloc] init];
-	enclosure.url = urlString;
+	RSParsedEnclosure *enclosure = [[RSParsedEnclosure alloc] initWithURLString:urlString];
 	enclosure.title = attributes[kTitleKey];
 	enclosure.mimeType = attributes[kTypeKey];
 	enclosure.length = [attributes[kLengthKey] integerValue];

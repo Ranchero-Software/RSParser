@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSParsedFeed : NSObject
 
-- (instancetype)initWithURLString:(NSString *)urlString title:(NSString * _Nullable)title link:(NSString * _Nullable)link language:(NSString * _Nullable)language articles:(NSArray <RSParsedArticle *>*)articles;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithURLString:(NSString *)urlString title:(NSString * _Nullable)title link:(NSString * _Nullable)link language:(NSString * _Nullable)language articles:(NSArray <RSParsedArticle *>*)articles NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly) NSString *urlString;
 @property (nonatomic, readonly, nullable) NSString *title;

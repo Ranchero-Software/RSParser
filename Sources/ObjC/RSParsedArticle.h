@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSParsedArticle : NSObject
 
-- (instancetype)initWithFeedURL:(NSString *)feedURL;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFeedURL:(NSString *)feedURL NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly) NSString *feedURL;
 @property (nonatomic) NSString *articleID; //guid, if present, or calculated from other attributes. Should be unique to the feed, but not necessarily unique across different feeds. (Not suitable for a database ID.)
