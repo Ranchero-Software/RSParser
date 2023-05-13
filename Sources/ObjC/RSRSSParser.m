@@ -33,6 +33,7 @@
 @property (nonatomic) BOOL parsingAuthor;
 @property (nonatomic, readonly) RSParsedArticle *currentArticle;
 @property (nonatomic) BOOL parsingChannelImage;
+@property (nonatomic) BOOL parsingTextInput;
 @property (nonatomic, readonly) NSDate *currentDate;
 @property (nonatomic) BOOL endRSSFound;
 @property (nonatomic) NSString *link;
@@ -101,6 +102,9 @@ static const NSInteger kItemLength = 5;
 
 static const char *kImage = "image";
 static const NSInteger kImageLength = 6;
+
+static const char *kTextInput = "textInput";
+static const NSInteger kTextInputLength = 10;
 
 static const char *kLink = "link";
 static const NSInteger kLinkLength = 5;
@@ -415,13 +419,16 @@ static const NSInteger kLanguageLength = 9;
 	else if (!prefix && RSSAXEqualTags(localName, kImage, kImageLength)) {
 		self.parsingChannelImage = YES;
 	}
+	else if (!prefix && RSSAXEqualTags(localName, kTextInput, kTextInputLength)) {
+		self.parsingTextInput = YES;
+	}
 	else if (!prefix && RSSAXEqualTags(localName, kAuthor, kAuthorLength)) {
 		if (self.parsingArticle) {
 			self.parsingAuthor = true;
 		}
 	}
 
-	if (!self.parsingChannelImage) {
+	if (!self.parsingChannelImage && !self.parsingTextInput) {
 		[self.parser beginStoringCharacters];
 	}
 }
@@ -445,6 +452,10 @@ static const NSInteger kLanguageLength = 9;
 		self.parsingChannelImage = NO;
 	}
 
+	else if (RSSAXEqualTags(localName, kTextInput, kTextInputLength)) {
+		self.parsingTextInput = NO;
+	}
+
 	else if (RSSAXEqualTags(localName, kItem, kItemLength)) {
 		self.parsingArticle = NO;
 	}
@@ -456,7 +467,7 @@ static const NSInteger kLanguageLength = 9;
 		}
 	}
 
-	else if (!self.parsingChannelImage) {
+	else if (!self.parsingChannelImage && !self.parsingTextInput) {
 		[self addFeedElement:localName prefix:prefix];
 	}
 }
