@@ -299,16 +299,12 @@ static const NSInteger kLanguageLength = 9;
 		return s;
 	}
 
-	if (!self.link) {
+	if (!self.link || ![self.link hasPrefix:@"http"]) {
         NSURL *feedURL = [NSURL URLWithString:self.urlString];
         if (!feedURL) {
             return s;
         }
-        NSURL *baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", feedURL.scheme, feedURL.host]];
-        if (!baseURL) {
-            return s;
-        }
-        NSURL *resolvedURL = [NSURL URLWithString:s relativeToURL:baseURL];
+        NSURL *resolvedURL = [NSURL URLWithString:s relativeToURL:feedURL];
         if (resolvedURL.absoluteString) {
             return resolvedURL.absoluteString;
         }
