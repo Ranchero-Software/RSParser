@@ -193,4 +193,13 @@ class RSSParserTests: XCTestCase {
 //			XCTAssertNotNil(article.contentHTML)
 //		}
 //	}
+    
+    func testFeedWithHomeEmpty() {
+        let d = parserData("fuli51", "html", "https://www.fuli51.net/feed")
+        let parsedFeed = try? FeedParser.parse(d)
+
+        for article in parsedFeed?.items ?? [] {
+            XCTAssertTrue(article.url?.starts(with: "https://www.fuli51.net") ?? false )
+        }
+    }
 }
