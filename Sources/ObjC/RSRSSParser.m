@@ -302,8 +302,15 @@ static const NSInteger kLanguageLength = 9;
 		return s;
 	}
 
-	if (!self.link) {
-		//TODO: get feed URL and use that to resolve URL.*/
+	if (!self.link || ![self.link hasPrefix:@"http"]) {
+        NSURL *feedURL = [NSURL URLWithString:self.urlString];
+        if (!feedURL) {
+            return s;
+        }
+        NSURL *resolvedURL = [NSURL URLWithString:s relativeToURL:feedURL];
+        if (resolvedURL.absoluteString) {
+            return resolvedURL.absoluteString;
+        }
 		return s;
 	}
 
